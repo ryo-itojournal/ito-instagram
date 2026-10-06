@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ばんばん食堂｜Instagram改善提案</title>
+<meta name="description" content="伊東マリンタウンの海鮮食堂「ばんばん食堂」のInstagramプロフィール・投稿・リールの改善提案をまとめたページです。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="伊東Instagram改善提案">
+<meta property="og:title" content="ばんばん食堂｜Instagram改善提案">
+<meta property="og:description" content="伊東マリンタウンの海鮮食堂「ばんばん食堂」のInstagramプロフィール・投稿・リールの改善提案をまとめたページです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;900&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3ECD9;
+    --paper-2:#EDE3C8;
+    --ink:#241B12;
+    --ink-soft:#5B5142;
+    --amber:#C8862E;
+    --amber-deep:#A8552B;
+    --deep-sea:#1E3A45;
+    --deep-sea-2:#14282F;
+    --foam:#FFFBF0;
+    --line: rgba(36,27,18,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Zen Kaku Gothic New", sans-serif;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:"Zen Old Mincho", serif;
+    margin:0;
+    letter-spacing:.02em;
+  }
+  .eyebrow{
+    font-family:"Space Mono", monospace;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--amber-deep);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ---------- top nav back link ---------- */
+  .backlink{
+    position:sticky; top:0; z-index:40;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:14px 6vw;
+    background:rgba(243,236,217,.88);
+    backdrop-filter: blur(6px);
+    border-bottom:1px solid var(--line);
+    font-family:"Space Mono", monospace;
+    font-size:12px;
+    letter-spacing:.06em;
+  }
+  .backlink a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    display:flex; align-items:center; gap:6px;
+  }
+  .backlink a:hover{color:var(--amber-deep);}
+  .backlink .tag{
+    color:var(--deep-sea);
+    border:1px solid var(--deep-sea);
+    padding:3px 10px;
+    border-radius:100px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:16vh 6vw 14vh;
+    overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 15% -10%, #FFF3D6 0%, transparent 55%),
+      linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  }
+  .hero-eyebrow{
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:28px;
+  }
+  .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);}
+  .hero h1{
+    font-size:clamp(40px, 8vw, 96px);
+    font-weight:900;
+    line-height:1.05;
+    color:var(--ink);
+  }
+  .hero h1 span{
+    display:block;
+    color:var(--amber-deep);
+  }
+  .hero-sub{
+    max-width:640px;
+    margin-top:28px;
+    font-size:17px;
+    color:var(--ink-soft);
+  }
+  .hero-meta{
+    margin-top:56px;
+    display:flex; flex-wrap:wrap; gap:32px 56px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .hero-meta div .eyebrow{display:block; margin-bottom:6px;}
+  .hero-meta div .val{font-size:15px;}
+  .hero-meta a.val{text-decoration:none; border-bottom:1px solid var(--amber-deep);}
+
+  /* pour divider — signature element */
+  .pour{
+    position:relative;
+    height:64px;
+    margin:0 6vw;
+  }
+  .pour svg{width:100%; height:100%; display:block;}
+
+  section{padding:9vh 6vw;}
+  .section-head{
+    display:flex; align-items:baseline; gap:18px;
+    margin-bottom:52px;
+  }
+  .section-num{
+    font-family:"Space Mono", monospace;
+    font-size:14px;
+    color:var(--amber-deep);
+    border:1px solid var(--amber-deep);
+    border-radius:100px;
+    padding:4px 12px;
+  }
+  .section-head h2{font-size:clamp(26px,3.4vw,40px);}
+  .section-head .desc{
+    margin-top:10px; color:var(--ink-soft); font-size:15px; max-width:560px;
+  }
+
+  /* ---------- 01 profile before/after ---------- */
+  .profile-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .profile-card{
+    background:var(--foam);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:32px 30px;
+    position:relative;
+  }
+  .profile-card.before{opacity:.8;}
+  .profile-card.after{
+    background:linear-gradient(165deg, #FFF7E6, var(--foam));
+    border-color:var(--amber);
+  }
+  .profile-card .label{
+    font-family:"Space Mono", monospace;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+  .profile-card.after .label{color:var(--amber-deep);}
+  .profile-card .handle{
+    font-family:"Zen Old Mincho", serif;
+    font-size:20px; font-weight:600;
+    margin-bottom:14px;
+  }
+  .profile-card p{margin:0; font-size:14.5px; color:var(--ink);}
+  .profile-card .link{margin-top:10px; font-size:13px; color:var(--amber-deep); text-decoration:underline; word-break:break-all;}
+  .stat-row{
+    display:flex; gap:26px; margin-bottom:16px;
+    padding-bottom:16px; border-bottom:1px solid var(--line);
+  }
+  .stat-row div{display:flex; flex-direction:column;}
+  .stat-row b{font-size:16px; font-family:"Zen Old Mincho",serif;}
+  .stat-row span{font-size:11px; color:var(--ink-soft); margin-top:2px;}
+  .profile-card ul{margin:14px 0 0; padding-left:0; list-style:none;}
+  .profile-card li{font-size:14px; margin-bottom:6px; padding-left:1.1em; position:relative; color:var(--ink);}
+  .profile-card li::before{content:"●"; position:absolute; left:0; font-size:7px; top:.55em; color:var(--amber-deep);}
+  .points{
+    margin-top:24px;
+    display:grid; gap:10px;
+  }
+  .points div{
+    display:flex; gap:10px; font-size:14px; color:var(--ink-soft);
+    align-items:flex-start;
+  }
+  .points .check{color:var(--amber-deep); font-family:"Space Mono",monospace; flex:none;}
+
+  /* ---------- 02 screens ---------- */
+  .screens{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  .screen-card{
+    border:1px solid var(--line);
+    border-radius:10px;
+    aspect-ratio:320/460;
+    overflow:hidden;
+    background:var(--foam);
+    box-shadow:0 18px 40px -22px rgba(36,27,18,.35);
+  }
+  .screen-card svg{width:100%; height:100%; display:block;}
+  .screen-caption{
+    margin-top:14px;
+    text-align:center;
+    font-family:"Space Mono",monospace;
+    font-size:11px;
+    color:var(--ink-soft);
+    letter-spacing:.04em;
+  }
+  .screen-col{display:flex; flex-direction:column;}
+
+  /* ---------- 03 four pillars ---------- */
+  .pillars{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .pillar{
+    background:var(--foam);
+    padding:36px 26px;
+    display:flex; flex-direction:column; gap:14px;
+    transition:background .25s ease;
+  }
+  .pillar:hover{background:#FFF7E6;}
+  .pillar .num{font-family:"Space Mono",monospace; font-size:12px; color:var(--amber-deep);}
+  .pillar h3{font-size:19px;}
+  .pillar p{font-size:13.5px; color:var(--ink-soft); margin:0;}
+
+  /* ---------- 04 reel storyboard — gauge timeline ---------- */
+  .reel-direction{
+    background:var(--deep-sea);
+    color:var(--foam);
+    border-radius:4px;
+    padding:34px 34px;
+    margin-bottom:40px;
+  }
+  .reel-direction .eyebrow{color:#8FD0C9;}
+  .reel-direction p{margin:10px 0 0; font-size:16px; font-family:"Zen Old Mincho", serif;}
+  .reel-direction p b{color:#FFC97A;}
+
+  .gauge{
+    position:relative;
+    display:flex;
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .gauge-seg{
+    flex:1;
+    padding:22px 16px 20px;
+    border-right:1px solid var(--line);
+    position:relative;
+    background:var(--foam);
+  }
+  .gauge-seg:last-child{border-right:none;}
+  .gauge-seg .time{
+    font-family:"Space Mono",monospace;
+    font-size:11px; color:var(--amber-deep); margin-bottom:10px; display:block;
+  }
+  .gauge-seg .tag{font-size:14px; font-weight:700; margin-bottom:6px;}
+  .gauge-seg .txt{font-size:12.5px; color:var(--ink-soft);}
+  .gauge-fill{
+    position:absolute; left:0; bottom:0; width:100%; height:3px; background:var(--amber);
+    transform-origin:left; opacity:.6;
+  }
+
+  .themes{
+    margin-top:36px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+  .theme-chip{
+    border:1px solid var(--line);
+    border-radius:100px;
+    padding:14px 20px;
+    font-size:13px;
+    text-align:center;
+    color:var(--ink-soft);
+    background:var(--foam);
+  }
+  .theme-chip b{display:block; font-family:"Zen Old Mincho",serif; color:var(--ink); font-size:14px; margin-bottom:2px; font-weight:600;}
+
+  /* ---------- 05 design checklist ---------- */
+  .checklist{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px 40px;
+  }
+  .checklist div{
+    display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--line); font-size:14.5px;
+  }
+  .checklist .ck{
+    flex:none; width:22px; height:22px; border-radius:50%;
+    border:1px solid var(--amber-deep); color:var(--amber-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Space Mono",monospace; font-size:12px;
+  }
+
+  /* ---------- 06 summary flow ---------- */
+  .summary-wrap{
+    background:var(--deep-sea-2);
+    color:var(--foam);
+    border-radius:4px;
+    padding:6vh 5vw;
+  }
+  .summary-before-after{
+    display:grid; grid-template-columns:1fr 1fr; gap:40px;
+    margin-bottom:48px;
+  }
+  .summary-before-after .eyebrow{color:#8FD0C9;}
+  .summary-before-after p{font-size:15px; margin:10px 0 0; color:#DCE4E2;}
+  .flow{
+    display:flex; align-items:center; flex-wrap:wrap; gap:10px;
+    font-family:"Zen Old Mincho", serif;
+  }
+  .flow .node{
+    border:1px solid rgba(255,251,240,.3);
+    border-radius:100px;
+    padding:10px 22px;
+    font-size:15px;
+  }
+  .flow .arrow{color:#FFC97A; font-family:"Space Mono",monospace;}
+  .summary-line{
+    margin-top:44px;
+    font-family:"Zen Old Mincho", serif;
+    font-size:clamp(20px,2.6vw,30px);
+    font-weight:600;
+    line-height:1.6;
+    border-left:2px solid var(--amber);
+    padding-left:24px;
+  }
+  .summary-line b{color:#FFC97A;}
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:8vh 6vw 6vh;
+    text-align:center;
+  }
+  .footer-links{
+    display:flex; justify-content:center; gap:20px; flex-wrap:wrap;
+    margin-bottom:28px;
+  }
+  .footer-links a{
+    text-decoration:none;
+    border:1px solid var(--ink);
+    border-radius:100px;
+    padding:12px 28px;
+    font-size:14px;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:.2s;
+  }
+  .footer-links a:hover{background:var(--ink); color:var(--paper);}
+  footer small{color:var(--ink-soft); font-family:"Space Mono",monospace; font-size:11px;}
+
+  @media (max-width:820px){
+    .profile-grid, .screens, .summary-before-after, .checklist{grid-template-columns:1fr;}
+    .pillars{grid-template-columns:1fr 1fr;}
+    .gauge{flex-direction:column;}
+    .gauge-seg{border-right:none; border-bottom:1px solid var(--line);}
+    .themes{grid-template-columns:1fr 1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- additions for the jizakana pages ---------- */
+  .hero h1 span{word-break:keep-all; overflow-wrap:anywhere;}
+  .summary-wrap > .eyebrow{color:#8FD0C9;}
+  .summary-line{text-wrap:balance; word-break:auto-phrase;}
+  .flow .step{display:flex; align-items:center; gap:10px;}
+  .screen-card{aspect-ratio:320/520;}
+  .profile-card .bio{line-height:1.95;}
+  .profile-card .bio.folded{color:var(--ink-soft);}
+  .profile-card .fold{
+    margin:10px 0 8px; padding-top:8px;
+    border-top:1px dashed var(--amber);
+    font-size:11.5px; color:var(--amber-deep);
+  }
+  .profile-card.after li{padding-left:0;}
+  .profile-card.after li::before{content:none;}
+  .profile-card .note{
+    margin-top:16px; padding-top:12px;
+    border-top:1px dashed var(--line);
+    font-size:12.5px; color:var(--ink-soft);
+  }
+  .mini-label{
+    font-family:"Space Mono", monospace;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .reel-now{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    gap:1px; background:var(--line);
+    border:1px solid var(--line); border-radius:4px; overflow:hidden;
+    margin-bottom:18px;
+  }
+  .reel-now div{
+    background:var(--foam);
+    padding:22px 22px 20px;
+    display:flex; flex-direction:column; gap:4px;
+  }
+  .reel-now .k{font-size:12.5px; color:var(--ink-soft);}
+  .reel-now b{font-size:26px; line-height:1.3; font-weight:700;}
+  .reel-now b small{font-size:13px; font-weight:500; margin-left:3px; color:var(--ink-soft);}
+  .reel-now .s{font-size:12.5px; color:var(--ink-soft);}
+  .reel-now + .mini-label{margin-top:30px;}
+  .reel-rank{
+    margin:0 0 18px;
+    border:1px solid var(--line); border-radius:4px; background:var(--foam);
+  }
+  .reel-rank ol{list-style:none; margin:0; padding:0;}
+  .reel-rank li, .reel-rank .ref{
+    display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) 6em;
+    gap:18px; align-items:center;
+    padding:13px 22px; border-bottom:1px solid var(--line);
+    font-size:13.5px;
+  }
+  .reel-rank .ref{border-bottom:none; color:var(--ink-soft);}
+  .reel-rank .t{display:flex; gap:12px;}
+  .reel-rank .t b{font-family:"Space Mono",monospace; font-weight:400; font-size:12px; color:var(--amber-deep); flex:none; width:1.6em;}
+  .reel-rank .bar{display:block; height:8px;}
+  .reel-rank .bar i{display:block; height:100%; min-width:3px; background:var(--amber-deep); border-radius:0 4px 4px 0;}
+  .reel-rank .ref .bar i{background:#B5A98F;}
+  .reel-rank .v{text-align:right; font-weight:700; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .reel-rank .ref .v{font-weight:500;}
+  .reel-note{margin:0 0 40px; font-size:14px; color:var(--ink-soft); max-width:780px;}
+  .sibling{margin:0 0 26px; font-size:13px; color:var(--ink-soft);}
+  .sibling a{color:var(--amber-deep); margin:0 .4em; white-space:nowrap;}
+  .data-note{margin:0 0 12px; font-size:12px; color:var(--ink-soft);}
+  @media (max-width:820px){
+    .profile-card{padding:28px 18px;}
+    .profile-card .bio, .profile-card.after li{font-size:13px;}
+    .reel-now{grid-template-columns:1fr;}
+    .reel-rank li, .reel-rank .ref{grid-template-columns:minmax(0,1fr) auto; gap:8px 14px; padding:13px 18px;}
+    .reel-rank .bar{grid-column:1 / -1; order:3;}
+  }
+</style>
+</head>
+<body>
+
+<div class="backlink">
+  <a href="../../group/jizakana/index.html">← 地魚王国一覧へ</a>
+  <span class="tag">jizakana / 03</span>
+</div>
+
+<header class="hero">
+  <div class="hero-eyebrow"><span class="dot"></span><span class="eyebrow">Instagram 改善提案</span></div>
+  <h1>ばんばん食堂<span>— 伊東・<wbr>干物屋直営の<wbr>海鮮食堂 —</span></h1>
+  <p class="hero-sub">年間4万食の「まかない丼」という、強い看板メニューをすでに持っているお店です。次の一歩は、その一杯の裏側にある「干物屋の仕事」と「つくる人」を見せること。プロフィール・投稿構成・リールの3方向から改善案をまとめました。</p>
+  <div class="hero-meta">
+    <div><span class="eyebrow">Client</span><span class="val">ばんばん食堂 伊東マリンタウン店（株式会社伊豆中）</span></div>
+    <div><span class="eyebrow">Account</span><a class="val" href="https://www.instagram.com/banban.marinetown/" target="_blank" rel="noopener">@banban.marinetown</a></div>
+    <div><span class="eyebrow">Location</span><span class="val">静岡県伊東市湯川571-19（道の駅 伊東マリンタウン2F）</span></div>
+    <div><span class="eyebrow">Category</span><span class="val">海鮮食堂（丼・定食・干物）</span></div>
+  </div>
+</header>
+
+<div class="pour">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="pourGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#C8862E" stop-opacity="0"/>
+        <stop offset="15%" stop-color="#C8862E" stop-opacity="0.9"/>
+        <stop offset="85%" stop-color="#A8552B" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#A8552B" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="M0,32 C150,10 300,54 450,32 C600,10 750,54 900,32 C1000,18 1100,44 1200,32" fill="none" stroke="url(#pourGrad)" stroke-width="2"/>
+  </svg>
+</div>
+
+<!-- 01 profile -->
+<section id="profile">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <div>
+      <h2>プロフィール改善</h2>
+      <p class="desc">「何の店か」「何が名物か」「どこで・いつ食べられるか」を3秒で理解できる構成に整理します。</p>
+    </div>
+  </div>
+  <div class="profile-grid">
+    <div class="profile-card before">
+      <div class="label">Before — 現在のプロフィール</div>
+      <div class="handle">ばんばん食堂伊東マリンタウン店【伊豆伊東ランチ】</div>
+      <div class="stat-row">
+        <div><b>14</b><span>投稿</span></div>
+        <div><b>116</b><span>フォロワー</span></div>
+        <div><b>121</b><span>フォロー中</span></div>
+      </div>
+      <p class="bio">【伊東で“大人気な食事”ならここ】<br>
+      干物屋直営の海鮮食堂🐟<br>
+      ☀︎年間4万食の名物▶まかない丼<br>
+      ☀︎伊東を満喫▶︎ばんばん膳 など</p>
+      <p class="fold">▼ ここから下は「続きを読む」を押すと表示</p>
+      <p class="bio folded">📍道の駅伊東マリンタウン<br>
+      👇人気メニューは投稿から✨</p>
+      <p class="note">リンク：未設定　／　ハイライト：なし　／　カテゴリ表示：なし</p>
+    </div>
+    <div class="profile-card after">
+      <div class="label">After — 改善案</div>
+      <div class="handle">ばんばん食堂｜伊東マリンタウンの海鮮ランチ</div>
+      <div class="stat-row">
+        <div><b>14</b><span>投稿</span></div>
+        <div><b>116</b><span>フォロワー</span></div>
+        <div><b>121</b><span>フォロー中</span></div>
+      </div>
+      <ul>
+        <li>🐟 老舗干物屋「伊豆中」直営の海鮮食堂</li>
+        <li>🥢 まかない丼（年間4万食）・ばんばん膳</li>
+        <li>🌊 海が見える店内82席・お座敷あり</li>
+        <li>📍 道の駅 伊東マリンタウン2F／11:00–20:00</li>
+      </ul>
+      <p class="note">リンク：店舗ページ・Googleマップ　／　ハイライト：メニュー・行き方・店内・お知らせ・メディア　／　カテゴリ表示：レストラン</p>
+    </div>
+  </div>
+  <div class="points">
+    <div><span class="check">01</span>名前欄に「海鮮」を加える。名前欄は検索の対象になるが、現在は「伊東」「ランチ」までで、「海鮮」が入っていない</div>
+    <div><span class="check">02</span>自己紹介文は4行に収める。スマートフォンでは5行目あたりから先が「続きを読む」に隠れるため、現在は5行目の「📍道の駅伊東マリンタウン」が最初に表示されていない</div>
+    <div><span class="check">03</span>1行目で「干物屋『伊豆中』直営」と言い切り、ほかの海鮮食堂との違いを最初に伝える</div>
+    <div><span class="check">04</span>場所（2F）と営業時間を4行目に入れ、来店前の疑問をプロフィールだけで解決する。あわせて、カテゴリ「レストラン」と住所・電話の表示も設定する</div>
+    <div><span class="check">05</span>リンクとハイライト（メニュー・行き方・店内・お知らせ・メディア）を新設する。「人気メニューは投稿から」ではなく、ハイライトへ直接案内する。テレビで紹介された実績は「メディア」に残す</div>
+    <div><span class="check">06</span>伊豆中本体（@izuchu.himono）や系列店、道の駅 伊東マリンタウン（@itomarinetown）と、メンション・共同投稿で相互に紹介する。フォロワーがまだ少ない開設初期を、グループ全体で支える</div>
+  </div>
+</section>
+
+<!-- 02 screens -->
+<section id="screens">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <div>
+      <h2>Instagram 画面イメージ</h2>
+      <p class="desc">現状の見え方と、改善後の見え方を並べて確認します（画面はイメージです）。</p>
+    </div>
+  </div>
+  <div class="screens">
+    <div class="screen-col">
+      <div class="screen-card">
+        <svg viewBox="0 0 320 520" xmlns="http://www.w3.org/2000/svg" font-family="'Zen Kaku Gothic New', sans-serif" role="img" aria-label="現在のプロフィール画面のイメージ">
+          <rect x="0" y="0" width="320" height="520" fill="#FFFBF0"/>
+          <circle cx="288" cy="24" r="1.6" fill="#5B5142"/><circle cx="278" cy="24" r="1.6" fill="#5B5142"/><circle cx="268" cy="24" r="1.6" fill="#5B5142"/>
+          <text x="160" y="28" text-anchor="middle" font-size="12" fill="#241B12">banban.marinetown</text>
+          <line x1="0" y1="40" x2="320" y2="40" stroke="#E7DFC9"/>
+
+          <circle cx="50" cy="80" r="27" fill="#E4D6B6" stroke="#E7DFC9"/>
+          <text x="50" y="87" text-anchor="middle" font-size="20">🐟</text>
+
+          <text x="118" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">14</text>
+          <text x="118" y="88" text-anchor="middle" font-size="9" fill="#5B5142">投稿</text>
+          <text x="196" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">116</text>
+          <text x="196" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロワー</text>
+          <text x="274" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">121</text>
+          <text x="274" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロー中</text>
+
+          <text x="20" y="124" font-size="11" font-weight="700" fill="#241B12">ばんばん食堂伊東マリンタウン店【伊豆伊東ランチ】</text>
+
+          <text x="20" y="142" font-size="10.5" fill="#241B12">【伊東で“大人気な食事”ならここ】</text>
+          <text x="20" y="156.5" font-size="10.5" fill="#241B12">干物屋直営の海鮮食堂🐟</text>
+          <text x="20" y="171" font-size="10.5" fill="#241B12">☀︎年間4万食の名物▶まかない丼</text>
+          <text x="20" y="185.5" font-size="10.5" fill="#241B12">☀︎伊東を満喫▶︎ばんばん膳 など</text>
+          <text x="20" y="200" font-size="10.5" fill="#9A8F7C">… 続きを読む</text>
+          <text x="20" y="215" font-size="10" fill="#9A8F7C">（リンク未設定）</text>
+
+          <rect x="20" y="225" width="280" height="24" rx="6" fill="none" stroke="#E7DFC9"/>
+          <text x="160" y="241" text-anchor="middle" font-size="10.5" fill="#5B5142">プロフィールを編集</text>
+
+          <line x1="0" y1="259" x2="320" y2="259" stroke="#E7DFC9"/>
+
+          <g>
+            <rect x="0" y="264" width="105" height="84" fill="#C68A3D"/><text x="52.5" y="303.5" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">店内</text><text x="52.5" y="314.5" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">（ピン留め）</text>
+            <rect x="107" y="264" width="105" height="84" fill="#4C6B58"/><text x="159.5" y="303.5" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">まかない丼リール</text><text x="159.5" y="314.5" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">（ピン留め）</text>
+            <rect x="214" y="264" width="106" height="84" fill="#8B4513"/><text x="267" y="303.5" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">臨時休業の</text><text x="267" y="314.5" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">お知らせ</text>
+            <rect x="0" y="350" width="105" height="84" fill="#D8CBAE"/><text x="52.5" y="389.5" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">まかない丼</text><text x="52.5" y="400.5" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">（リール）</text>
+            <rect x="107" y="350" width="105" height="84" fill="#35586B"/><text x="159.5" y="395" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">店内</text>
+            <rect x="214" y="350" width="106" height="84" fill="#2B2118"/><text x="267" y="395" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">店内</text>
+            <rect x="0" y="436" width="105" height="84" fill="#E3D5B8"/><text x="52.5" y="481" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">ねぎ油</text>
+            <rect x="107" y="436" width="105" height="84" fill="#9C7A4A"/><text x="159.5" y="481" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">まかない丼</text>
+            <rect x="214" y="436" width="106" height="84" fill="#6B4226"/><text x="267" y="481" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">鯖味噌煮</text>
+          </g>
+        </svg>
+      </div>
+      <div class="screen-caption">Before — メニュー紹介が中心で、表紙の型が途中から変わっているフィード</div>
+    </div>
+
+    <div class="screen-col">
+      <div class="screen-card">
+        <svg viewBox="0 0 320 520" xmlns="http://www.w3.org/2000/svg" font-family="'Zen Kaku Gothic New', sans-serif" role="img" aria-label="改善後のプロフィール画面のイメージ">
+          <rect x="0" y="0" width="320" height="520" fill="#FFFBF0"/>
+          <circle cx="288" cy="24" r="1.6" fill="#5B5142"/><circle cx="278" cy="24" r="1.6" fill="#5B5142"/><circle cx="268" cy="24" r="1.6" fill="#5B5142"/>
+          <text x="160" y="28" text-anchor="middle" font-size="12" fill="#241B12">banban.marinetown</text>
+          <line x1="0" y1="40" x2="320" y2="40" stroke="#E7DFC9"/>
+
+          <circle cx="50" cy="80" r="27" fill="#C8862E" stroke="#A8552B"/>
+          <text x="50" y="87" text-anchor="middle" font-size="20">🐟</text>
+
+          <text x="118" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">14</text>
+          <text x="118" y="88" text-anchor="middle" font-size="9" fill="#5B5142">投稿</text>
+          <text x="196" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">116</text>
+          <text x="196" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロワー</text>
+          <text x="274" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">121</text>
+          <text x="274" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロー中</text>
+
+          <text x="20" y="122" font-size="11.5" font-weight="700" fill="#241B12">ばんばん食堂｜伊東マリンタウンの海鮮ランチ</text>
+          <text x="20" y="136" font-size="10" fill="#5B5142">レストラン</text>
+
+          <text x="20" y="153" font-size="10.5" fill="#241B12">🐟 老舗干物屋「伊豆中」直営の海鮮食堂</text>
+          <text x="20" y="167.5" font-size="10.5" fill="#241B12">🥢 まかない丼（年間4万食）・ばんばん膳</text>
+          <text x="20" y="182" font-size="10.5" fill="#241B12">🌊 海が見える店内82席・お座敷あり</text>
+          <text x="20" y="196.5" font-size="10.5" fill="#241B12">📍 道の駅 伊東マリンタウン2F／11:00–20:00</text>
+          <text x="20" y="212" font-size="10.5" fill="#3B6E86" text-decoration="underline">🔗 ito-marinetown.co.jp、他1件</text>
+
+          <rect x="20" y="222" width="128" height="24" rx="12" fill="none" stroke="#E7DFC9"/>
+          <text x="84" y="238" text-anchor="middle" font-size="10" fill="#5B5142">編集</text>
+          <rect x="156" y="222" width="144" height="24" rx="12" fill="#A8552B"/>
+          <text x="228" y="238" text-anchor="middle" font-size="10" fill="#FFFBF0">▼ メニュー・行き方</text>
+
+          <g font-size="8.5" fill="#5B5142">
+            <circle cx="40" cy="273" r="19" fill="#C8862E"/><text x="40" y="279" text-anchor="middle" font-size="15">📖</text>
+            <text x="40" y="303" text-anchor="middle">メニュー</text>
+            <circle cx="100" cy="273" r="19" fill="#1E3A45"/><text x="100" y="279" text-anchor="middle" font-size="15">📍</text>
+            <text x="100" y="303" text-anchor="middle">行き方</text>
+            <circle cx="160" cy="273" r="19" fill="#EDE3C8" stroke="#C8862E"/><text x="160" y="279" text-anchor="middle" font-size="15">🏠</text>
+            <text x="160" y="303" text-anchor="middle">店内</text>
+            <circle cx="220" cy="273" r="19" fill="#35586B"/><text x="220" y="279" text-anchor="middle" font-size="15">📣</text>
+            <text x="220" y="303" text-anchor="middle">お知らせ</text>
+            <circle cx="280" cy="273" r="19" fill="#14282F"/><text x="280" y="279" text-anchor="middle" font-size="15">📺</text>
+            <text x="280" y="303" text-anchor="middle">メディア</text>
+          </g>
+
+          <line x1="0" y1="316" x2="320" y2="316" stroke="#E7DFC9"/>
+
+          <g>
+            <rect x="0" y="322" width="105" height="64.7" fill="#C8862E"/><text x="52.5" y="352.4" text-anchor="middle" font-size="17">🍚</text><text x="52.5" y="369.4" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">まかない丼</text>
+            <rect x="107" y="322" width="105" height="64.7" fill="#1E3A45"/><text x="159.5" y="352.4" text-anchor="middle" font-size="17">⚙️</text><text x="159.5" y="369.4" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">干物を開く</text>
+            <rect x="214" y="322" width="106" height="64.7" fill="#A8552B"/><text x="267" y="352.4" text-anchor="middle" font-size="17">👤</text><text x="267" y="369.4" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">料理長</text>
+            <rect x="0" y="388.7" width="105" height="64.7" fill="#EDE3C8"/><text x="52.5" y="419.1" text-anchor="middle" font-size="17">🌊</text><text x="52.5" y="436.1" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">海の見える席</text>
+            <rect x="107" y="388.7" width="105" height="64.7" fill="#C8862E"/><text x="159.5" y="419.1" text-anchor="middle" font-size="17">🍚</text><text x="159.5" y="436.1" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">ばんばん膳</text>
+            <rect x="214" y="388.7" width="106" height="64.7" fill="#1E3A45"/><text x="267" y="419.1" text-anchor="middle" font-size="17">⚙️</text><text x="267" y="436.1" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">ねぎ油の仕込み</text>
+            <rect x="0" y="455.4" width="105" height="64.6" fill="#A8552B"/><text x="52.5" y="485.7" text-anchor="middle" font-size="17">👤</text><text x="52.5" y="502.7" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">スタッフ</text>
+            <rect x="107" y="455.4" width="105" height="64.6" fill="#EDE3C8"/><text x="159.5" y="485.7" text-anchor="middle" font-size="17">🌊</text><text x="159.5" y="502.7" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">宇佐美の干物工場</text>
+            <rect x="214" y="455.4" width="106" height="64.6" fill="#C8862E"/><text x="267" y="485.7" text-anchor="middle" font-size="17">🍚</text><text x="267" y="502.7" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">伊東ひもの定食</text>
+          </g>
+        </svg>
+      </div>
+      <div class="screen-caption">After — 4本柱で統一されたフィード</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 pillars -->
+<section id="pillars">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <div>
+      <h2>投稿内容の4本柱</h2>
+      <p class="desc">料理だけでなく「仕事」と「人」と「土地」を伝える発信バランスに組み替えます。</p>
+    </div>
+  </div>
+  <div class="pillars">
+    <div class="pillar">
+      <span class="num">🍚 01</span>
+      <h3>料理</h3>
+      <p>まかない丼、ばんばん膳、伊東ひもの定食、しらす丼。具材やねぎ油、玉子を混ぜるタイミングなど「おいしい食べ方」まで紹介する。</p>
+    </div>
+    <div class="pillar">
+      <span class="num">⚙️ 02</span>
+      <h3>仕事</h3>
+      <p>魚を一枚ずつ手で開く、駿河湾の海洋深層水と自家製の塩で漬け込む、干す、焼く。干物屋直営だからこそ撮れる工程を、短い動画で見せる。</p>
+    </div>
+    <div class="pillar">
+      <span class="num">👤 03</span>
+      <h3>ヒト</h3>
+      <p>ねぎ油を考案した料理長、干物職人、ホールスタッフ。まかない丼が生まれたきっかけや、おすすめの食べ方を本人の言葉で語ってもらう。</p>
+    </div>
+    <div class="pillar">
+      <span class="num">🌊 04</span>
+      <h3>伊東</h3>
+      <p>窓の外の海とヨットハーバー、道の駅 伊東マリンタウン、宇佐美の干物工場。「伊東で食べる理由」を伝える。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 reel -->
+<section id="reel">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <div>
+      <h2>Instagram リール提案</h2>
+      <p class="desc">1本のリールを、一杯のまかない丼ができるまでの短編ドキュメンタリーとして構成します。</p>
+    </div>
+  </div>
+
+  <div class="mini-label">Now — 現在のリール</div>
+  <div class="reel-now">
+    <div><span class="k">公開中のリール</span><b>2<small>本</small></b><span class="s">どちらも「まかない丼」</span></div>
+    <div><span class="k">最多再生</span><b>1,157<small>回</small></b><span class="s">もう1本は666回</span></div>
+    <div><span class="k">フォロワー</span><b>116<small>人</small></b><span class="s">最多再生はフォロワー数の約10倍</span></div>
+  </div>
+  <p class="reel-note">まかない丼のリールは2本とも、フォロワー数を大きく超えて再生されています。同じ一杯を「つくる人」「仕込み」「食べ方」と切り口を変えて見せ続けることが、認知を広げる近道です。</p>
+
+  <div class="reel-direction">
+    <span class="eyebrow">Direction</span>
+    <p>「メニュー紹介」ではなく、<b>一杯のまかない丼ができるまでの30秒ドキュメンタリー</b>として見せる。</p>
+  </div>
+
+  <div class="gauge">
+    <div class="gauge-seg"><span class="time">0–3s</span><div class="tag">HOOK</div><div class="txt">黄身を崩す瞬間・ねぎ油を回しかけるアップ</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">3–6s</span><div class="tag">ヒト</div><div class="txt">料理長の手元と表情・厨房の活気</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">6–12s</span><div class="tag">仕込み</div><div class="txt">魚をぶつ切りにする・ねぎ油を仕込む</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">12–18s</span><div class="tag">仕上げ</div><div class="txt">刺身と釜揚げしらすを盛る・卵黄をのせる</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">18–24s</span><div class="tag">料理</div><div class="txt">海の見える席に届く、できたての一杯</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">24–30s</span><div class="tag">想い・締め</div><div class="txt">窓の外の海＋店名＋「道の駅 伊東マリンタウン2F」</div><div class="gauge-fill"></div></div>
+  </div>
+
+  <div class="themes">
+    <div class="theme-chip"><b>テーマ①</b>一杯のまかない丼ができるまで</div>
+    <div class="theme-chip"><b>テーマ②</b>干物屋の一日（開く・漬ける・干す・焼く）</div>
+    <div class="theme-chip"><b>テーマ③</b>ばんばん膳で伊東の味を一度に</div>
+    <div class="theme-chip"><b>テーマ④</b>2階のどこ？　入口から席までの道案内</div>
+  </div>
+</section>
+
+<!-- 05 checklist -->
+<section id="design">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <div>
+      <h2>投稿デザイン・見せ方</h2>
+      <p class="desc">アカウント全体を一つのブランドとして見せるための運用ルール。</p>
+    </div>
+  </div>
+  <div class="checklist">
+    <div><span class="ck">01</span>表紙の写真は「料理＋手元（箸・スプーン）や湯気」を基本にする</div>
+    <div><span class="ck">02</span>表紙の型を、開設当初の「吹き出しロゴ＋縦書きの筆文字タイトル」に戻して統一する。最近の文字なし写真より、何の投稿かがひと目で伝わる</div>
+    <div><span class="ck">03</span>1投稿1テーマ。書き出しの1行は「伊東＋その投稿の内容」で毎回書き分ける（現在は臨時休業のお知らせも「伊東で海鮮ランチなら…名物『まかない丼』！」で始まっている）</div>
+    <div><span class="ck">04</span>キャプション末尾の定型文を修正する。自店のアカウント表記が「@bamban.marinetown」になっている（正しくは @banban.marinetown）。最初の投稿の「まなかい丼」も直しておく</div>
+    <div><span class="ck">05</span>臨時休業などのお知らせはストーリーズとハイライト「お知らせ」へ。終了した告知を最新投稿として残さない（9月21日の臨時休業が現在も最新）</div>
+    <div><span class="ck">06</span>完成した料理だけでなく、仕込み・干物づくり・スタッフを積極的に見せる</div>
+    <div><span class="ck">07</span>動画は1カット1〜3秒を目安にテンポよくつなぐ。テロップは1画面1メッセージにする</div>
+    <div><span class="ck">08</span>投稿は週1〜2本を目安に、曜日を決めて続ける（現在は開設から約5か月で14投稿）</div>
+  </div>
+</section>
+
+<!-- 06 summary -->
+<section id="summary">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <div>
+      <h2>改善方針まとめ</h2>
+    </div>
+  </div>
+  <div class="summary-wrap">
+    <div class="summary-before-after">
+      <div>
+        <span class="eyebrow">現在</span>
+        <p>「まかない丼がおいしい店」という、メニュー中心の情報発信。</p>
+      </div>
+      <div>
+        <span class="eyebrow">改善後</span>
+        <p>「伊東の干物屋が営む食堂で、どんな魚を、誰が、どう仕込んで出しているのか」まで伝えるアカウントへ。</p>
+      </div>
+    </div>
+    <span class="eyebrow">目指す方向性</span>
+    <div class="flow" style="margin-top:14px;">
+      <div class="step"><div class="node">料理</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">ヒト</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">仕事</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">伊東</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">ストーリー</div></div>
+    </div>
+    <p class="summary-line">メニュー紹介にとどまらず、<br><b>「ばんばん食堂で食べたくなる理由」をつくるアカウント</b>を目指す。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/banban.marinetown/" target="_blank" rel="noopener">Instagramを見る</a>
+    <a href="https://ito-marinetown.co.jp/restaurant/banban/" target="_blank" rel="noopener">店舗ページを見る</a>
+  </div>
+  <p class="sibling">同じ伊豆中グループの改善提案：<a href="hamayaki.html">伊豆浜焼本舗</a>／<a href="marusu.html">伊豆まるす</a></p>
+  <p class="data-note">※ 数値とプロフィールの内容は、2026年10月6日時点のInstagram公開情報にもとづきます。</p>
+  <small>© Ito Instagram</small>
+</footer>
+
+</body>
+</html>
