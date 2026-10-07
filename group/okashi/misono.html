@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>まんじゅう みその｜Instagram改善提案</title>
+<meta name="description" content="伊東駅前のまんじゅう屋「まんじゅう みその」のInstagramプロフィール・投稿・リールの改善提案をまとめたページです。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="伊東Instagram改善提案">
+<meta property="og:title" content="まんじゅう みその｜Instagram改善提案">
+<meta property="og:description" content="伊東駅前のまんじゅう屋「まんじゅう みその」のInstagramプロフィール・投稿・リールの改善提案をまとめたページです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;900&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3ECD9;
+    --paper-2:#EDE3C8;
+    --ink:#241B12;
+    --ink-soft:#5B5142;
+    --amber:#C8862E;
+    --amber-deep:#A8552B;
+    --deep-sea:#1E3A45;
+    --deep-sea-2:#14282F;
+    --foam:#FFFBF0;
+    --line: rgba(36,27,18,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Zen Kaku Gothic New", sans-serif;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:"Zen Old Mincho", serif;
+    margin:0;
+    letter-spacing:.02em;
+  }
+  .eyebrow{
+    font-family:"Space Mono", monospace;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--amber-deep);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ---------- top nav back link ---------- */
+  .backlink{
+    position:sticky; top:0; z-index:40;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:14px 6vw;
+    background:rgba(243,236,217,.88);
+    backdrop-filter: blur(6px);
+    border-bottom:1px solid var(--line);
+    font-family:"Space Mono", monospace;
+    font-size:12px;
+    letter-spacing:.06em;
+  }
+  .backlink a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    display:flex; align-items:center; gap:6px;
+  }
+  .backlink a:hover{color:var(--amber-deep);}
+  .backlink .tag{
+    color:var(--deep-sea);
+    border:1px solid var(--deep-sea);
+    padding:3px 10px;
+    border-radius:100px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:16vh 6vw 14vh;
+    overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 15% -10%, #FFF3D6 0%, transparent 55%),
+      linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  }
+  .hero-eyebrow{
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:28px;
+  }
+  .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);}
+  .hero h1{
+    font-size:clamp(40px, 8vw, 96px);
+    font-weight:900;
+    line-height:1.05;
+    color:var(--ink);
+  }
+  .hero h1 span{
+    display:block;
+    color:var(--amber-deep);
+  }
+  .hero-sub{
+    max-width:640px;
+    margin-top:28px;
+    font-size:17px;
+    color:var(--ink-soft);
+  }
+  .hero-meta{
+    margin-top:56px;
+    display:flex; flex-wrap:wrap; gap:32px 56px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .hero-meta div .eyebrow{display:block; margin-bottom:6px;}
+  .hero-meta div .val{font-size:15px;}
+  .hero-meta a.val{text-decoration:none; border-bottom:1px solid var(--amber-deep);}
+
+  /* pour divider — signature element */
+  .pour{
+    position:relative;
+    height:64px;
+    margin:0 6vw;
+  }
+  .pour svg{width:100%; height:100%; display:block;}
+
+  section{padding:9vh 6vw;}
+  .section-head{
+    display:flex; align-items:baseline; gap:18px;
+    margin-bottom:52px;
+  }
+  .section-num{
+    font-family:"Space Mono", monospace;
+    font-size:14px;
+    color:var(--amber-deep);
+    border:1px solid var(--amber-deep);
+    border-radius:100px;
+    padding:4px 12px;
+  }
+  .section-head h2{font-size:clamp(26px,3.4vw,40px);}
+  .section-head .desc{
+    margin-top:10px; color:var(--ink-soft); font-size:15px; max-width:560px;
+  }
+
+  /* ---------- 01 profile before/after ---------- */
+  .profile-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .profile-card{
+    background:var(--foam);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:32px 30px;
+    position:relative;
+  }
+  .profile-card.before{opacity:.8;}
+  .profile-card.after{
+    background:linear-gradient(165deg, #FFF7E6, var(--foam));
+    border-color:var(--amber);
+  }
+  .profile-card .label{
+    font-family:"Space Mono", monospace;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+  .profile-card.after .label{color:var(--amber-deep);}
+  .profile-card .handle{
+    font-family:"Zen Old Mincho", serif;
+    font-size:20px; font-weight:600;
+    margin-bottom:14px;
+  }
+  .profile-card p{margin:0; font-size:14.5px; color:var(--ink);}
+  .profile-card .link{margin-top:10px; font-size:13px; color:var(--amber-deep); text-decoration:underline; word-break:break-all;}
+  .stat-row{
+    display:flex; gap:26px; margin-bottom:16px;
+    padding-bottom:16px; border-bottom:1px solid var(--line);
+  }
+  .stat-row div{display:flex; flex-direction:column;}
+  .stat-row b{font-size:16px; font-family:"Zen Old Mincho",serif;}
+  .stat-row span{font-size:11px; color:var(--ink-soft); margin-top:2px;}
+  .profile-card ul{margin:14px 0 0; padding-left:0; list-style:none;}
+  .profile-card li{font-size:14px; margin-bottom:6px; padding-left:1.1em; position:relative; color:var(--ink);}
+  .profile-card li::before{content:"●"; position:absolute; left:0; font-size:7px; top:.55em; color:var(--amber-deep);}
+  .points{
+    margin-top:24px;
+    display:grid; gap:10px;
+  }
+  .points div{
+    display:flex; gap:10px; font-size:14px; color:var(--ink-soft);
+    align-items:flex-start;
+  }
+  .points .check{color:var(--amber-deep); font-family:"Space Mono",monospace; flex:none;}
+
+  /* ---------- 02 screens ---------- */
+  .screens{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  .screen-card{
+    border:1px solid var(--line);
+    border-radius:10px;
+    aspect-ratio:320/460;
+    overflow:hidden;
+    background:var(--foam);
+    box-shadow:0 18px 40px -22px rgba(36,27,18,.35);
+  }
+  .screen-card svg{width:100%; height:100%; display:block;}
+  .screen-caption{
+    margin-top:14px;
+    text-align:center;
+    font-family:"Space Mono",monospace;
+    font-size:11px;
+    color:var(--ink-soft);
+    letter-spacing:.04em;
+  }
+  .screen-col{display:flex; flex-direction:column;}
+
+  /* ---------- 03 four pillars ---------- */
+  .pillars{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .pillar{
+    background:var(--foam);
+    padding:36px 26px;
+    display:flex; flex-direction:column; gap:14px;
+    transition:background .25s ease;
+  }
+  .pillar:hover{background:#FFF7E6;}
+  .pillar .num{font-family:"Space Mono",monospace; font-size:12px; color:var(--amber-deep);}
+  .pillar h3{font-size:19px;}
+  .pillar p{font-size:13.5px; color:var(--ink-soft); margin:0;}
+
+  /* ---------- 04 reel storyboard — gauge timeline ---------- */
+  .reel-direction{
+    background:var(--deep-sea);
+    color:var(--foam);
+    border-radius:4px;
+    padding:34px 34px;
+    margin-bottom:40px;
+  }
+  .reel-direction .eyebrow{color:#8FD0C9;}
+  .reel-direction p{margin:10px 0 0; font-size:16px; font-family:"Zen Old Mincho", serif;}
+  .reel-direction p b{color:#FFC97A;}
+
+  .gauge{
+    position:relative;
+    display:flex;
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .gauge-seg{
+    flex:1;
+    padding:22px 16px 20px;
+    border-right:1px solid var(--line);
+    position:relative;
+    background:var(--foam);
+  }
+  .gauge-seg:last-child{border-right:none;}
+  .gauge-seg .time{
+    font-family:"Space Mono",monospace;
+    font-size:11px; color:var(--amber-deep); margin-bottom:10px; display:block;
+  }
+  .gauge-seg .tag{font-size:14px; font-weight:700; margin-bottom:6px;}
+  .gauge-seg .txt{font-size:12.5px; color:var(--ink-soft);}
+  .gauge-fill{
+    position:absolute; left:0; bottom:0; width:100%; height:3px; background:var(--amber);
+    transform-origin:left; opacity:.6;
+  }
+
+  .themes{
+    margin-top:36px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+  .theme-chip{
+    border:1px solid var(--line);
+    border-radius:100px;
+    padding:14px 20px;
+    font-size:13px;
+    text-align:center;
+    color:var(--ink-soft);
+    background:var(--foam);
+  }
+  .theme-chip b{display:block; font-family:"Zen Old Mincho",serif; color:var(--ink); font-size:14px; margin-bottom:2px; font-weight:600;}
+
+  /* ---------- 05 design checklist ---------- */
+  .checklist{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px 40px;
+  }
+  .checklist div{
+    display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--line); font-size:14.5px;
+  }
+  .checklist .ck{
+    flex:none; width:22px; height:22px; border-radius:50%;
+    border:1px solid var(--amber-deep); color:var(--amber-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Space Mono",monospace; font-size:12px;
+  }
+
+  /* ---------- 06 summary flow ---------- */
+  .summary-wrap{
+    background:var(--deep-sea-2);
+    color:var(--foam);
+    border-radius:4px;
+    padding:6vh 5vw;
+  }
+  .summary-before-after{
+    display:grid; grid-template-columns:1fr 1fr; gap:40px;
+    margin-bottom:48px;
+  }
+  .summary-before-after .eyebrow{color:#8FD0C9;}
+  .summary-before-after p{font-size:15px; margin:10px 0 0; color:#DCE4E2;}
+  .flow{
+    display:flex; align-items:center; flex-wrap:wrap; gap:10px;
+    font-family:"Zen Old Mincho", serif;
+  }
+  .flow .node{
+    border:1px solid rgba(255,251,240,.3);
+    border-radius:100px;
+    padding:10px 22px;
+    font-size:15px;
+  }
+  .flow .arrow{color:#FFC97A; font-family:"Space Mono",monospace;}
+  .summary-line{
+    margin-top:44px;
+    font-family:"Zen Old Mincho", serif;
+    font-size:clamp(20px,2.6vw,30px);
+    font-weight:600;
+    line-height:1.6;
+    border-left:2px solid var(--amber);
+    padding-left:24px;
+  }
+  .summary-line b{color:#FFC97A;}
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:8vh 6vw 6vh;
+    text-align:center;
+  }
+  .footer-links{
+    display:flex; justify-content:center; gap:20px; flex-wrap:wrap;
+    margin-bottom:28px;
+  }
+  .footer-links a{
+    text-decoration:none;
+    border:1px solid var(--ink);
+    border-radius:100px;
+    padding:12px 28px;
+    font-size:14px;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:.2s;
+  }
+  .footer-links a:hover{background:var(--ink); color:var(--paper);}
+  footer small{color:var(--ink-soft); font-family:"Space Mono",monospace; font-size:11px;}
+
+  @media (max-width:820px){
+    .profile-grid, .screens, .summary-before-after, .checklist{grid-template-columns:1fr;}
+    .pillars{grid-template-columns:1fr 1fr;}
+    .gauge{flex-direction:column;}
+    .gauge-seg{border-right:none; border-bottom:1px solid var(--line);}
+    .themes{grid-template-columns:1fr 1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- additions shared with the jizakana pages ---------- */
+  .hero h1 span{word-break:keep-all; overflow-wrap:anywhere;}
+  .summary-wrap > .eyebrow{color:#8FD0C9;}
+  .summary-line{text-wrap:balance; word-break:auto-phrase;}
+  .flow .step{display:flex; align-items:center; gap:10px;}
+  .screen-card{aspect-ratio:320/520;}
+  .profile-card .bio{line-height:1.95;}
+  .profile-card .bio.folded{color:var(--ink-soft);}
+  .profile-card .fold{
+    margin:10px 0 8px; padding-top:8px;
+    border-top:1px dashed var(--amber);
+    font-size:11.5px; color:var(--amber-deep);
+  }
+  .profile-card.after li{padding-left:0;}
+  .profile-card.after li::before{content:none;}
+  .profile-card .note{
+    margin-top:16px; padding-top:12px;
+    border-top:1px dashed var(--line);
+    font-size:12.5px; color:var(--ink-soft);
+  }
+  .mini-label{
+    font-family:"Space Mono", monospace;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .reel-now{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    gap:1px; background:var(--line);
+    border:1px solid var(--line); border-radius:4px; overflow:hidden;
+    margin-bottom:18px;
+  }
+  .reel-now div{
+    background:var(--foam);
+    padding:22px 22px 20px;
+    display:flex; flex-direction:column; gap:4px;
+  }
+  .reel-now .k{font-size:12.5px; color:var(--ink-soft);}
+  .reel-now b{font-size:26px; line-height:1.3; font-weight:700;}
+  .reel-now b small{font-size:13px; font-weight:500; margin-left:3px; color:var(--ink-soft);}
+  .reel-now .s{font-size:12.5px; color:var(--ink-soft);}
+  .reel-now + .mini-label{margin-top:30px;}
+  .reel-rank{
+    margin:0 0 18px;
+    border:1px solid var(--line); border-radius:4px; background:var(--foam);
+  }
+  .reel-rank ol{list-style:none; margin:0; padding:0;}
+  .reel-rank li, .reel-rank .ref{
+    display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) 6em;
+    gap:18px; align-items:center;
+    padding:13px 22px; border-bottom:1px solid var(--line);
+    font-size:13.5px;
+  }
+  .reel-rank .ref{border-bottom:none; color:var(--ink-soft);}
+  .reel-rank .t{display:flex; gap:12px;}
+  .reel-rank .t b{font-family:"Space Mono",monospace; font-weight:400; font-size:12px; color:var(--amber-deep); flex:none; width:1.6em;}
+  .reel-rank .bar{display:block; height:8px;}
+  .reel-rank .bar i{display:block; height:100%; min-width:3px; background:var(--amber-deep); border-radius:0 4px 4px 0;}
+  .reel-rank .ref .bar i{background:#B5A98F;}
+  .reel-rank .v{text-align:right; font-weight:700; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .reel-rank .ref .v{font-weight:500;}
+  .reel-note{margin:0 0 40px; font-size:14px; color:var(--ink-soft); max-width:780px;}
+  .sibling{margin:0 0 26px; font-size:13px; color:var(--ink-soft);}
+  .sibling a{color:var(--amber-deep); margin:0 .4em; white-space:nowrap;}
+  .data-note{margin:0 0 12px; font-size:12px; color:var(--ink-soft);}
+  @media (max-width:820px){
+    .profile-card{padding:28px 18px;}
+    .profile-card .bio, .profile-card.after li{font-size:13px;}
+    .reel-now{grid-template-columns:1fr;}
+    .reel-rank li, .reel-rank .ref{grid-template-columns:minmax(0,1fr) auto; gap:8px 14px; padding:13px 18px;}
+    .reel-rank .bar{grid-column:1 / -1; order:3;}
+  }
+</style>
+</head>
+<body>
+
+<div class="backlink">
+  <a href="../../group/okashi/index.html">← お菓子ぃ共和国一覧へ</a>
+  <span class="tag">okashi / 04</span>
+</div>
+
+<header class="hero">
+  <div class="hero-eyebrow"><span class="dot"></span><span class="eyebrow">Instagram 改善提案</span></div>
+  <h1>まんじゅう みその<span>—&nbsp;伊東駅前・<wbr>復活した<wbr>老舗の味&nbsp;—</span></h1>
+  <p class="hero-sub">創業から50年あまり。一度は閉じた店を、地元の干物屋が屋号ごと継いで2023年11月によみがえらせた、伊東駅前のまんじゅう屋です。次の一歩は、この復活の物語と、餡を炊き、包み、揚げる「人と仕事」を見せること。プロフィール・投稿構成・リールの3方向から改善案をまとめました。</p>
+  <div class="hero-meta">
+    <div><span class="eyebrow">Client</span><span class="val">まんじゅう みその（株式会社伊豆中）</span></div>
+    <div><span class="eyebrow">Account</span><a class="val" href="https://www.instagram.com/misono.manju/" target="_blank" rel="noopener">@misono.manju</a></div>
+    <div><span class="eyebrow">Location</span><span class="val">静岡県伊東市湯川1-16-14（JR伊東駅前）</span></div>
+    <div><span class="eyebrow">Category</span><span class="val">和菓子（あげまん・温泉まんじゅう・甘味）</span></div>
+  </div>
+</header>
+
+<div class="pour">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="pourGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#C8862E" stop-opacity="0"/>
+        <stop offset="15%" stop-color="#C8862E" stop-opacity="0.9"/>
+        <stop offset="85%" stop-color="#A8552B" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#A8552B" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="M0,32 C150,10 300,54 450,32 C600,10 750,54 900,32 C1000,18 1100,44 1200,32" fill="none" stroke="url(#pourGrad)" stroke-width="2"/>
+  </svg>
+</div>
+
+<!-- 01 profile -->
+<section id="profile">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <div>
+      <h2>プロフィール改善</h2>
+      <p class="desc">「何の店か」「何が名物か」「どこで・どう買えるか」を3秒で理解できる構成に整理します。</p>
+    </div>
+  </div>
+  <div class="profile-grid">
+    <div class="profile-card before">
+      <div class="label">Before — 現在のプロフィール</div>
+      <div class="handle">（伊東駅前）まんじゅう みその</div>
+      <div class="stat-row">
+        <div><b>221</b><span>投稿</span></div>
+        <div><b>661</b><span>フォロワー</span></div>
+        <div><b>0</b><span>フォロー中</span></div>
+      </div>
+      <p class="bio">♨️伊東銘菓♨️まんじゅう みその<br>
+      ▶︎創業50年の歴史ある老舗<br>
+      ▶︎伊東駅から徒歩30秒<br>
+      ▶︎観光しながら食べ歩きにも最適</p>
+      <p class="fold">▼ ここから下は「続きを読む」を押すと表示</p>
+      <p class="bio folded">🟤名物あげまん🟤<br>
+      🟠元祖蒸しまん🟠<br>
+      営業時間 9:00〜17:00<br>
+      ⬇️購入はコチラから⬇️</p>
+      <p class="note">リンク：manju-misono.com/collections/all（通信販売）　／　ハイライト：4件（media・thanks・開店準備・商品開発）　／　カテゴリ表示：食料品店　／　フォロー中：0</p>
+    </div>
+    <div class="profile-card after">
+      <div class="label">After — 改善案</div>
+      <div class="handle">まんじゅう みその｜伊東駅前のお土産・あげまん</div>
+      <div class="stat-row">
+        <div><b>221</b><span>投稿</span></div>
+        <div><b>661</b><span>フォロワー</span></div>
+        <div><b>0</b><span>フォロー中</span></div>
+      </div>
+      <ul>
+        <li>♨️ 創業50余年。2023年に復活した伊東の味</li>
+        <li>🟤 名物あげまん　🟠 元祖蒸しまん</li>
+        <li>🧂 餡の決め手は西伊豆の戸田塩。一から手作り</li>
+        <li>📍 伊東駅から徒歩30秒／9:00–17:00</li>
+      </ul>
+      <p class="note">リンク：通信販売・店舗情報・Googleマップ　／　ハイライト：メニュー・行き方・お取り寄せ・お知らせ・復活物語・メディア・thanks　／　カテゴリ表示：デザートショップ</p>
+    </div>
+  </div>
+  <div class="points">
+    <div><span class="check">01</span>自己紹介文は4行に収める。スマートフォンでは5行目あたりから先が「続きを読む」に隠れるため、現在は「名物あげまん」「元祖蒸しまん」「営業時間」「購入はコチラから」の4行が隠れている。名物と通信販売への案内が、最初に表示されていない</div>
+    <div><span class="check">02</span>1行目に「復活」を入れる。コロナ禍の打撃と創業者の他界が重なって2022年に閉じた店を、伊東の干物屋・伊豆中が屋号ごと継ぎ、旧みそのの職人から作り方を学んで復活させた。「創業50年の歴史ある老舗」だけでは伝わらない、この店だけの物語になる</div>
+    <div><span class="check">03</span>餡の決め手「戸田塩（へだしお）」を1行で伝える。西伊豆・戸田で、海水を薪の火で13時間炊き上げてつくる塩。あげまんにも蒸しまんにも、ソフトクリームのトッピングにも使われており、店の味の軸になっている</div>
+    <div><span class="check">04</span>名前欄に「お土産」「あげまん」を加える。名前欄は検索の対象になるが、現在の「（伊東駅前）まんじゅう みその」には名物の名前が入っていない</div>
+    <div><span class="check">05</span>カテゴリ表示を「食料品店」から、菓子店だと分かるものに変える（例：デザートショップ）</div>
+    <div><span class="check">06</span>ハイライトに、来店前に知りたい「メニュー」「行き方」「お取り寄せ」「お知らせ」を加える。現在の4件のうち「開店準備」「商品開発」は「復活物語」にまとめ、「media」は「メディア」として、「thanks」はそのまま残す</div>
+    <div><span class="check">07</span>リンクは通信販売の商品一覧だけでなく、店舗情報とGoogleマップも並べる（リンクは複数設定できる）</div>
+    <div><span class="check">08</span>フォロー中が0のため、同じ伊東駅前の系列店「フルーツパーラー伊豆旬実堂」（@izu_shunmido）や、伊東お菓子ぃ共和国（@ito_okashi.republic）など地元のアカウントをフォローし、メンションや共同投稿の土台をつくる</div>
+    <div><span class="check">09</span>共同投稿とプレゼント企画を、年に数回の恒例にする。JR東日本公式（@jr_izu_hakone_yugawara）との共同投稿（2026年2月）はいいね283件で、2026年の投稿のいいね中央値（約27件）のおよそ10倍。11月17日の復活3周年は、その節目になる</div>
+  </div>
+</section>
+
+<!-- 02 screens -->
+<section id="screens">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <div>
+      <h2>Instagram 画面イメージ</h2>
+      <p class="desc">現状の見え方と、改善後の見え方を並べて確認します（画面はイメージです）。</p>
+    </div>
+  </div>
+  <div class="screens">
+    <div class="screen-col">
+      <div class="screen-card">
+        <svg viewBox="0 0 320 520" xmlns="http://www.w3.org/2000/svg" font-family="'Zen Kaku Gothic New', sans-serif" role="img" aria-label="現在のプロフィール画面のイメージ">
+          <rect x="0" y="0" width="320" height="520" fill="#FFFBF0"/>
+          <circle cx="288" cy="24" r="1.6" fill="#5B5142"/><circle cx="278" cy="24" r="1.6" fill="#5B5142"/><circle cx="268" cy="24" r="1.6" fill="#5B5142"/>
+          <text x="160" y="28" text-anchor="middle" font-size="12" fill="#241B12">misono.manju</text>
+          <line x1="0" y1="40" x2="320" y2="40" stroke="#E7DFC9"/>
+
+          <circle cx="50" cy="80" r="27" fill="#E4D6B6" stroke="#E7DFC9"/>
+          <text x="50" y="87" text-anchor="middle" font-size="20">♨️</text>
+
+          <text x="118" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">221</text>
+          <text x="118" y="88" text-anchor="middle" font-size="9" fill="#5B5142">投稿</text>
+          <text x="196" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">661</text>
+          <text x="196" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロワー</text>
+          <text x="274" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">0</text>
+          <text x="274" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロー中</text>
+
+          <text x="20" y="124" font-size="11.5" font-weight="700" fill="#241B12">（伊東駅前）まんじゅう みその</text>
+          <text x="20" y="138" font-size="10" fill="#5B5142">食料品店</text>
+
+          <text x="20" y="156" font-size="10.5" fill="#241B12">♨️伊東銘菓♨️まんじゅう みその</text>
+          <text x="20" y="170.5" font-size="10.5" fill="#241B12">▶︎創業50年の歴史ある老舗</text>
+          <text x="20" y="185" font-size="10.5" fill="#241B12">▶︎伊東駅から徒歩30秒</text>
+          <text x="20" y="199.5" font-size="10.5" fill="#241B12">▶︎観光しながら食べ歩きにも最適</text>
+          <text x="20" y="214" font-size="10.5" fill="#9A8F7C">… 続きを読む</text>
+          <text x="20" y="229" font-size="10" fill="#3B6E86" text-decoration="underline">🔗 manju-misono.com/collections/all</text>
+
+          <rect x="20" y="239" width="280" height="24" rx="6" fill="none" stroke="#E7DFC9"/>
+          <text x="160" y="255" text-anchor="middle" font-size="10.5" fill="#5B5142">プロフィールを編集</text>
+
+          <g font-size="8.5" fill="#5B5142">
+            <circle cx="40" cy="290" r="17" fill="#C68A3D"/>
+            <text x="40" y="318" text-anchor="middle">media</text>
+            <circle cx="98" cy="290" r="17" fill="#C68A3D"/>
+            <text x="98" y="318" text-anchor="middle">thanks</text>
+            <circle cx="156" cy="290" r="17" fill="#C68A3D"/>
+            <text x="156" y="318" text-anchor="middle">開店準備</text>
+            <circle cx="214" cy="290" r="17" fill="#C68A3D"/>
+            <text x="214" y="318" text-anchor="middle">商品開発</text>
+          </g>
+
+          <line x1="0" y1="330" x2="320" y2="330" stroke="#E7DFC9"/>
+
+          <g>
+            <rect x="0" y="335" width="105" height="60.3" fill="#C68A3D"/><text x="52.5" y="362.6" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">塩みるくソフト</text><text x="52.5" y="373.6" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">（ピン留め）</text>
+            <rect x="107" y="335" width="105" height="60.3" fill="#4C6B58"/><text x="159.5" y="362.6" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">ポリ茶瓶のぐり茶</text><text x="159.5" y="373.6" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">（ピン留め）</text>
+            <rect x="214" y="335" width="106" height="60.3" fill="#8B4513"/><text x="267" y="362.6" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">店の紹介リール</text><text x="267" y="373.6" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">（ピン留め）</text>
+            <rect x="0" y="397.3" width="105" height="60.3" fill="#D8CBAE"/><text x="52.5" y="424.9" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">臨時休業の</text><text x="52.5" y="435.9" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">お知らせ</text>
+            <rect x="107" y="397.3" width="105" height="60.3" fill="#35586B"/><text x="159.5" y="424.9" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">ぐり茶とあげまん</text><text x="159.5" y="435.9" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">（説明なし）</text>
+            <rect x="214" y="397.3" width="106" height="60.3" fill="#2B2118"/><text x="267" y="430.4" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">1日店長</text>
+            <rect x="0" y="459.6" width="105" height="60.4" fill="#E3D5B8"/><text x="52.5" y="492.8" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">かき氷</text>
+            <rect x="107" y="459.6" width="105" height="60.4" fill="#9C7A4A"/><text x="159.5" y="487.3" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">壁のサイン色紙</text><text x="159.5" y="498.3" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">（説明なし）</text>
+            <rect x="214" y="459.6" width="106" height="60.4" fill="#6B4226"/><text x="267" y="487.3" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">塩みるくソフト</text><text x="267" y="498.3" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">（リール）</text>
+          </g>
+        </svg>
+      </div>
+      <div class="screen-caption">Before — 名物と通信販売の案内が「続きを読む」に隠れ、最新投稿は臨時休業のお知らせ</div>
+    </div>
+
+    <div class="screen-col">
+      <div class="screen-card">
+        <svg viewBox="0 0 320 520" xmlns="http://www.w3.org/2000/svg" font-family="'Zen Kaku Gothic New', sans-serif" role="img" aria-label="改善後のプロフィール画面のイメージ">
+          <rect x="0" y="0" width="320" height="520" fill="#FFFBF0"/>
+          <circle cx="288" cy="24" r="1.6" fill="#5B5142"/><circle cx="278" cy="24" r="1.6" fill="#5B5142"/><circle cx="268" cy="24" r="1.6" fill="#5B5142"/>
+          <text x="160" y="28" text-anchor="middle" font-size="12" fill="#241B12">misono.manju</text>
+          <line x1="0" y1="40" x2="320" y2="40" stroke="#E7DFC9"/>
+
+          <circle cx="50" cy="80" r="27" fill="#C8862E" stroke="#A8552B"/>
+          <text x="50" y="87" text-anchor="middle" font-size="20">♨️</text>
+
+          <text x="118" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">221</text>
+          <text x="118" y="88" text-anchor="middle" font-size="9" fill="#5B5142">投稿</text>
+          <text x="196" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">661</text>
+          <text x="196" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロワー</text>
+          <text x="274" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">0</text>
+          <text x="274" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロー中</text>
+
+          <text x="20" y="122" font-size="11.5" font-weight="700" fill="#241B12">まんじゅう みその｜伊東駅前のお土産・あげまん</text>
+          <text x="20" y="136" font-size="10" fill="#5B5142">デザートショップ</text>
+
+          <text x="20" y="153" font-size="10.5" fill="#241B12">♨️ 創業50余年。2023年に復活した伊東の味</text>
+          <text x="20" y="167.5" font-size="10.5" fill="#241B12">🟤 名物あげまん　🟠 元祖蒸しまん</text>
+          <text x="20" y="182" font-size="10.5" fill="#241B12">🧂 餡の決め手は西伊豆の戸田塩。一から手作り</text>
+          <text x="20" y="196.5" font-size="10.5" fill="#241B12">📍 伊東駅から徒歩30秒／9:00–17:00</text>
+          <text x="20" y="212" font-size="10.5" fill="#3B6E86" text-decoration="underline">🔗 manju-misono.com、他2件</text>
+
+          <rect x="20" y="222" width="128" height="24" rx="12" fill="none" stroke="#E7DFC9"/>
+          <text x="84" y="238" text-anchor="middle" font-size="10" fill="#5B5142">編集</text>
+          <rect x="156" y="222" width="144" height="24" rx="12" fill="#A8552B"/>
+          <text x="228" y="238" text-anchor="middle" font-size="10" fill="#FFFBF0">▼ お取り寄せ・行き方</text>
+
+          <g font-size="8" fill="#5B5142">
+            <circle cx="28" cy="273" r="17" fill="#C8862E"/><text x="28" y="278.5" text-anchor="middle" font-size="14">📖</text>
+            <text x="28" y="303" text-anchor="middle">メニュー</text>
+            <circle cx="72" cy="273" r="17" fill="#1E3A45"/><text x="72" y="278.5" text-anchor="middle" font-size="14">📍</text>
+            <text x="72" y="303" text-anchor="middle">行き方</text>
+            <circle cx="116" cy="273" r="17" fill="#35586B"/><text x="116" y="278.5" text-anchor="middle" font-size="14">📦</text>
+            <text x="116" y="303" text-anchor="middle">お取り寄せ</text>
+            <circle cx="160" cy="273" r="17" fill="#EDE3C8" stroke="#C8862E"/><text x="160" y="278.5" text-anchor="middle" font-size="14">📣</text>
+            <text x="160" y="303" text-anchor="middle">お知らせ</text>
+            <circle cx="204" cy="273" r="17" fill="#14282F"/><text x="204" y="278.5" text-anchor="middle" font-size="14">📜</text>
+            <text x="204" y="303" text-anchor="middle">復活物語</text>
+            <circle cx="248" cy="273" r="17" fill="#1E3A45"/><text x="248" y="278.5" text-anchor="middle" font-size="14">📺</text>
+            <text x="248" y="303" text-anchor="middle">メディア</text>
+            <circle cx="292" cy="273" r="17" fill="#A8552B"/><text x="292" y="278.5" text-anchor="middle" font-size="14">💌</text>
+            <text x="292" y="303" text-anchor="middle">thanks</text>
+          </g>
+
+          <line x1="0" y1="316" x2="320" y2="316" stroke="#E7DFC9"/>
+
+          <g>
+            <rect x="0" y="322" width="105" height="64.7" fill="#C8862E"/><text x="52.5" y="352.4" text-anchor="middle" font-size="17">🟤</text><text x="52.5" y="369.4" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">あげまんの断面</text>
+            <rect x="107" y="322" width="105" height="64.7" fill="#1E3A45"/><text x="159.5" y="352.4" text-anchor="middle" font-size="17">⚙️</text><text x="159.5" y="369.4" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">餡を炊く</text>
+            <rect x="214" y="322" width="106" height="64.7" fill="#A8552B"/><text x="267" y="352.4" text-anchor="middle" font-size="17">👤</text><text x="267" y="369.4" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">包む手元</text>
+            <rect x="0" y="388.7" width="105" height="64.7" fill="#EDE3C8"/><text x="52.5" y="419.1" text-anchor="middle" font-size="17">♨️</text><text x="52.5" y="436.1" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">改札前の店構え</text>
+            <rect x="107" y="388.7" width="105" height="64.7" fill="#C8862E"/><text x="159.5" y="419.1" text-anchor="middle" font-size="17">🟤</text><text x="159.5" y="436.1" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">せいろの蒸しまん</text>
+            <rect x="214" y="388.7" width="106" height="64.7" fill="#1E3A45"/><text x="267" y="419.1" text-anchor="middle" font-size="17">⚙️</text><text x="267" y="436.1" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">あげまんを揚げる</text>
+            <rect x="0" y="455.4" width="105" height="64.6" fill="#A8552B"/><text x="52.5" y="485.7" text-anchor="middle" font-size="17">👤</text><text x="52.5" y="502.7" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">店長</text>
+            <rect x="107" y="455.4" width="105" height="64.6" fill="#EDE3C8"/><text x="159.5" y="485.7" text-anchor="middle" font-size="17">♨️</text><text x="159.5" y="502.7" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">戸田の塩づくり</text>
+            <rect x="214" y="455.4" width="106" height="64.6" fill="#C8862E"/><text x="267" y="485.7" text-anchor="middle" font-size="17">🟤</text><text x="267" y="502.7" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">ポリ茶瓶のぐり茶</text>
+          </g>
+        </svg>
+      </div>
+      <div class="screen-caption">After — 4本柱で統一されたフィード</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 pillars -->
+<section id="pillars">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <div>
+      <h2>投稿内容の4本柱</h2>
+      <p class="desc">まんじゅうだけでなく「仕事」と「人」と「土地」を伝える発信バランスに組み替えます。</p>
+    </div>
+  </div>
+  <div class="pillars">
+    <div class="pillar">
+      <span class="num">🟤 01</span>
+      <h3>まんじゅう</h3>
+      <p>名物あげまん、元祖蒸しまん、季節の桜まんじゅうや水まんじゅう、塩みるくソフト、ポリ茶瓶のぐり茶。「持ち帰ったあげまんは、トースターで焼いて少し冷ますとサクッとする」といった、おいしい食べ方まで紹介する。</p>
+    </div>
+    <div class="pillar">
+      <span class="num">⚙️ 02</span>
+      <h3>仕事</h3>
+      <p>小豆を富士山の伏流水と戸田塩で炊く、生地で包む、せいろで蒸す、揚げる。開店前の2023年秋には、試作や工房づくりの様子を投稿していた。その「手元が見える投稿」を、ふだんの投稿に戻す。</p>
+    </div>
+    <div class="pillar">
+      <span class="num">👤 03</span>
+      <h3>ヒト</h3>
+      <p>店長、作り方を伝えた旧みそのの職人、せいろから蒸したてを手渡すスタッフ。「店長の発注ミスで、抹茶ソフトのトッピング無料」のような人柄の出る投稿は、店を身近にする。店と名前を残したかった理由を、店長の言葉で語ってもらう。</p>
+    </div>
+    <div class="pillar">
+      <span class="num">♨️ 04</span>
+      <h3>伊東</h3>
+      <p>改札を出てすぐという場所、湯の花通り商店街、夏の按針祭。西伊豆・戸田の塩、伊豆のぐり茶、伊東のニューサマーオレンジ。「伊東に着いて最初の一口、帰りの最後のお土産」という立ち位置を伝える。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 reel -->
+<section id="reel">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <div>
+      <h2>Instagram リール提案</h2>
+      <p class="desc">1本のリールを、餡を炊くところから一個のあげまんができるまでの短編ドキュメンタリーとして構成します。</p>
+    </div>
+  </div>
+
+  <div class="mini-label">Now — 現在のリール</div>
+  <div class="reel-now">
+    <div><span class="k">公開中のリール</span><b>111<small>本</small></b><span class="s">2026年は11本</span></div>
+    <div><span class="k">再生数</span><b>約130〜3.3万<small>回</small></b><span class="s">中央値は約1,070回</span></div>
+    <div><span class="k">フォロワー</span><b>661<small>人</small></b><span class="s">最多再生はフォロワー数の約50倍</span></div>
+  </div>
+  <div class="mini-label">Top 5 — 再生数の多いリール</div>
+  <div class="reel-rank">
+    <ol>
+      <li><span class="t"><b>01</b>ポリ茶瓶のぐり茶（ピン留め）</span><span class="bar"><i style="width:100%"></i></span><span class="v">約3.3万回</span></li>
+      <li><span class="t"><b>02</b>名物あげまん、手で割った断面</span><span class="bar"><i style="width:39.4%"></i></span><span class="v">約1.3万回</span></li>
+      <li><span class="t"><b>03</b>プレゼント企画（黒糖蒸しまんじゅう8個）</span><span class="bar"><i style="width:33.3%"></i></span><span class="v">約1.1万回</span></li>
+      <li><span class="t"><b>04</b>JR東日本公式との共同投稿「伊東ノスタルジア」</span><span class="bar"><i style="width:30.3%"></i></span><span class="v">約1万回</span></li>
+      <li><span class="t"><b>05</b>できたてのまんじゅうがずらりと並ぶ様子</span><span class="bar"><i style="width:29.6%"></i></span><span class="v">9,774回</span></li>
+    </ol>
+    <div class="ref"><span class="t"><b>—</b>参考：全111本の中央値</span><span class="bar"><i style="width:3.2%"></i></span><span class="v">約1,070回</span></div>
+  </div>
+  <p class="reel-note">よく見られているのは、ポリ茶瓶のような「懐かしいもの」と、あげまんの断面のように「できたて」が伝わる映像、そしてプレゼント企画・共同投稿です。一方、3月の「あげまん100円」の告知リール4本は約600〜1,550回で、全体でも111本のうち93本は2,000回未満。告知よりも「つくる場面・食べる場面」を、月2本のペースで出していきます。</p>
+
+  <div class="reel-direction">
+    <span class="eyebrow">Direction</span>
+    <p>「商品紹介」ではなく、<b>餡を炊くところから、揚げたての一個が手に渡るまでの30秒ドキュメンタリー</b>として見せる。</p>
+  </div>
+
+  <div class="gauge">
+    <div class="gauge-seg"><span class="time">0–3s</span><div class="tag">HOOK</div><div class="txt">あげまんを割った断面・せいろのふたを開けた瞬間の湯気</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">3–6s</span><div class="tag">ヒト</div><div class="txt">まんじゅうを包む手元と表情</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">6–12s</span><div class="tag">餡</div><div class="txt">小豆を炊く・戸田塩を加える</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">12–18s</span><div class="tag">仕上げ</div><div class="txt">生地で包む・せいろで蒸す・揚げる</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">18–24s</span><div class="tag">まんじゅう</div><div class="txt">店頭に並ぶあげまんと、ポリ茶瓶のぐり茶</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">24–30s</span><div class="tag">想い・締め</div><div class="txt">改札前の店構え＋店名＋「2023年11月 復活」</div><div class="gauge-fill"></div></div>
+  </div>
+
+  <div class="themes">
+    <div class="theme-chip"><b>テーマ①</b>一個のあげまんができるまで</div>
+    <div class="theme-chip"><b>テーマ②</b>閉じた店が、もう一度開くまで</div>
+    <div class="theme-chip"><b>テーマ③</b>餡の決め手、戸田塩ができるまで</div>
+    <div class="theme-chip"><b>テーマ④</b>蒸したてとぐり茶で、駅前の一服</div>
+  </div>
+</section>
+
+<!-- 05 checklist -->
+<section id="design">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <div>
+      <h2>投稿デザイン・見せ方</h2>
+      <p class="desc">アカウント全体を一つのブランドとして見せるための運用ルール。</p>
+    </div>
+  </div>
+  <div class="checklist">
+    <div><span class="ck">01</span>表紙の写真は「まんじゅう＋手元」または「まんじゅう＋湯気」を基本にする</div>
+    <div><span class="ck">02</span>表紙の型をそろえる。ピン留めの3本は白い文字のタイトルでそろっているが、3月の「あげまん100円」の告知リールでは黄色や赤の太い文字が使われている</div>
+    <div><span class="ck">03</span>書き出しの1行を毎回書き分ける。「♨️伊東温泉のお土産に♨️」「『伊東温泉』の、まんじゅうみその」など、決まった1行で始まる投稿が続いている。1行目は「伊東＋その投稿の内容」にする</div>
+    <div><span class="ck">04</span>どの投稿にも、ひとこと説明を添える。冒頭の決まり文句と店舗情報だけの投稿が、221件のうち67件ある。直近24投稿でも5件で、7,231回再生された2月15日のリールもその一つ</div>
+    <div><span class="ck">05</span>同じ告知は1本にまとめる。3月1日〜8日は「あげまん100円」の告知が6本続いた。日々のお知らせはストーリーズとハイライト「お知らせ」に寄せる</div>
+    <div><span class="ck">06</span>臨時休業のお知らせもストーリーズとハイライトへ。終了した告知を最新投稿として残さない（9月21日の臨時休業が現在も最新）</div>
+    <div><span class="ck">07</span>ピン留め投稿の誤記を直す。塩みるくソフトの投稿に「熱い日にも」とある（正しくは「暑い日にも」）。店の紹介リールのハッシュタグは、「#ShibzukaSightseeing」を Shizuoka に、全角の「＃伊東観光」を半角の # に直す</div>
+    <div><span class="ck">08</span>お取り寄せを投稿でも案内する。公式サイトでは、あげまん・蒸しまんの8個入りを通信販売している。「旅先で食べた味を家でも」「贈りものに」という切り口で紹介し、ストーリーズはハイライト「お取り寄せ」に残す</div>
+    <div><span class="ck">09</span>投稿は週1本を目安に、曜日を決めて続ける（2026年は9か月で28本、月によって1〜6本）。そのうち月2本をリールにする</div>
+  </div>
+</section>
+
+<!-- 06 summary -->
+<section id="summary">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <div>
+      <h2>改善方針まとめ</h2>
+    </div>
+  </div>
+  <div class="summary-wrap">
+    <div class="summary-before-after">
+      <div>
+        <span class="eyebrow">現在</span>
+        <p>「あげまんがおいしい駅前のまんじゅう屋」という、商品とお知らせが中心の情報発信。</p>
+      </div>
+      <div>
+        <span class="eyebrow">改善後</span>
+        <p>「一度閉じた伊東駅前の店を、誰が継ぎ、どんな餡を炊き、どう蒸し、どう揚げているのか」まで伝えるアカウントへ。</p>
+      </div>
+    </div>
+    <span class="eyebrow">目指す方向性</span>
+    <div class="flow" style="margin-top:14px;">
+      <div class="step"><div class="node">まんじゅう</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">ヒト</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">仕事</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">伊東</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">ストーリー</div></div>
+    </div>
+    <p class="summary-line">商品紹介にとどまらず、<br><b>「みそのに立ち寄りたくなる理由」をつくるアカウント</b>を目指す。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/misono.manju/" target="_blank" rel="noopener">Instagramを見る</a>
+    <a href="https://manju-misono.com/" target="_blank" rel="noopener">公式サイトを見る</a>
+  </div>
+  <p class="sibling">同じ伊豆中グループの改善提案：<a href="shunmido.html">旬実堂</a>／<a href="../jizakana/banban.html">ばんばん食堂</a>／<a href="../jizakana/hamayaki.html">伊豆浜焼本舗</a>／<a href="../jizakana/marusu.html">伊豆まるす</a></p>
+  <p class="data-note">※ 数値とプロフィールの内容は、2026年10月7日時点のInstagram公開情報にもとづきます。</p>
+  <small>© Ito Instagram</small>
+</footer>
+
+</body>
+</html>

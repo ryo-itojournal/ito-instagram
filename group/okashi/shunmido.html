@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旬実堂｜Instagram改善提案</title>
+<meta name="description" content="伊東駅前のフルーツパーラー「伊豆旬実堂」のInstagramプロフィール・投稿・リールの改善提案をまとめたページです。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="伊東Instagram改善提案">
+<meta property="og:title" content="旬実堂｜Instagram改善提案">
+<meta property="og:description" content="伊東駅前のフルーツパーラー「伊豆旬実堂」のInstagramプロフィール・投稿・リールの改善提案をまとめたページです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;900&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3ECD9;
+    --paper-2:#EDE3C8;
+    --ink:#241B12;
+    --ink-soft:#5B5142;
+    --amber:#C8862E;
+    --amber-deep:#A8552B;
+    --deep-sea:#1E3A45;
+    --deep-sea-2:#14282F;
+    --foam:#FFFBF0;
+    --line: rgba(36,27,18,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Zen Kaku Gothic New", sans-serif;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:"Zen Old Mincho", serif;
+    margin:0;
+    letter-spacing:.02em;
+  }
+  .eyebrow{
+    font-family:"Space Mono", monospace;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--amber-deep);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ---------- top nav back link ---------- */
+  .backlink{
+    position:sticky; top:0; z-index:40;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:14px 6vw;
+    background:rgba(243,236,217,.88);
+    backdrop-filter: blur(6px);
+    border-bottom:1px solid var(--line);
+    font-family:"Space Mono", monospace;
+    font-size:12px;
+    letter-spacing:.06em;
+  }
+  .backlink a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    display:flex; align-items:center; gap:6px;
+  }
+  .backlink a:hover{color:var(--amber-deep);}
+  .backlink .tag{
+    color:var(--deep-sea);
+    border:1px solid var(--deep-sea);
+    padding:3px 10px;
+    border-radius:100px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:16vh 6vw 14vh;
+    overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 15% -10%, #FFF3D6 0%, transparent 55%),
+      linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  }
+  .hero-eyebrow{
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:28px;
+  }
+  .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);}
+  .hero h1{
+    font-size:clamp(40px, 8vw, 96px);
+    font-weight:900;
+    line-height:1.05;
+    color:var(--ink);
+  }
+  .hero h1 span{
+    display:block;
+    color:var(--amber-deep);
+  }
+  .hero-sub{
+    max-width:640px;
+    margin-top:28px;
+    font-size:17px;
+    color:var(--ink-soft);
+  }
+  .hero-meta{
+    margin-top:56px;
+    display:flex; flex-wrap:wrap; gap:32px 56px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .hero-meta div .eyebrow{display:block; margin-bottom:6px;}
+  .hero-meta div .val{font-size:15px;}
+  .hero-meta a.val{text-decoration:none; border-bottom:1px solid var(--amber-deep);}
+
+  /* pour divider — signature element */
+  .pour{
+    position:relative;
+    height:64px;
+    margin:0 6vw;
+  }
+  .pour svg{width:100%; height:100%; display:block;}
+
+  section{padding:9vh 6vw;}
+  .section-head{
+    display:flex; align-items:baseline; gap:18px;
+    margin-bottom:52px;
+  }
+  .section-num{
+    font-family:"Space Mono", monospace;
+    font-size:14px;
+    color:var(--amber-deep);
+    border:1px solid var(--amber-deep);
+    border-radius:100px;
+    padding:4px 12px;
+  }
+  .section-head h2{font-size:clamp(26px,3.4vw,40px);}
+  .section-head .desc{
+    margin-top:10px; color:var(--ink-soft); font-size:15px; max-width:560px;
+  }
+
+  /* ---------- 01 profile before/after ---------- */
+  .profile-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .profile-card{
+    background:var(--foam);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:32px 30px;
+    position:relative;
+  }
+  .profile-card.before{opacity:.8;}
+  .profile-card.after{
+    background:linear-gradient(165deg, #FFF7E6, var(--foam));
+    border-color:var(--amber);
+  }
+  .profile-card .label{
+    font-family:"Space Mono", monospace;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+  .profile-card.after .label{color:var(--amber-deep);}
+  .profile-card .handle{
+    font-family:"Zen Old Mincho", serif;
+    font-size:20px; font-weight:600;
+    margin-bottom:14px;
+  }
+  .profile-card p{margin:0; font-size:14.5px; color:var(--ink);}
+  .profile-card .link{margin-top:10px; font-size:13px; color:var(--amber-deep); text-decoration:underline; word-break:break-all;}
+  .stat-row{
+    display:flex; gap:26px; margin-bottom:16px;
+    padding-bottom:16px; border-bottom:1px solid var(--line);
+  }
+  .stat-row div{display:flex; flex-direction:column;}
+  .stat-row b{font-size:16px; font-family:"Zen Old Mincho",serif;}
+  .stat-row span{font-size:11px; color:var(--ink-soft); margin-top:2px;}
+  .profile-card ul{margin:14px 0 0; padding-left:0; list-style:none;}
+  .profile-card li{font-size:14px; margin-bottom:6px; padding-left:1.1em; position:relative; color:var(--ink);}
+  .profile-card li::before{content:"●"; position:absolute; left:0; font-size:7px; top:.55em; color:var(--amber-deep);}
+  .points{
+    margin-top:24px;
+    display:grid; gap:10px;
+  }
+  .points div{
+    display:flex; gap:10px; font-size:14px; color:var(--ink-soft);
+    align-items:flex-start;
+  }
+  .points .check{color:var(--amber-deep); font-family:"Space Mono",monospace; flex:none;}
+
+  /* ---------- 02 screens ---------- */
+  .screens{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  .screen-card{
+    border:1px solid var(--line);
+    border-radius:10px;
+    aspect-ratio:320/460;
+    overflow:hidden;
+    background:var(--foam);
+    box-shadow:0 18px 40px -22px rgba(36,27,18,.35);
+  }
+  .screen-card svg{width:100%; height:100%; display:block;}
+  .screen-caption{
+    margin-top:14px;
+    text-align:center;
+    font-family:"Space Mono",monospace;
+    font-size:11px;
+    color:var(--ink-soft);
+    letter-spacing:.04em;
+  }
+  .screen-col{display:flex; flex-direction:column;}
+
+  /* ---------- 03 four pillars ---------- */
+  .pillars{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .pillar{
+    background:var(--foam);
+    padding:36px 26px;
+    display:flex; flex-direction:column; gap:14px;
+    transition:background .25s ease;
+  }
+  .pillar:hover{background:#FFF7E6;}
+  .pillar .num{font-family:"Space Mono",monospace; font-size:12px; color:var(--amber-deep);}
+  .pillar h3{font-size:19px;}
+  .pillar p{font-size:13.5px; color:var(--ink-soft); margin:0;}
+
+  /* ---------- 04 reel storyboard — gauge timeline ---------- */
+  .reel-direction{
+    background:var(--deep-sea);
+    color:var(--foam);
+    border-radius:4px;
+    padding:34px 34px;
+    margin-bottom:40px;
+  }
+  .reel-direction .eyebrow{color:#8FD0C9;}
+  .reel-direction p{margin:10px 0 0; font-size:16px; font-family:"Zen Old Mincho", serif;}
+  .reel-direction p b{color:#FFC97A;}
+
+  .gauge{
+    position:relative;
+    display:flex;
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .gauge-seg{
+    flex:1;
+    padding:22px 16px 20px;
+    border-right:1px solid var(--line);
+    position:relative;
+    background:var(--foam);
+  }
+  .gauge-seg:last-child{border-right:none;}
+  .gauge-seg .time{
+    font-family:"Space Mono",monospace;
+    font-size:11px; color:var(--amber-deep); margin-bottom:10px; display:block;
+  }
+  .gauge-seg .tag{font-size:14px; font-weight:700; margin-bottom:6px;}
+  .gauge-seg .txt{font-size:12.5px; color:var(--ink-soft);}
+  .gauge-fill{
+    position:absolute; left:0; bottom:0; width:100%; height:3px; background:var(--amber);
+    transform-origin:left; opacity:.6;
+  }
+
+  .themes{
+    margin-top:36px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+  .theme-chip{
+    border:1px solid var(--line);
+    border-radius:100px;
+    padding:14px 20px;
+    font-size:13px;
+    text-align:center;
+    color:var(--ink-soft);
+    background:var(--foam);
+  }
+  .theme-chip b{display:block; font-family:"Zen Old Mincho",serif; color:var(--ink); font-size:14px; margin-bottom:2px; font-weight:600;}
+
+  /* ---------- 05 design checklist ---------- */
+  .checklist{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px 40px;
+  }
+  .checklist div{
+    display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--line); font-size:14.5px;
+  }
+  .checklist .ck{
+    flex:none; width:22px; height:22px; border-radius:50%;
+    border:1px solid var(--amber-deep); color:var(--amber-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Space Mono",monospace; font-size:12px;
+  }
+
+  /* ---------- 06 summary flow ---------- */
+  .summary-wrap{
+    background:var(--deep-sea-2);
+    color:var(--foam);
+    border-radius:4px;
+    padding:6vh 5vw;
+  }
+  .summary-before-after{
+    display:grid; grid-template-columns:1fr 1fr; gap:40px;
+    margin-bottom:48px;
+  }
+  .summary-before-after .eyebrow{color:#8FD0C9;}
+  .summary-before-after p{font-size:15px; margin:10px 0 0; color:#DCE4E2;}
+  .flow{
+    display:flex; align-items:center; flex-wrap:wrap; gap:10px;
+    font-family:"Zen Old Mincho", serif;
+  }
+  .flow .node{
+    border:1px solid rgba(255,251,240,.3);
+    border-radius:100px;
+    padding:10px 22px;
+    font-size:15px;
+  }
+  .flow .arrow{color:#FFC97A; font-family:"Space Mono",monospace;}
+  .summary-line{
+    margin-top:44px;
+    font-family:"Zen Old Mincho", serif;
+    font-size:clamp(20px,2.6vw,30px);
+    font-weight:600;
+    line-height:1.6;
+    border-left:2px solid var(--amber);
+    padding-left:24px;
+  }
+  .summary-line b{color:#FFC97A;}
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:8vh 6vw 6vh;
+    text-align:center;
+  }
+  .footer-links{
+    display:flex; justify-content:center; gap:20px; flex-wrap:wrap;
+    margin-bottom:28px;
+  }
+  .footer-links a{
+    text-decoration:none;
+    border:1px solid var(--ink);
+    border-radius:100px;
+    padding:12px 28px;
+    font-size:14px;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:.2s;
+  }
+  .footer-links a:hover{background:var(--ink); color:var(--paper);}
+  footer small{color:var(--ink-soft); font-family:"Space Mono",monospace; font-size:11px;}
+
+  @media (max-width:820px){
+    .profile-grid, .screens, .summary-before-after, .checklist{grid-template-columns:1fr;}
+    .pillars{grid-template-columns:1fr 1fr;}
+    .gauge{flex-direction:column;}
+    .gauge-seg{border-right:none; border-bottom:1px solid var(--line);}
+    .themes{grid-template-columns:1fr 1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- additions shared with the jizakana pages ---------- */
+  .hero h1 span{word-break:keep-all; overflow-wrap:anywhere;}
+  .summary-wrap > .eyebrow{color:#8FD0C9;}
+  .summary-line{text-wrap:balance; word-break:auto-phrase;}
+  .flow .step{display:flex; align-items:center; gap:10px;}
+  .screen-card{aspect-ratio:320/520;}
+  .profile-card .bio{line-height:1.95;}
+  .profile-card .bio.folded{color:var(--ink-soft);}
+  .profile-card .fold{
+    margin:10px 0 8px; padding-top:8px;
+    border-top:1px dashed var(--amber);
+    font-size:11.5px; color:var(--amber-deep);
+  }
+  .profile-card.after li{padding-left:0;}
+  .profile-card.after li::before{content:none;}
+  .profile-card .note{
+    margin-top:16px; padding-top:12px;
+    border-top:1px dashed var(--line);
+    font-size:12.5px; color:var(--ink-soft);
+  }
+  .mini-label{
+    font-family:"Space Mono", monospace;
+    font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .reel-now{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    gap:1px; background:var(--line);
+    border:1px solid var(--line); border-radius:4px; overflow:hidden;
+    margin-bottom:18px;
+  }
+  .reel-now div{
+    background:var(--foam);
+    padding:22px 22px 20px;
+    display:flex; flex-direction:column; gap:4px;
+  }
+  .reel-now .k{font-size:12.5px; color:var(--ink-soft);}
+  .reel-now b{font-size:26px; line-height:1.3; font-weight:700;}
+  .reel-now b small{font-size:13px; font-weight:500; margin-left:3px; color:var(--ink-soft);}
+  .reel-now .s{font-size:12.5px; color:var(--ink-soft);}
+  .reel-now + .mini-label{margin-top:30px;}
+  .reel-rank{
+    margin:0 0 18px;
+    border:1px solid var(--line); border-radius:4px; background:var(--foam);
+  }
+  .reel-rank ol{list-style:none; margin:0; padding:0;}
+  .reel-rank li, .reel-rank .ref{
+    display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) 6em;
+    gap:18px; align-items:center;
+    padding:13px 22px; border-bottom:1px solid var(--line);
+    font-size:13.5px;
+  }
+  .reel-rank .ref{border-bottom:none; color:var(--ink-soft);}
+  .reel-rank .t{display:flex; gap:12px;}
+  .reel-rank .t b{font-family:"Space Mono",monospace; font-weight:400; font-size:12px; color:var(--amber-deep); flex:none; width:1.6em;}
+  .reel-rank .bar{display:block; height:8px;}
+  .reel-rank .bar i{display:block; height:100%; min-width:3px; background:var(--amber-deep); border-radius:0 4px 4px 0;}
+  .reel-rank .ref .bar i{background:#B5A98F;}
+  .reel-rank .v{text-align:right; font-weight:700; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .reel-rank .ref .v{font-weight:500;}
+  .reel-note{margin:0 0 40px; font-size:14px; color:var(--ink-soft); max-width:780px;}
+  .sibling{margin:0 0 26px; font-size:13px; color:var(--ink-soft);}
+  .sibling a{color:var(--amber-deep); margin:0 .4em; white-space:nowrap;}
+  .data-note{margin:0 0 12px; font-size:12px; color:var(--ink-soft);}
+  @media (max-width:820px){
+    .profile-card{padding:28px 18px;}
+    .profile-card .bio, .profile-card.after li{font-size:13px;}
+    .reel-now{grid-template-columns:1fr;}
+    .reel-rank li, .reel-rank .ref{grid-template-columns:minmax(0,1fr) auto; gap:8px 14px; padding:13px 18px;}
+    .reel-rank .bar{grid-column:1 / -1; order:3;}
+  }
+  /* ---------- additions for this page ---------- */
+  @media (max-width:480px){
+    .hero h1 span{font-size:.82em;}
+  }
+</style>
+</head>
+<body>
+
+<div class="backlink">
+  <a href="../../group/okashi/index.html">← お菓子ぃ共和国一覧へ</a>
+  <span class="tag">okashi / 03</span>
+</div>
+
+<header class="hero">
+  <div class="hero-eyebrow"><span class="dot"></span><span class="eyebrow">Instagram 改善提案</span></div>
+  <h1>旬実堂<span>—&nbsp;伊東駅前の<wbr>フルーツパーラー&nbsp;—</span></h1>
+  <p class="hero-sub">「蛇口からみかんジュース」という、ひと目で伝わる名物をすでに持っているアカウントです。次の一歩は、プロフィールに公式サイトやお店の情報への入口をつくることと、瓶やカップの向こう側にある「工房・人・産地」を見せること。プロフィール・投稿構成・リールの3方向から改善案をまとめました。</p>
+  <div class="hero-meta">
+    <div><span class="eyebrow">Client</span><span class="val">フルーツパーラー伊豆旬実堂（株式会社伊豆中）</span></div>
+    <div><span class="eyebrow">Account</span><a class="val" href="https://www.instagram.com/izu_shunmido/" target="_blank" rel="noopener">@izu_shunmido</a></div>
+    <div><span class="eyebrow">Location</span><span class="val">静岡県伊東市湯川1-16-13（JR伊東駅から徒歩30秒）</span></div>
+    <div><span class="eyebrow">Category</span><span class="val">フルーツスイーツ（プリン・ソフトクリーム・ドリンク・焼き菓子）</span></div>
+  </div>
+</header>
+
+<div class="pour">
+  <svg viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="pourGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#C8862E" stop-opacity="0"/>
+        <stop offset="15%" stop-color="#C8862E" stop-opacity="0.9"/>
+        <stop offset="85%" stop-color="#A8552B" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#A8552B" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="M0,32 C150,10 300,54 450,32 C600,10 750,54 900,32 C1000,18 1100,44 1200,32" fill="none" stroke="url(#pourGrad)" stroke-width="2"/>
+  </svg>
+</div>
+
+<!-- 01 profile -->
+<section id="profile">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <div>
+      <h2>プロフィール改善</h2>
+      <p class="desc">「何の店か」「何が名物か」「どこで・いつ買えるか」を3秒で理解できる構成に整理します。</p>
+    </div>
+  </div>
+  <div class="profile-grid">
+    <div class="profile-card before">
+      <div class="label">Before — 現在のプロフィール</div>
+      <div class="handle">伊東駅前『フルーツパーラー伊豆旬実堂』</div>
+      <div class="stat-row">
+        <div><b>175</b><span>投稿</span></div>
+        <div><b>1,135</b><span>フォロワー</span></div>
+        <div><b>0</b><span>フォロー中</span></div>
+      </div>
+      <p class="bio">フルーツを使用した伊東駅前のスイーツ店です。<br>
+      ▶︎大人気名物『丸ごとみかんプリン』<br>
+      •みかんソフト<br>
+      •蛇口からみかんジュース</p>
+      <p class="fold">▼ ここから下は「続きを読む」を押すと表示</p>
+      <p class="bio folded">•オレンジバターケーキ<br>
+      •丸ごとみかんチーズケーキ　など</p>
+      <p class="note">リンク：未設定　／　ハイライト：なし　／　カテゴリ表示：なし　／　フォロー中：0</p>
+    </div>
+    <div class="profile-card after">
+      <div class="label">After — 改善案</div>
+      <div class="handle">フルーツパーラー伊豆旬実堂｜伊東駅前スイーツ</div>
+      <div class="stat-row">
+        <div><b>175</b><span>投稿</span></div>
+        <div><b>1,135</b><span>フォロワー</span></div>
+        <div><b>0</b><span>フォロー中</span></div>
+      </div>
+      <ul>
+        <li>🍊 みかんが主役。伊東駅前で食べ歩き＆お土産</li>
+        <li>🚰 蛇口からみかんジュース・みかんソフト</li>
+        <li>🍮 丸ごとみかんプリン（宇佐美の工房で手作り）</li>
+        <li>📍 伊東駅から徒歩30秒／9:00–17:00・無休</li>
+      </ul>
+      <p class="note">リンク：公式サイト（ネット注文）・Googleマップ　／　ハイライト：メニュー・行き方・休憩所・お土産・お知らせ・メディア　／　カテゴリ表示：デザートショップ</p>
+    </div>
+  </div>
+  <div class="points">
+    <div><span class="check">01</span>リンクを設定する。公式サイト（izu-shunmido.com）ではプリンやバターケーキをネット注文できるが、プロフィールにリンクがなく、Instagramから直接は進めない。公式サイトとGoogleマップを並べる</div>
+    <div><span class="check">02</span>自己紹介文は4行に収める。スマートフォンでは5行目あたりから先が「続きを読む」に隠れる。現在は6行のうち5行が商品名で、営業時間と「無休」がプロフィールに書かれていない</div>
+    <div><span class="check">03</span>1行目で「みかんが主役」と言い切る。現在の「フルーツを使用した伊東駅前のスイーツ店です」だけでは、ほかの店との違いが伝わりにくい。蛇口のジュースも、ソフトクリームも、お土産でいちばん人気のプリンも、主役はみかん</div>
+    <div><span class="check">04</span>名前欄に「スイーツ」を加える。名前欄は検索の対象になるが、現在は「伊東駅前」「フルーツパーラー」までで、「スイーツ」が入っていない</div>
+    <div><span class="check">05</span>ハイライトを新設する（現在は0件）。「メニュー」「行き方」「休憩所」「お土産」「お知らせ」「メディア」の6つ。2階の休憩スペース（冷房・Wi-Fi・充電）やテレビで紹介された実績を、投稿が流れても見つけられる場所に置く</div>
+    <div><span class="check">06</span>カテゴリ表示を設定する（例：デザートショップ）。プロフィールを開いた瞬間に、スイーツの店だと伝わる</div>
+    <div><span class="check">07</span>フォロー中が0のため、同じ伊東駅前の系列店「まんじゅう みその」（@misono.manju）や、伊東お菓子ぃ共和国（@ito_okashi.republic）など地元のアカウントをフォローし、メンションや共同投稿の土台をつくる</div>
+    <div><span class="check">08</span>共同投稿とプレゼント企画を、年に数回の恒例にする。JR東日本公式（@jr_izu_hakone_yugawara）との共同投稿（2026年2月）はいいね283件・約1万回再生。2周年のプレゼント企画（4月）はいいね545件・コメント290件（どちらも応募条件）。2026年の投稿のいいね中央値（42件）を大きく上回っている</div>
+  </div>
+</section>
+
+<!-- 02 screens -->
+<section id="screens">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <div>
+      <h2>Instagram 画面イメージ</h2>
+      <p class="desc">現状の見え方と、改善後の見え方を並べて確認します（画面はイメージです）。</p>
+    </div>
+  </div>
+  <div class="screens">
+    <div class="screen-col">
+      <div class="screen-card">
+        <svg viewBox="0 0 320 520" xmlns="http://www.w3.org/2000/svg" font-family="'Zen Kaku Gothic New', sans-serif" role="img" aria-label="現在のプロフィール画面のイメージ">
+          <rect x="0" y="0" width="320" height="520" fill="#FFFBF0"/>
+          <circle cx="288" cy="24" r="1.6" fill="#5B5142"/><circle cx="278" cy="24" r="1.6" fill="#5B5142"/><circle cx="268" cy="24" r="1.6" fill="#5B5142"/>
+          <text x="160" y="28" text-anchor="middle" font-size="12" fill="#241B12">izu_shunmido</text>
+          <line x1="0" y1="40" x2="320" y2="40" stroke="#E7DFC9"/>
+
+          <circle cx="50" cy="80" r="27" fill="#E4D6B6" stroke="#E7DFC9"/>
+          <text x="50" y="87" text-anchor="middle" font-size="20">🍊</text>
+
+          <text x="118" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">175</text>
+          <text x="118" y="88" text-anchor="middle" font-size="9" fill="#5B5142">投稿</text>
+          <text x="196" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">1,135</text>
+          <text x="196" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロワー</text>
+          <text x="274" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">0</text>
+          <text x="274" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロー中</text>
+
+          <text x="20" y="124" font-size="11.5" font-weight="700" fill="#241B12">伊東駅前『フルーツパーラー伊豆旬実堂』</text>
+
+          <text x="20" y="142" font-size="10.5" fill="#241B12">フルーツを使用した伊東駅前のスイーツ店です。</text>
+          <text x="20" y="156.5" font-size="10.5" fill="#241B12">▶︎大人気名物『丸ごとみかんプリン』</text>
+          <text x="20" y="171" font-size="10.5" fill="#241B12">•みかんソフト</text>
+          <text x="20" y="185.5" font-size="10.5" fill="#241B12">•蛇口からみかんジュース</text>
+          <text x="20" y="200" font-size="10.5" fill="#9A8F7C">… 続きを読む</text>
+          <text x="20" y="215" font-size="10" fill="#9A8F7C">（リンク未設定・ハイライトなし）</text>
+
+          <rect x="20" y="225" width="280" height="24" rx="6" fill="none" stroke="#E7DFC9"/>
+          <text x="160" y="241" text-anchor="middle" font-size="10.5" fill="#5B5142">プロフィールを編集</text>
+
+          <line x1="0" y1="259" x2="320" y2="259" stroke="#E7DFC9"/>
+
+          <g>
+            <rect x="0" y="264" width="105" height="84" fill="#C68A3D"/><text x="52.5" y="303.5" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">蛇口からみかんジュース</text><text x="52.5" y="314.5" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">（ピン留め）</text>
+            <rect x="107" y="264" width="105" height="84" fill="#4C6B58"/><text x="159.5" y="303.5" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">「噂の旬実堂とは？」</text><text x="159.5" y="314.5" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">（ピン留め）</text>
+            <rect x="214" y="264" width="106" height="84" fill="#8B4513"/><text x="267" y="303.5" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">みかんソフト</text><text x="267" y="314.5" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">（ピン留め）</text>
+            <rect x="0" y="350" width="105" height="84" fill="#D8CBAE"/><text x="52.5" y="389.5" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">臨時休業の</text><text x="52.5" y="400.5" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">お知らせ</text>
+            <rect x="107" y="350" width="105" height="84" fill="#35586B"/><text x="159.5" y="395" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">シャインマスカット</text>
+            <rect x="214" y="350" width="106" height="84" fill="#2B2118"/><text x="267" y="389.5" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">シャインマスカット</text><text x="267" y="400.5" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">のプリン</text>
+            <rect x="0" y="436" width="105" height="84" fill="#E3D5B8"/><text x="52.5" y="481" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">1日店長</text>
+            <rect x="107" y="436" width="105" height="84" fill="#9C7A4A"/><text x="159.5" y="481" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">蛇口からみかんジュース</text>
+            <rect x="214" y="436" width="106" height="84" fill="#6B4226"/><text x="267" y="481" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">2階の休憩所</text>
+          </g>
+        </svg>
+      </div>
+      <div class="screen-caption">Before — 名物は伝わるが、リンクとハイライトがなく、最新投稿は臨時休業のお知らせ</div>
+    </div>
+
+    <div class="screen-col">
+      <div class="screen-card">
+        <svg viewBox="0 0 320 520" xmlns="http://www.w3.org/2000/svg" font-family="'Zen Kaku Gothic New', sans-serif" role="img" aria-label="改善後のプロフィール画面のイメージ">
+          <rect x="0" y="0" width="320" height="520" fill="#FFFBF0"/>
+          <circle cx="288" cy="24" r="1.6" fill="#5B5142"/><circle cx="278" cy="24" r="1.6" fill="#5B5142"/><circle cx="268" cy="24" r="1.6" fill="#5B5142"/>
+          <text x="160" y="28" text-anchor="middle" font-size="12" fill="#241B12">izu_shunmido</text>
+          <line x1="0" y1="40" x2="320" y2="40" stroke="#E7DFC9"/>
+
+          <circle cx="50" cy="80" r="27" fill="#C8862E" stroke="#A8552B"/>
+          <text x="50" y="87" text-anchor="middle" font-size="20">🍊</text>
+
+          <text x="118" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">175</text>
+          <text x="118" y="88" text-anchor="middle" font-size="9" fill="#5B5142">投稿</text>
+          <text x="196" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">1,135</text>
+          <text x="196" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロワー</text>
+          <text x="274" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#241B12">0</text>
+          <text x="274" y="88" text-anchor="middle" font-size="9" fill="#5B5142">フォロー中</text>
+
+          <text x="20" y="122" font-size="11.5" font-weight="700" fill="#241B12">フルーツパーラー伊豆旬実堂｜伊東駅前スイーツ</text>
+          <text x="20" y="136" font-size="10" fill="#5B5142">デザートショップ</text>
+
+          <text x="20" y="153" font-size="10.5" fill="#241B12">🍊 みかんが主役。伊東駅前で食べ歩き＆お土産</text>
+          <text x="20" y="167.5" font-size="10.5" fill="#241B12">🚰 蛇口からみかんジュース・みかんソフト</text>
+          <text x="20" y="182" font-size="10.5" fill="#241B12">🍮 丸ごとみかんプリン（宇佐美の工房で手作り）</text>
+          <text x="20" y="196.5" font-size="10.5" fill="#241B12">📍 伊東駅から徒歩30秒／9:00–17:00・無休</text>
+          <text x="20" y="212" font-size="10.5" fill="#3B6E86" text-decoration="underline">🔗 izu-shunmido.com、他1件</text>
+
+          <rect x="20" y="222" width="128" height="24" rx="12" fill="none" stroke="#E7DFC9"/>
+          <text x="84" y="238" text-anchor="middle" font-size="10" fill="#5B5142">編集</text>
+          <rect x="156" y="222" width="144" height="24" rx="12" fill="#A8552B"/>
+          <text x="228" y="238" text-anchor="middle" font-size="10" fill="#FFFBF0">▼ ネット注文・行き方</text>
+
+          <g font-size="8.5" fill="#5B5142">
+            <circle cx="35" cy="273" r="18" fill="#C8862E"/><text x="35" y="279" text-anchor="middle" font-size="15">📖</text>
+            <text x="35" y="303" text-anchor="middle">メニュー</text>
+            <circle cx="85" cy="273" r="18" fill="#1E3A45"/><text x="85" y="279" text-anchor="middle" font-size="15">📍</text>
+            <text x="85" y="303" text-anchor="middle">行き方</text>
+            <circle cx="135" cy="273" r="18" fill="#35586B"/><text x="135" y="279" text-anchor="middle" font-size="15">🪑</text>
+            <text x="135" y="303" text-anchor="middle">休憩所</text>
+            <circle cx="185" cy="273" r="18" fill="#14282F"/><text x="185" y="279" text-anchor="middle" font-size="15">🎁</text>
+            <text x="185" y="303" text-anchor="middle">お土産</text>
+            <circle cx="235" cy="273" r="18" fill="#EDE3C8" stroke="#C8862E"/><text x="235" y="279" text-anchor="middle" font-size="15">📣</text>
+            <text x="235" y="303" text-anchor="middle">お知らせ</text>
+            <circle cx="285" cy="273" r="18" fill="#1E3A45"/><text x="285" y="279" text-anchor="middle" font-size="15">📺</text>
+            <text x="285" y="303" text-anchor="middle">メディア</text>
+          </g>
+
+          <line x1="0" y1="316" x2="320" y2="316" stroke="#E7DFC9"/>
+
+          <g>
+            <rect x="0" y="322" width="105" height="64.7" fill="#C8862E"/><text x="52.5" y="352.4" text-anchor="middle" font-size="17">🍊</text><text x="52.5" y="369.4" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">蛇口からみかんジュース</text>
+            <rect x="107" y="322" width="105" height="64.7" fill="#1E3A45"/><text x="159.5" y="352.4" text-anchor="middle" font-size="17">⚙️</text><text x="159.5" y="369.4" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">プリンの仕込み</text>
+            <rect x="214" y="322" width="106" height="64.7" fill="#A8552B"/><text x="267" y="352.4" text-anchor="middle" font-size="17">👤</text><text x="267" y="369.4" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">店長</text>
+            <rect x="0" y="388.7" width="105" height="64.7" fill="#EDE3C8"/><text x="52.5" y="419.1" text-anchor="middle" font-size="17">🌊</text><text x="52.5" y="436.1" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">オレンジビーチ</text>
+            <rect x="107" y="388.7" width="105" height="64.7" fill="#C8862E"/><text x="159.5" y="419.1" text-anchor="middle" font-size="17">🍊</text><text x="159.5" y="436.1" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">丸ごとみかんプリン</text>
+            <rect x="214" y="388.7" width="106" height="64.7" fill="#1E3A45"/><text x="267" y="419.1" text-anchor="middle" font-size="17">⚙️</text><text x="267" y="436.1" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">ソースを炊く</text>
+            <rect x="0" y="455.4" width="105" height="64.6" fill="#A8552B"/><text x="52.5" y="485.7" text-anchor="middle" font-size="17">👤</text><text x="52.5" y="502.7" text-anchor="middle" font-size="8.5" fill="#FFFBF0" fill-opacity="0.92">スタッフ</text>
+            <rect x="107" y="455.4" width="105" height="64.6" fill="#EDE3C8"/><text x="159.5" y="485.7" text-anchor="middle" font-size="17">🌊</text><text x="159.5" y="502.7" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">みかん畑</text>
+            <rect x="214" y="455.4" width="106" height="64.6" fill="#C8862E"/><text x="267" y="485.7" text-anchor="middle" font-size="17">🍊</text><text x="267" y="502.7" text-anchor="middle" font-size="8.5" fill="#241B12" fill-opacity="0.78">みかんソフト</text>
+          </g>
+        </svg>
+      </div>
+      <div class="screen-caption">After — 4本柱で統一されたフィード</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 pillars -->
+<section id="pillars">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <div>
+      <h2>投稿内容の4本柱</h2>
+      <p class="desc">フルーツだけでなく「仕事」と「人」と「土地」を伝える発信バランスに組み替えます。</p>
+    </div>
+  </div>
+  <div class="pillars">
+    <div class="pillar">
+      <span class="num">🍊 01</span>
+      <h3>フルーツ</h3>
+      <p>蛇口からみかんジュース、みかんソフト、丸ごとみかんプリン、冬の丸ごといちごソフト、季節の生フルーツプリン。味に加えて、蛇口は「はじめはしっかり、徐々にゆっくり」注ぐといった楽しみ方のコツまで紹介する。</p>
+    </div>
+    <div class="pillar">
+      <span class="num">⚙️ 02</span>
+      <h3>仕事</h3>
+      <p>宇佐美の工房でプリンを仕込む、みかんをコンポートにして瓶に詰める、フルーツソースを炊く、店頭でソフトクリームを巻く。定型文でくり返してきた「工房で手作り」を、言葉だけでなく映像でも見せる。</p>
+    </div>
+    <div class="pillar">
+      <span class="num">👤 03</span>
+      <h3>ヒト</h3>
+      <p>店長、店頭のスタッフ、工房のつくり手。「店長がメロンを買いすぎてゲリラセール」や、スタッフが名乗って書いた学割の告知のように、人柄の出る投稿は店を身近にする。1日店長や小学生の見学の回も「ヒト」の投稿。</p>
+    </div>
+    <div class="pillar">
+      <span class="num">🌊 04</span>
+      <h3>伊東</h3>
+      <p>熱海・伊東のみかん農家、宇佐美のニューサマーオレンジ、函南の牛乳。店から歩いてすぐのオレンジビーチ、湯の花通り商店街。童謡「みかんの花咲く丘」が初めて歌われた街であることも、伊東でみかんの店を営む理由になる。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 reel -->
+<section id="reel">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <div>
+      <h2>Instagram リール提案</h2>
+      <p class="desc">1本のリールを、みかんが一杯のジュースや一本のプリンになるまでの短編ドキュメンタリーとして構成します。</p>
+    </div>
+  </div>
+
+  <div class="mini-label">Now — 現在のリール</div>
+  <div class="reel-now">
+    <div><span class="k">公開中のリール</span><b>84<small>本</small></b><span class="s">最後の公開は6月20日</span></div>
+    <div><span class="k">再生数</span><b>約530〜1.7万<small>回</small></b><span class="s">中央値は約1,300回</span></div>
+    <div><span class="k">フォロワー</span><b>1,135<small>人</small></b><span class="s">最多再生はフォロワー数の約15倍</span></div>
+  </div>
+  <div class="mini-label">Top 5 — 再生数の多いリール</div>
+  <div class="reel-rank">
+    <ol>
+      <li><span class="t"><b>01</b>丸ごといちごソフト「まるで苺大福」</span><span class="bar"><i style="width:100%"></i></span><span class="v">約1.7万回</span></li>
+      <li><span class="t"><b>02</b>蛇口からみかんジュース（ピン留め）</span><span class="bar"><i style="width:82.4%"></i></span><span class="v">約1.4万回</span></li>
+      <li><span class="t"><b>03</b>「伊東に来たなら旬実堂」みかんソフト（ピン留め）</span><span class="bar"><i style="width:82.4%"></i></span><span class="v">約1.4万回</span></li>
+      <li><span class="t"><b>04</b>2周年のプレゼント企画</span><span class="bar"><i style="width:70.6%"></i></span><span class="v">約1.2万回</span></li>
+      <li><span class="t"><b>05</b>JR東日本公式との共同投稿「伊東ノスタルジア」</span><span class="bar"><i style="width:58.8%"></i></span><span class="v">約1万回</span></li>
+    </ol>
+    <div class="ref"><span class="t"><b>—</b>参考：全84本の中央値</span><span class="bar"><i style="width:7.7%"></i></span><span class="v">約1,300回</span></div>
+  </div>
+  <p class="reel-note">上位は、蛇口やソフトクリームのように「ひと目で伝わる驚き」のある名物と、プレゼント企画・共同投稿です。一方で、84本のうち62本は2,000回未満。リールは6月20日を最後に止まっており、その後の10投稿にリールはありません。まずは月2本のペースで再開します。</p>
+
+  <div class="reel-direction">
+    <span class="eyebrow">Direction</span>
+    <p>「商品紹介」ではなく、<b>みかんが一杯のジュース、一本のプリンになるまでの30秒ドキュメンタリー</b>として見せる。</p>
+  </div>
+
+  <div class="gauge">
+    <div class="gauge-seg"><span class="time">0–3s</span><div class="tag">HOOK</div><div class="txt">蛇口をひねる瞬間・みかんソフトを巻き上げるアップ</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">3–6s</span><div class="tag">ヒト</div><div class="txt">カップを手渡すスタッフの手元と笑顔</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">6–12s</span><div class="tag">産地</div><div class="txt">熱海・伊東のみかん畑、色づいた実</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">12–18s</span><div class="tag">工房</div><div class="txt">宇佐美の工房でプリンを仕込む・ソースを炊く</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">18–24s</span><div class="tag">フルーツ</div><div class="txt">蛇口からの一杯と、店頭に並ぶプリン</div><div class="gauge-fill"></div></div>
+    <div class="gauge-seg"><span class="time">24–30s</span><div class="tag">想い・締め</div><div class="txt">緑のテントの店構え＋店名＋「伊東駅から徒歩30秒」</div><div class="gauge-fill"></div></div>
+  </div>
+
+  <div class="themes">
+    <div class="theme-chip"><b>テーマ①</b>みかんが蛇口のジュースになるまで</div>
+    <div class="theme-chip"><b>テーマ②</b>丸ごとみかんプリンができるまで</div>
+    <div class="theme-chip"><b>テーマ③</b>改札から30秒、店までの道案内</div>
+    <div class="theme-chip"><b>テーマ④</b>ジュース片手にオレンジビーチまで</div>
+  </div>
+</section>
+
+<!-- 05 checklist -->
+<section id="design">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <div>
+      <h2>投稿デザイン・見せ方</h2>
+      <p class="desc">アカウント全体を一つのブランドとして見せるための運用ルール。</p>
+    </div>
+  </div>
+  <div class="checklist">
+    <div><span class="ck">01</span>表紙の写真は「フルーツ＋手元」または「フルーツ＋伊東の風景」を基本にする</div>
+    <div><span class="ck">02</span>リールの表紙は、タイトルを入れる型にそろえる。ピン留めの「噂の旬実堂とは？」のように何の動画かがひと目で分かる表紙と、文字のない表紙がまざっている</div>
+    <div><span class="ck">03</span>書き出しの1行を毎回書き分ける。7月以降の10投稿のうち8投稿が「🍊伊東駅前で食べ歩きandお土産は伊豆旬実堂🍊」で始まっている。1行目は「伊東＋その投稿の内容」にする</div>
+    <div><span class="ck">04</span>リールにも内容の説明を書く。直近24投稿のうちリール4本は、定型文だけで動画の説明がない。6,684回再生された蛇口のリール（2月22日）もその一つ</div>
+    <div><span class="ck">05</span>外国語の定型文を見直す。ピン留めのリールに残る中国語では、フルーツパーラーが「水果店（果物屋）」、ボトルスイーツが「瓶装糖果（瓶入りのキャンディ）」になっている。英語・中国語は「場所・営業時間・名物2つ」の短い定型にしぼる</div>
+    <div><span class="ck">06</span>ピン留めのリール（蛇口からみかんジュース）のハッシュタグを点検する。#熱海グルメ #熱海旅行 など熱海のタグや、#izuislands（伊豆諸島）が入っている。最近の投稿と同じ、伊東にしぼった5個の型にそろえる</div>
+    <div><span class="ck">07</span>臨時休業などのお知らせはストーリーズとハイライト「お知らせ」へ。終了した告知を最新投稿として残さない（9月21日の臨時休業が現在も最新）</div>
+    <div><span class="ck">08</span>投稿は週1本を目安に、曜日を決めて続ける（2026年は9か月で28本、月によって1〜5本）。そのうち月2本をリールにする</div>
+    <div><span class="ck">09</span>お客さまのタグ付け投稿を生かす。旬実堂をタグ付けした投稿は60件以上あり、2026年だけで24件。投稿者にひとこと伝えたうえで、ストーリーズで紹介する</div>
+  </div>
+</section>
+
+<!-- 06 summary -->
+<section id="summary">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <div>
+      <h2>改善方針まとめ</h2>
+    </div>
+  </div>
+  <div class="summary-wrap">
+    <div class="summary-before-after">
+      <div>
+        <span class="eyebrow">現在</span>
+        <p>「みかんのスイーツがおいしい駅前の店」という、商品中心の情報発信。</p>
+      </div>
+      <div>
+        <span class="eyebrow">改善後</span>
+        <p>「伊東駅前で、誰が、どこの果物を、どう仕込んで出しているのか」まで伝えるアカウントへ。</p>
+      </div>
+    </div>
+    <span class="eyebrow">目指す方向性</span>
+    <div class="flow" style="margin-top:14px;">
+      <div class="step"><div class="node">フルーツ</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">ヒト</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">仕事</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">伊東</div><div class="arrow">→</div></div>
+      <div class="step"><div class="node">ストーリー</div></div>
+    </div>
+    <p class="summary-line">商品紹介にとどまらず、<br><b>「旬実堂に立ち寄りたくなる理由」をつくるアカウント</b>を目指す。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/izu_shunmido/" target="_blank" rel="noopener">Instagramを見る</a>
+    <a href="https://izu-shunmido.com/" target="_blank" rel="noopener">公式サイトを見る</a>
+  </div>
+  <p class="sibling">同じ伊豆中グループの改善提案：<a href="misono.html">まんじゅう みその</a>／<a href="../jizakana/banban.html">ばんばん食堂</a>／<a href="../jizakana/hamayaki.html">伊豆浜焼本舗</a>／<a href="../jizakana/marusu.html">伊豆まるす</a></p>
+  <p class="data-note">※ 数値とプロフィールの内容は、2026年10月7日時点のInstagram公開情報にもとづきます。</p>
+  <small>© Ito Instagram</small>
+</footer>
+
+</body>
+</html>
