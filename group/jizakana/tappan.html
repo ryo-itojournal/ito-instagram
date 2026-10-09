@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>さかな倶楽部 たっぱん｜静岡県伊東市湯川の鮨と地魚料理の店</title>
+<meta name="description" content="静岡県伊東市湯川、伊東駅から徒歩2〜3分のさかな倶楽部 たっぱん。伊豆・伊東の地魚を中心にした鮨と魚料理、日本酒。17:30〜22:00、水曜・第3火曜定休。ご予約がおすすめです。">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="さかな倶楽部 たっぱん｜静岡県伊東市湯川">
+<meta property="og:description" content="旬の魚を、お客さんと楽しく、おいしく。伊東・湯川の鮨と地魚料理の店です。">
+<meta property="og:locale" content="ja_JP">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Marcellus&amp;display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   さかな倶楽部 たっぱん / design tokens
+   墨＝板場、朱＝まぐろと金目鯛、巻きす＝太巻き
+   ============================================================ */
+:root{
+  --deep:#17181A;
+  --main:#2A2C30;
+  --mid:#6B6E75;
+  --glaze:#ECECEA;
+  --paper:#F7F7F4;
+  --ink:#131416;
+  --ink-soft:#4F5156;
+  --accent:#D2452C;
+  --accent-soft:#EE9A86;
+  --accent-ink:#A8321C;
+  --on-accent:#fff;
+
+  --iri:linear-gradient(118deg,#2A2C30 0%,#6B6E75 24%,#C9CBCE 46%,#F5EFE2 64%,#D2452C 84%,#44474D 100%);
+
+  --disp:"Shippori Mincho B1",serif;
+  --body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+  --lat:"Marcellus",serif;
+
+  --pad:clamp(20px,5vw,72px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+/* 写真枠：画像が読めなかったときは下地のグラデーションが残る */
+.ph{position:relative;overflow:hidden;background:var(--iri)}
+.ph img{width:100%;height:100%;object-fit:cover;position:relative;z-index:2}
+
+.wrap{max-width:1120px;margin:0 auto;padding-inline:var(--pad)}
+
+.eyebrow{
+  font-family:var(--lat);font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--mid);display:flex;align-items:center;gap:14px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:currentColor;opacity:.3}
+
+.h2{
+  font-family:var(--disp);font-weight:800;
+  font-size:clamp(26px,4.2vw,40px);line-height:1.45;letter-spacing:.04em;
+  margin:18px 0 26px;
+}
+/* 見出しとコピー：行の長さをそろえ、文節の途中で折り返さない（対応ブラウザのみ）。おさまらない語だけは途中で折る */
+.h2,.hero-copy,.intro-quote,.feature h2,.card h3{text-wrap:balance;word-break:auto-phrase;overflow-wrap:anywhere}
+.lead{max-width:44em;color:var(--ink-soft);font-size:clamp(15px,1.6vw,17px)}
+.lead+.lead{margin-top:1.4em}
+.band{padding-block:clamp(64px,10vw,120px)}
+
+/* ============================================================
+   ヘッダー
+   ============================================================ */
+.head{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:14px var(--pad);color:var(--glaze);
+  transition:background .4s ease,color .4s ease,box-shadow .4s ease;
+}
+.head.is-stuck{
+  background:color-mix(in srgb,var(--paper) 93%,transparent);backdrop-filter:blur(10px);
+  color:var(--ink);box-shadow:0 1px 0 color-mix(in srgb,var(--main) 14%,transparent);
+}
+.head-mark{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.28em;text-decoration:none;white-space:nowrap}
+.head-mark.is-latin{font-family:var(--lat);font-weight:400;letter-spacing:.14em}
+.head-nav{display:flex;gap:clamp(14px,2.4vw,30px);font-size:13.5px;letter-spacing:.12em}
+.head-nav a{text-decoration:none;opacity:.86;padding-block:4px;border-bottom:1px solid transparent;white-space:nowrap}
+.head-nav a:hover{opacity:1;border-bottom-color:currentColor}
+@media(max-width:640px){.head-nav{display:none}}
+
+/* ============================================================
+   ヒーロー ─ 壁のモチーフ＋写真
+   ============================================================ */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:center;
+  overflow:hidden;background:var(--deep);color:var(--glaze);
+}
+.wall{
+  position:absolute;inset:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(46px,1fr));
+  grid-auto-rows:46px;background:var(--deep);
+}
+.tile{position:relative;background:var(--main);box-shadow:inset 0 0 0 .5px color-mix(in srgb,var(--deep) 90%,transparent)}
+.tile::after{
+  content:"";position:absolute;inset:0;background:var(--iri);
+  opacity:var(--o,.08);mix-blend-mode:screen;transition:opacity 1.6s ease;
+}
+.tile.lit::after{opacity:.62}
+/* 壁のモチーフ：巻きす。ひかりが通ると、竹のひごがあかるくなる */
+.wall[data-wall="makisu"]{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));grid-auto-rows:12px}
+.wall[data-wall="makisu"] .tile{box-shadow:none;background:linear-gradient(180deg,color-mix(in srgb,var(--main) 80%,#fff) 0 1px,var(--main) 1px 9px,var(--deep) 9px 12px)}
+.wall[data-wall="makisu"] .tile::before{content:"";position:absolute;top:0;bottom:0;left:24%;width:3px;background:color-mix(in srgb,var(--glaze) 26%,transparent)}
+.wall[data-wall="makisu"] .tile::after{inset:0 0 3px 0;background:linear-gradient(180deg,#fff,var(--accent-soft));opacity:var(--o,.04)}
+.wall[data-wall="makisu"] .tile.lit::after{opacity:.3}
+.hero-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(178deg,color-mix(in srgb,var(--deep) 66%,transparent) 0%,color-mix(in srgb,var(--deep) 32%,transparent) 40%,color-mix(in srgb,var(--deep) 88%,transparent) 90%);
+}
+
+.hero-inner{position:relative;width:100%;padding-block:clamp(96px,14vh,140px)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero-grid.solo{grid-template-columns:1fr}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px}}
+
+.plate{
+  display:inline-block;position:relative;
+  padding:clamp(20px,3.6vw,34px) clamp(26px,4.6vw,48px);
+  background:var(--glaze);color:var(--deep);
+  box-shadow:0 22px 60px rgba(0,0,0,.4);
+}
+.plate::before{content:"";position:absolute;inset:7px;border:1px solid color-mix(in srgb,var(--main) 35%,transparent);pointer-events:none}
+.plate-lat{font-family:var(--lat);font-size:clamp(11px,1.5vw,14px);letter-spacing:.42em;text-transform:uppercase;color:var(--mid)}
+.plate-name{font-family:var(--disp);font-weight:800;font-size:clamp(44px,9.5vw,88px);letter-spacing:.12em;line-height:1.1;margin:.18em 0 .1em;text-wrap:balance}
+.plate-name.is-mid{font-size:clamp(30px,5.6vw,58px);letter-spacing:.08em;line-height:1.25;margin:.28em 0 .22em}
+.plate-name.is-long{font-size:clamp(24px,4.2vw,44px);letter-spacing:.06em;line-height:1.4;margin:.34em 0 .3em}
+.plate-name.is-latin{font-family:var(--lat);font-weight:400;font-size:clamp(52px,10.5vw,98px);letter-spacing:.1em;line-height:1.05;margin:.1em 0 .06em}
+.plate-yomi{font-size:12px;letter-spacing:.4em;color:var(--ink-soft)}
+
+.hero-copy{
+  margin-top:clamp(24px,3.4vw,36px);max-width:28em;
+  font-family:var(--disp);font-weight:500;
+  font-size:clamp(17px,2.3vw,24px);line-height:2;letter-spacing:.03em;
+}
+.hero-copy b{color:var(--accent-soft);font-weight:500}
+
+.hero-meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:13.5px;letter-spacing:.08em;color:color-mix(in srgb,var(--glaze) 82%,transparent)}
+.hero-meta span{display:flex;align-items:center;gap:9px}
+.hero-meta span::before{content:"";width:5px;height:5px;background:var(--accent);border-radius:50%}
+
+.hero-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;text-decoration:none;padding:14px 30px;font-size:14px;letter-spacing:.14em;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);transition:background .25s,color .25s}
+.btn:hover{background:transparent;color:var(--accent-soft)}
+.btn-ghost{background:transparent;border-color:color-mix(in srgb,var(--glaze) 45%,transparent);color:var(--glaze)}
+.btn-ghost:hover{background:var(--glaze);color:var(--deep);border-color:var(--glaze)}
+@media(max-width:420px){.btn{padding:14px 20px}}
+
+.hero-shot{aspect-ratio:3/4;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+@media(max-width:900px){.hero-shot{aspect-ratio:16/10}}
+
+/* ============================================================
+   はじめに
+   ============================================================ */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,72px);align-items:start}
+@media(max-width:820px){.intro-grid{grid-template-columns:1fr}}
+.intro-text p+p{margin-top:1.4em}
+.intro-quote{
+  font-family:var(--disp);font-weight:700;
+  font-size:clamp(21px,3.2vw,30px);line-height:1.85;letter-spacing:.03em;
+  border-left:3px solid var(--accent);padding-left:24px;margin-top:22px;
+}
+
+/* ============================================================
+   商品
+   ============================================================ */
+.sweets{background:var(--glaze)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.6vw,30px)}
+@media(max-width:860px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}}
+
+.card{background:var(--paper);display:flex;flex-direction:column}
+.card.noimg{border-top:3px solid var(--accent)}
+.card .ph{aspect-ratio:4/3}
+/* --z / --ox / --oy：1枚の写真から一部を切り出して見せるときの拡大率と中心 */
+.card .ph img{object-position:var(--ox,50%) var(--oy,50%);transform-origin:var(--ox,50%) var(--oy,50%);transform:scale(var(--z,1));transition:transform .8s cubic-bezier(.2,.7,.3,1)}
+.card:hover .ph img{transform:scale(calc(var(--z,1) * 1.05))}
+.card-body{padding:24px 24px 30px;flex:1;display:flex;flex-direction:column}
+.card-tag{align-self:flex-start;font-family:var(--lat);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mid);border:1px solid color-mix(in srgb,var(--mid) 35%,transparent);padding:3px 10px;margin-bottom:14px}
+.card h3{font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:.04em;line-height:1.6}
+.card p{margin-top:10px;font-size:14.5px;line-height:1.95;color:var(--ink-soft)}
+.card p.card-note{margin-top:auto;padding-top:16px;font-size:12.5px;letter-spacing:.06em;color:var(--accent-ink)}
+
+/* ============================================================
+   特集枠
+   ============================================================ */
+.feature{background:var(--deep);color:var(--glaze)}
+.feature-grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,6vw,64px);align-items:center}
+@media(max-width:760px){.feature-grid{grid-template-columns:1fr}}
+.week{display:flex;gap:6px}
+.day{width:clamp(34px,5.4vw,44px);aspect-ratio:1;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--glaze) 24%,transparent);font-family:var(--lat);font-size:12px;letter-spacing:.06em;color:color-mix(in srgb,var(--glaze) 55%,transparent)}
+.day.off{color:color-mix(in srgb,var(--glaze) 20%,transparent);border-style:dashed}
+.day.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.stat{font-family:var(--lat);font-size:clamp(56px,9vw,104px);line-height:1;letter-spacing:.04em;color:var(--accent-soft);white-space:nowrap}
+.stat small{display:block;margin-top:14px;font-family:var(--body);font-size:12px;letter-spacing:.32em;color:color-mix(in srgb,var(--glaze) 62%,transparent)}
+.feature h2{font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.8vw,36px);letter-spacing:.05em;line-height:1.5;margin-bottom:16px}
+.feature p{color:color-mix(in srgb,var(--glaze) 78%,transparent);max-width:40em;font-size:15.5px}
+.feature-note{color:var(--accent-soft)}
+
+/* ============================================================
+   お店のこと
+   ============================================================ */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,6vw,70px);align-items:center}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+.about-shot{aspect-ratio:3/4}
+@media(max-width:820px){.about-shot{aspect-ratio:16/10}}
+
+/* ============================================================
+   ご案内
+   ============================================================ */
+.info{background:var(--glaze)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,56px)}
+@media(max-width:860px){.info-grid{grid-template-columns:1fr}}
+.dl{border-top:1px solid color-mix(in srgb,var(--main) 18%,transparent)}
+.dl div{display:grid;grid-template-columns:6.5em 1fr;gap:16px;padding:16px 2px;border-bottom:1px solid color-mix(in srgb,var(--main) 14%,transparent)}
+.dl dt{font-size:13px;letter-spacing:.14em;color:var(--mid);padding-top:3px}
+.dl dd{font-size:15px;min-width:0;overflow-wrap:anywhere}
+.dl dd small{display:block;font-size:12.5px;color:var(--ink-soft);letter-spacing:.02em;margin-top:4px}
+.dl a{color:var(--main);text-underline-offset:4px}
+.map{width:100%;flex:1;min-height:380px;border:0;filter:grayscale(.22) contrast(1.03)}
+.map-frame{background:var(--paper);box-shadow:0 10px 34px color-mix(in srgb,var(--main) 12%,transparent);display:flex;flex-direction:column}
+.map-link{display:inline-block;margin-top:14px;font-size:13.5px;letter-spacing:.08em;color:var(--main)}
+
+/* ============================================================
+   フッター
+   ============================================================ */
+.foot{background:var(--deep);color:color-mix(in srgb,var(--glaze) 70%,transparent);padding:clamp(46px,7vw,72px) 0 34px}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:flex-end}
+.foot-mark{font-family:var(--disp);font-weight:700;color:var(--glaze);font-size:26px;letter-spacing:.24em}
+.foot-mark.is-latin{font-family:var(--lat);font-weight:400;letter-spacing:.12em}
+.foot-lat{font-family:var(--lat);font-size:11.5px;letter-spacing:.36em;text-transform:uppercase;color:color-mix(in srgb,var(--glaze) 52%,transparent);margin-top:8px}
+.foot-tel{font-family:var(--lat);font-size:clamp(22px,3.6vw,30px);letter-spacing:.06em;color:var(--glaze);text-decoration:none}
+.foot-tel span{display:block;font-family:var(--body);font-size:12px;letter-spacing:.2em;color:color-mix(in srgb,var(--glaze) 52%,transparent);margin-bottom:4px}
+.foot-bottom{margin-top:40px;padding-top:20px;border-top:1px solid color-mix(in srgb,var(--glaze) 14%,transparent);font-size:12px;letter-spacing:.06em;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 22px}
+.foot-links a{color:color-mix(in srgb,var(--glaze) 72%,transparent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--glaze) 32%,transparent)}
+.foot-links a:hover{color:var(--glaze)}
+.foot-note{margin-top:18px;font-size:11.5px;line-height:1.9;letter-spacing:.04em;color:color-mix(in srgb,var(--glaze) 50%,transparent);max-width:60em}
+
+/* ---- スクロールで写真がすっと立ち上がる ---- */
+.rise{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.3,1)}
+.rise.in{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::after,*::before{transition-duration:.01ms !important;animation-duration:.01ms !important}
+  .rise{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="head" id="head">
+  <a class="head-mark" href="#top">たっぱん</a>
+  <nav class="head-nav">
+    <a href="#dishes">お料理</a>
+    <a href="#feature">営業日</a>
+    <a href="#about">お店のこと</a>
+    <a href="#info">ご案内</a>
+  </nav>
+</header>
+
+<!-- ============ ヒーロー ============ -->
+<section class="hero" id="top">
+  <div class="wall" id="wall" data-wall="makisu" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="plate">
+          <div class="plate-lat">Sushi &amp; Jizakana</div>
+          <h1 class="plate-name is-mid" aria-label="さかな倶楽部 たっぱん">たっぱん</h1>
+          <div class="plate-yomi">さかな倶楽部 鮨と地魚料理</div>
+        </div>
+
+        <p class="hero-copy">旬の魚を、お客さんと<br><b>楽しく、おいしく</b>。</p>
+
+        <div class="hero-meta">
+          <span>静岡県伊東市湯川</span>
+          <span>17:30 – 22:00</span>
+          <span>水曜・第3火曜定休</span>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn" href="#dishes">お料理を見る</a>
+          <a class="btn btn-ghost" href="#info">場所と営業時間</a>
+        </div>
+      </div>
+
+      <div class="ph hero-shot">
+        <img src="https://ito-jizakana.com/wp-content/uploads/2025/03/482581776_1623748278510002_7379744828021898462_n-1024x845.jpg" alt="刺身の盛り合わせ" style="object-position:50% 50%">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ はじめに ============ -->
+<section class="band">
+  <div class="wrap intro-grid">
+    <div>
+      <p class="eyebrow">Tappan</p>
+      <p class="intro-quote">魚通がうなる、<br>たっぱんの魚料理。</p>
+    </div>
+    <div class="intro-text lead">
+      <p>伊東駅から、海のほうへ歩いて二、三分。鮨と地魚料理の店です。</p>
+      <p>モットーは、「伊豆伊東の地魚を中心に旬の魚たちをお客様と共に楽しく美味しく」。</p>
+      <p>鮮度のいい素材と、繊細な職人の技。ここでしか味わえない魚料理を目あてに、常連さんがかよいます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ お料理 ============ -->
+<section class="band sweets" id="dishes">
+  <div class="wrap">
+    <p class="eyebrow">Our Dishes</p>
+    <h2 class="h2">お料理</h2>
+    <p class="lead" style="margin-bottom:clamp(28px,4vw,46px)">その日の水あげや仕入れによって、お料理はかわります。くわしくは、お店におたずねください。</p>
+
+    <div class="cards">
+      <article class="card rise">
+        <div class="ph"><img src="https://ito-jizakana.com/wp-content/uploads/2025/03/482879651_1132053845084193_5753952890169348788_n-1024x991.jpg" alt="鮨" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sushi</span>
+          <h3>鮨</h3>
+          <p>伊豆・伊東の地魚を中心に、旬の魚をつかった鮨。</p>
+        </div>
+      </article>
+
+      <article class="card rise">
+        <div class="ph"><img src="https://ito-jizakana.com/wp-content/uploads/2025/03/482596035_1608457473176993_5272003299041913281_n-1024x768.jpg" alt="煮魚" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Fish</span>
+          <h3>地魚料理</h3>
+          <p>おなじみの魚も、店主の平田さんの手にかかると、いつもとちがう上質な味わいに。地元の魚通をうならせる魚料理です。</p>
+        </div>
+      </article>
+
+      <article class="card rise">
+        <div class="ph"><img src="https://ito-jizakana.com/wp-content/uploads/2025/03/483180183_2067947487050358_2998482071795153463_n-1024x768.jpg" alt="お造り" loading="lazy"></div>
+        <div class="card-body">
+          <span class="card-tag">Sake</span>
+          <h3>おまかせコースと日本酒</h3>
+          <p>料理は、おまかせのコースで。日本酒は、ゆたかなリストから、好みや料理にあわせてすすめてもらえます。</p>
+          <p class="card-note">ご予約がおすすめです</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 営業日 ============ -->
+<section class="band feature" id="feature">
+  <div class="wrap feature-grid">
+    <div class="week" aria-hidden="true">
+      <div class="day">Mon</div>
+      <div class="day">Tue</div>
+      <div class="day off">Wed</div>
+      <div class="day">Thu</div>
+      <div class="day">Fri</div>
+      <div class="day">Sat</div>
+      <div class="day">Sun</div>
+    </div>
+    <div>
+      <h2>水曜日は、おやすみです。</h2>
+      <p>第三火曜日もお休みです。営業は、夕方五時半から夜十時まで。<br><span class="feature-note">※最新の営業情報は、お店の Instagram でおたしかめください。</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ お店のこと ============ -->
+<section class="band" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2 class="h2">お店のこと</h2>
+      <p class="lead">湯川三丁目にある店です。伊東駅から、歩いて二、三分。</p>
+      <p class="lead">ご来店のときは、ご予約を。ウェブには古い情報がのこっていることがあるので、お出かけの前に、Instagram で最新の情報をおたしかめください。</p>
+      <p class="lead">お店に駐車場はありません。お支払いは、現金か PayPay で。</p>
+    </div>
+    <div class="ph about-shot rise">
+      <img src="https://ito-jizakana.com/wp-content/uploads/2025/03/476236199_1339065710742044_5937599632363441921_n-1024x817.jpg" alt="鮨の折り詰め" loading="lazy" style="object-position:50% 50%">
+    </div>
+  </div>
+</section>
+
+<!-- ============ ご案内 ============ -->
+<section class="band info" id="info">
+  <div class="wrap">
+    <p class="eyebrow">Information</p>
+    <h2 class="h2">ご案内</h2>
+
+    <div class="info-grid">
+      <div>
+        <dl class="dl">
+          <div><dt>店名</dt><dd>さかな倶楽部 たっぱん<small>さかなくらぶ たっぱん／鮨と地魚料理</small></dd></div>
+          <div><dt>住所</dt><dd>静岡県伊東市湯川3-3-19</dd></div>
+          <div><dt>電話</dt><dd><a href="tel:0557487350">0557-48-7350</a></dd></div>
+          <div><dt>営業時間</dt><dd>17:30 – 22:00</dd></div>
+          <div><dt>定休日</dt><dd>水曜日、第3火曜日<small>最新の営業情報は Instagram で</small></dd></div>
+          <div><dt>アクセス</dt><dd>JR伊東駅から徒歩2〜3分</dd></div>
+          <div><dt>駐車場</dt><dd>なし</dd></div>
+          <div><dt>お支払い</dt><dd>現金、PayPay</dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/hirataman_519/" target="_blank" rel="noopener">@hirataman_519</a></dd></div>
+          <div><dt>地魚王国</dt><dd><a href="https://ito-jizakana.com/shop/tappan/" target="_blank" rel="noopener">加盟店ページを見る</a></dd></div>
+        </dl>
+      </div>
+
+      <div class="map-frame">
+        <iframe class="map"
+          src="https://maps.google.com/maps?q=%E3%81%95%E3%81%8B%E3%81%AA%E5%80%B6%E6%A5%BD%E9%83%A8%20%E3%81%9F%E3%81%A3%E3%81%B1%E3%82%93%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E6%B9%AF%E5%B7%9D3-3-19&amp;hl=ja&amp;z=17&amp;output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="さかな倶楽部 たっぱんの地図"></iframe>
+        <div style="padding:0 18px 18px">
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%95%E3%81%8B%E3%81%AA%E5%80%B6%E6%A5%BD%E9%83%A8%20%E3%81%9F%E3%81%A3%E3%81%B1%E3%82%93%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E6%B9%AF%E5%B7%9D3-3-19" target="_blank" rel="noopener">Google マップでひらく →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ フッター ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-mark">たっぱん</div>
+        <div class="foot-lat">Tappan — Ito, Shizuoka</div>
+      </div>
+      <a class="foot-tel" href="tel:0557487350"><span>ご予約・お問い合わせ</span>0557-48-7350</a>
+    </div>
+    <div class="foot-bottom">
+      <span>静岡県伊東市湯川3-3-19 ／ 17:30 – 22:00 ／ 水曜・第3火曜定休</span>
+      <span class="foot-links">
+        <a href="https://ryo-itojournal.github.io/ito-chamber.portal/museum/jizakana/index.html">← 展示室へもどる</a>
+        <a href="index.html">地魚王国 一覧へ</a>
+      </span>
+    </div>
+    <p class="foot-note">このページは、ITO PEOPLE MUSEUM「伊豆・いとう地魚王国 展示室」による店舗紹介です。公開されている情報をもとに作成しています。営業時間やお料理は変わることがありますので、お出かけの前にお店へご確認ください。<br>写真：伊豆・いとう地魚王国 オフィシャルサイト（ito-jizakana.com）</p>
+  </div>
+</footer>
+
+<script>
+/* ---- ヘッダーの背景切り替え ---- */
+const head = document.getElementById('head');
+const onScroll = () => head.classList.toggle('is-stuck', window.scrollY > window.innerHeight * 0.72);
+onScroll();
+window.addEventListener('scroll', onScroll, {passive:true});
+
+/* ---- 壁のモチーフ：ひかりをゆっくり走らせる ---- */
+const wall = document.getElementById('wall');
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function buildWall(){
+  wall.innerHTML = '';
+  const cs = getComputedStyle(wall);
+  const cols = cs.gridTemplateColumns.split(' ').length;
+  const rowH = (parseFloat(cs.gridAutoRows) || 46) + (parseFloat(cs.rowGap) || 0);
+  const rows = Math.ceil(wall.offsetHeight / rowH) + 1;
+  const total = Math.min(cols * rows, 3200);
+  const frag = document.createDocumentFragment();
+  for(let i = 0; i < total; i++){
+    const t = document.createElement('div');
+    /* r1：奇数段。モチーフによっては半コマずらして互い違いにならべる */
+    t.className = Math.floor(i / cols) % 2 ? 'tile r1' : 'tile';
+    t.style.setProperty('--o', (0.04 + Math.random() * 0.16).toFixed(3));
+    frag.appendChild(t);
+  }
+  wall.appendChild(frag);
+  return {cols, rows};
+}
+let grid = buildWall();
+
+if(!reduce){
+  let pass = -6;
+  setInterval(() => {
+    const tiles = wall.children;
+    for(let i = 0; i < tiles.length; i++){
+      const r = Math.floor(i / grid.cols), c = i % grid.cols;
+      tiles[i].classList.toggle('lit', Math.abs((r + c) / 1.7 - pass) < 1.4);
+    }
+    pass += 1.1;
+    if(pass > grid.cols + grid.rows) pass = -6;
+  }, 260);
+}
+
+let rt;
+window.addEventListener('resize', () => {
+  clearTimeout(rt);
+  rt = setTimeout(() => { grid = buildWall(); }, 250);
+});
+
+/* ---- 写真のスクロール表示 ---- */
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.12});
+document.querySelectorAll('.rise').forEach(el => io.observe(el));
+
+/* ---- 画像が読めなかった場合はグラデーションの下地を残す ---- */
+document.querySelectorAll('.ph img').forEach(img => {
+  img.addEventListener('error', () => img.remove());
+});
+</script>
+
+</body>
+</html>
