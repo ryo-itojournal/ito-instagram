@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>宇佐美麦酒製造（Usami Brewery）｜静岡県伊東市宇佐美のクラフトビール</title>
-<meta name="description" content="静岡県伊東市宇佐美の宇佐美麦酒製造（Usami Brewery）。伊豆の海洋深層水で仕こむ黄金色のエール「Usami Golden Ale」は、いとうのいいもの認定品。インターナショナル・ビアカップ2016 銀賞。">
+<title>氏原製菓株式会社｜静岡県伊東市岡の菓子メーカー</title>
+<meta name="description" content="静岡県伊東市岡の氏原製菓。昭和26年設立の、和菓子・洋菓子のメーカー。ぐり茶を練りこんだ抹茶あんで白あんを包んで蒸しあげた「伊豆 ぐり茶しぐれ」は、いとうのいいもの認定品。">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="宇佐美麦酒製造株式会社｜静岡県伊東市宇佐美">
-<meta property="og:description" content="伊豆の海洋深層水で仕こむ、Usami Golden Ale。伊東・宇佐美のクラフトビールの醸造所です。">
+<meta property="og:title" content="氏原製菓株式会社｜静岡県伊東市岡">
+<meta property="og:description" content="ぐり茶の抹茶あんで、白あんを包んで。伊豆 ぐり茶しぐれ。伊東・岡の菓子メーカーです。">
 <meta property="og:locale" content="ja_JP">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,23 +17,23 @@
 
 <style>
 /* ============================================================
-   宇佐美麦酒製造株式会社 / design tokens
-   藍＝伊豆の海、金＝ゴールデンエール、あわ＝ビールの泡
+   氏原製菓株式会社 / design tokens
+   抹茶色＝ぐり茶の抹茶あん、雨すじ＝お菓子の名前「しぐれ（時雨）」
    ============================================================ */
 :root{
-  --deep:#101A33;
-  --main:#1C2C55;
-  --mid:#4A5F96;
-  --glaze:#E9EDF5;
-  --paper:#F7F8FA;
-  --ink:#10141D;
-  --ink-soft:#4B5263;
-  --accent:#E0A12E;
-  --accent-soft:#F0CB7E;
-  --accent-ink:#8A5E08;
-  --on-accent:#1F1503;
+  --deep:#1C3122;
+  --main:#2C4C33;
+  --mid:#4C7443;
+  --glaze:#EEF2E4;
+  --paper:#F9F9EF;
+  --ink:#121A12;
+  --ink-soft:#4B564A;
+  --accent:#C6513A;
+  --accent-soft:#EE9C86;
+  --accent-ink:#A53F2A;
+  --on-accent:#fff;
 
-  --iri:linear-gradient(118deg,#1C2C55 0%,#4A5F96 26%,#B4C3E3 46%,#F6EDD2 64%,#E0A12E 84%,#33477F 100%);
+  --iri:linear-gradient(118deg,#2C4C33 0%,#6F9A5A 26%,#CFE0B4 46%,#F6EFCB 64%,#E08B6E 84%,#4F7D58 100%);
 
   --disp:"Shippori Mincho B1",serif;
   --body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
@@ -114,15 +114,15 @@ a{color:inherit}
   opacity:var(--o,.08);mix-blend-mode:screen;transition:opacity 1.6s ease;
 }
 .tile.lit::after{opacity:.62}
-/* 壁のモチーフ：あわ。ひかりが通ると、ひとつずつ浮かびあがる */
-.wall[data-wall="bubble"]{grid-template-columns:repeat(auto-fill,minmax(50px,1fr));grid-auto-rows:44px}
-.wall[data-wall="bubble"] .tile{background:none;box-shadow:none}
-.wall[data-wall="bubble"] .tile.r1{transform:translateX(50%)}
-.wall[data-wall="bubble"] .tile::before,
-.wall[data-wall="bubble"] .tile::after{content:"";position:absolute;inset:auto;left:50%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%}
-.wall[data-wall="bubble"] .tile::before{background:radial-gradient(circle at 34% 30%,color-mix(in srgb,var(--main) 50%,#fff) 0 7%,transparent 9%),radial-gradient(circle,transparent 0 56%,color-mix(in srgb,var(--main) 70%,#fff) 60% 66%,transparent 70%)}
-.wall[data-wall="bubble"] .tile::after{background:radial-gradient(circle,color-mix(in srgb,var(--accent-soft) 34%,transparent) 0 56%,#fff 60% 66%,transparent 70%);mix-blend-mode:normal;opacity:var(--o,.05)}
-.wall[data-wall="bubble"] .tile.lit::after{opacity:.6}
+/* 壁のモチーフ：時雨（しぐれ）。ぱらぱらと降る通り雨。ひかりが通ると、雨つぶがひかる */
+.wall[data-wall="shigure"]{grid-template-columns:repeat(auto-fill,minmax(30px,1fr));grid-auto-rows:34px}
+.wall[data-wall="shigure"] .tile{background:none;box-shadow:none}
+.wall[data-wall="shigure"] .tile.r1{transform:translateX(50%)}
+.wall[data-wall="shigure"] .tile::before,
+.wall[data-wall="shigure"] .tile::after{content:"";position:absolute;inset:auto;left:50%;top:50%;width:3px;height:18px;margin:-9px 0 0 -1.5px;border-radius:2px;transform:rotate(14deg)}
+.wall[data-wall="shigure"] .tile::before{background:linear-gradient(180deg,color-mix(in srgb,var(--main) 58%,#fff),var(--main))}
+.wall[data-wall="shigure"] .tile::after{background:linear-gradient(180deg,#fff,var(--accent-soft));mix-blend-mode:normal;opacity:var(--o,.05)}
+.wall[data-wall="shigure"] .tile.lit::after{opacity:.85}
 .hero-veil{
   position:absolute;inset:0;
   background:linear-gradient(178deg,color-mix(in srgb,var(--deep) 66%,transparent) 0%,color-mix(in srgb,var(--deep) 32%,transparent) 40%,color-mix(in srgb,var(--deep) 88%,transparent) 90%);
@@ -279,10 +279,10 @@ a{color:inherit}
 <body>
 
 <header class="head" id="head">
-  <a class="head-mark" href="#top">宇佐美麦酒</a>
+  <a class="head-mark" href="#top">氏原製菓</a>
   <nav class="head-nav">
-    <a href="#goods">ビール</a>
-    <a href="#feature">受賞</a>
+    <a href="#goods">商品</a>
+    <a href="#feature">歩み</a>
     <a href="#about">会社のこと</a>
     <a href="#info">ご案内</a>
   </nav>
@@ -290,34 +290,30 @@ a{color:inherit}
 
 <!-- ============ ヒーロー ============ -->
 <section class="hero" id="top">
-  <div class="wall" id="wall" data-wall="bubble" aria-hidden="true"></div>
+  <div class="wall" id="wall" data-wall="shigure" aria-hidden="true"></div>
   <div class="hero-veil" aria-hidden="true"></div>
 
   <div class="hero-inner">
-    <div class="wrap hero-grid">
+    <div class="wrap hero-grid solo">
       <div>
         <div class="plate">
-          <div class="plate-lat">Usami Brewery</div>
-          <h1 class="plate-name is-mid" aria-label="宇佐美麦酒製造株式会社">宇佐美麦酒</h1>
-          <div class="plate-yomi">うさみばくしゅ</div>
+          <div class="plate-lat">Ujihara Seika</div>
+          <h1 class="plate-name is-mid" aria-label="氏原製菓株式会社">氏原製菓</h1>
+          <div class="plate-yomi">うじはらせいか</div>
         </div>
 
-        <p class="hero-copy">伊豆の海洋深層水で仕こむ、<br><b>Usami Golden Ale</b>。</p>
+        <p class="hero-copy">ぐり茶の抹茶あんで、白あんを包んで。<br><b>伊豆 ぐり茶しぐれ</b>。</p>
 
         <div class="hero-meta">
-          <span>静岡県伊東市宇佐美</span>
-          <span>エールビール</span>
-          <span>1998年から</span>
+          <span>静岡県伊東市岡</span>
+          <span>8:00 – 17:30</span>
+          <span>日曜ほか休み</span>
         </div>
 
         <div class="hero-cta">
-          <a class="btn" href="#goods">ビールを見る</a>
+          <a class="btn" href="#goods">商品を見る</a>
           <a class="btn btn-ghost" href="#info">所在地と連絡先</a>
         </div>
-      </div>
-
-      <div class="ph hero-shot">
-        <img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/usamiGA_tokubetupage.jpeg" alt="Usami Golden Ale の瓶とグラス" style="object-position:50% 50%">
       </div>
     </div>
   </div>
@@ -327,63 +323,61 @@ a{color:inherit}
 <section class="band">
   <div class="wrap intro-grid">
     <div>
-      <p class="eyebrow">Usami Brewery</p>
-      <p class="intro-quote">海と山のあいだで、<br>つくるビール。</p>
+      <p class="eyebrow">Ujihara Seika</p>
+      <p class="intro-quote">お菓子づくり、<br>七十年あまり。</p>
     </div>
     <div class="intro-text lead">
-      <p>熱海と伊豆高原のあいだ、海ぞいのまち宇佐美にある、クラフトビールの会社です。</p>
-      <p>はじまりは一九九八年。宇佐美の山あい、みかん園のなかでした。ハンガリーのブラウマイスター（ビール職人）から、伝統的な醸造法をじかにおそわっています。</p>
-      <p>つくっているのは、かおり高く、味わい深いエールビール。「Usami Golden Ale」は、伊豆の海洋深層水をつかった、まろやかな黄金色のエールです。</p>
+      <p>伊東市岡にある、お菓子のメーカーです。和菓子と洋菓子をつくり、ホテルや旅館、道の駅、おみやげ店などに卸しています。</p>
+      <p>オリジナルのお菓子づくりをはじめてから、七十年あまり。その土地のものをつかった、ここにしかない味にこだわってきました。</p>
+      <p>「伊豆 ぐり茶しぐれ」は、平成二十七年に伊東ブランドに認定されました。ぐり茶を練りこんだ抹茶あんで白あんを包み、じっくり蒸しあげた、しっとりとしたお菓子です。</p>
     </div>
   </div>
 </section>
 
-<!-- ============ ビール ============ -->
+<!-- ============ 商品 ============ -->
 <section class="band sweets" id="goods">
   <div class="wrap">
-    <p class="eyebrow">Our Beer</p>
-    <h2 class="h2">ビール</h2>
-    <p class="lead" style="margin-bottom:clamp(28px,4vw,46px)">ならぶビールは、時期によってかわります。くわしくは、公式サイトでおたしかめください。</p>
+    <p class="eyebrow">Products</p>
+    <h2 class="h2">商品</h2>
+    <p class="lead" style="margin-bottom:clamp(28px,4vw,46px)">商品や取扱店は、時期によってかわります。くわしくは、直接おたずねください。</p>
 
     <div class="cards">
-      <article class="card rise">
-        <div class="ph"><img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/TESUT3.jpeg" alt="グラスにそそいだエールビール" loading="lazy"></div>
+      <article class="card noimg rise">
         <div class="card-body">
           <span class="card-tag">Ito Brand</span>
-          <h3>Usami Golden Ale</h3>
-          <p>大麦麦芽100％。伊豆の海洋深層水をつかい、海のミネラルをふくんだ、まろやかな仕あがりです。魚料理、とくにカルパッチョによくあいます。</p>
-          <p class="card-note">いとうのいいもの 認定品／アルコール 4.5％</p>
+          <h3>伊豆 ぐり茶しぐれ</h3>
+          <p>ぐり茶は、生の茶葉のやわらかさをいかして、もみながらつくるお茶。そのぐり茶を練りこんだ抹茶あんで、白あんを包んで蒸しあげています。</p>
+          <p class="card-note">いとうのいいもの 認定品</p>
         </div>
       </article>
 
-      <article class="card rise">
-        <div class="ph"><img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/IMGP3055-copy_570.jpeg" alt="宇佐美の海と山" loading="lazy"></div>
+      <article class="card noimg rise">
         <div class="card-body">
-          <span class="card-tag">Usami</span>
-          <h3>宇佐美というまち</h3>
-          <p>海と山にかこまれて、ゆっくりとおだやかな時間がながれるまち。その宇佐美で、クラフトビールをつくりつづけています。</p>
+          <span class="card-tag">Shigure</span>
+          <h3>くりしぐれ・桜しぐれ</h3>
+          <p>「しぐれ」は、ぱらぱらと降る通り雨のこと。お菓子のひびわれを、雨の降る風景に見たてた名前です。栗をつかった「くりしぐれ」と、春だけの「桜しぐれ」があります。</p>
+          <p class="card-note">桜しぐれは季節限定</p>
         </div>
       </article>
 
-      <article class="card rise">
-        <div class="ph"><img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/1200_te-1200x320.jpeg" alt="麦芽" loading="lazy"></div>
+      <article class="card noimg rise">
         <div class="card-body">
-          <span class="card-tag">Ale</span>
-          <h3>エールビール</h3>
-          <p>十五度から二十五度の、すこし高めの温度ではたらく酵母でつくるビール。こい味わいと、ひろがるかおりがもちあじです。</p>
+          <span class="card-tag">Izu</span>
+          <h3>伊豆のおみやげ</h3>
+          <p>ニューサマーオレンジのカスタードクリームがはいった蒸しケーキ、ぐり茶と宇治抹茶のまんじゅう、五十年以上つづく「伊豆の渚」。伊豆にちなんだお菓子がそろいます。</p>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ 受賞 ============ -->
+<!-- ============ 歩み ============ -->
 <section class="band feature" id="feature">
   <div class="wrap feature-grid">
-    <div class="stat" aria-hidden="true">2016<small>インターナショナル・ビアカップ</small></div>
+    <div class="stat" aria-hidden="true">1951<small>昭和26年 設立</small></div>
     <div>
-      <h2>フリーライトエール部門で、銀賞。</h2>
-      <p>「Usami Golden Ale」は、インターナショナル・ビアカップ2016の、フリーライトエール部門で銀賞をうけました。おいしく飲める温度は、六度くらいです。<br><span class="feature-note">※お酒は、二十歳になってから。</span></p>
+      <h2>昭和二十六年から、伊東で。</h2>
+      <p>昭和二十六年に、有限会社 氏原製菓として設立。昭和四十九年に、株式会社になりました。平成二十四年からは、楽天市場にもお店を出しています。</p>
     </div>
   </div>
 </section>
@@ -394,13 +388,13 @@ a{color:inherit}
     <div>
       <p class="eyebrow">About</p>
       <h2 class="h2">会社のこと</h2>
-      <p class="lead">ほかに、「Usami SAISON」「Curry Lover Ale」、三種類の「伊豆の地ビール」などをつくっています。</p>
-      <p class="lead">ビールは、公式のオンラインショップで買えます。買えるお店や飲めるお店は、公式サイトで紹介されています。</p>
-      <p class="lead">見学や直売については、公式サイトに案内が見あたりません。お問い合わせは、お電話で。</p>
+      <p class="lead">本社は、伊東市岡。伊豆急行線の南伊東駅から、車で七分ほどのところにあります。</p>
+      <p class="lead">営業は、朝八時から夕方五時半まで。おやすみは、日曜日ほかです。</p>
+      <p class="lead">お菓子は、公式のオンラインショップ（楽天市場）からも注文できます。</p>
     </div>
     <div class="ph about-shot noren rise" aria-hidden="true">
-      <span class="noren-name">宇佐美麦酒</span>
-      <span class="noren-sub">Usami Brewery</span>
+      <span class="noren-name">氏原製菓</span>
+      <span class="noren-sub">和菓子・洋菓子</span>
     </div>
   </div>
 </section>
@@ -414,22 +408,25 @@ a{color:inherit}
     <div class="info-grid">
       <div>
         <dl class="dl">
-          <div><dt>社名</dt><dd>宇佐美麦酒製造株式会社<small>うさみばくしゅせいぞう</small></dd></div>
-          <div><dt>住所</dt><dd>〒414-0001<br>静岡県伊東市宇佐美3504-1</dd></div>
-          <div><dt>電話</dt><dd><a href="tel:0557330333">0557-33-0333</a><small>FAX 0557-33-0334</small></dd></div>
-          <div><dt>認定品</dt><dd>いとうのいいもの「Usami Golden Ale」</dd></div>
-          <div><dt>お取り寄せ</dt><dd><a href="https://usamibrewery.theshop.jp/" target="_blank" rel="noopener">宇佐美麦酒 オンラインショップ</a></dd></div>
-          <div><dt>公式サイト</dt><dd><a href="https://usami-jibeer.com/" target="_blank" rel="noopener">usami-jibeer.com</a></dd></div>
-          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/usamibrewery/" target="_blank" rel="noopener">@usamibrewery</a></dd></div>
+          <div><dt>社名</dt><dd>氏原製菓株式会社<small>うじはらせいか</small></dd></div>
+          <div><dt>住所</dt><dd>〒414-0055<br>静岡県伊東市岡1284</dd></div>
+          <div><dt>電話</dt><dd><a href="tel:0557373334">0557-37-3334</a><small>FAX 0557-37-3323</small></dd></div>
+          <div><dt>営業時間</dt><dd>8:00 – 17:30</dd></div>
+          <div><dt>定休日</dt><dd>日曜日 ほか</dd></div>
+          <div><dt>アクセス</dt><dd>伊豆急行線 南伊東駅から車で約7分</dd></div>
+          <div><dt>認定品</dt><dd>いとうのいいもの「伊豆 ぐり茶しぐれ」</dd></div>
+          <div><dt>お取り寄せ</dt><dd><a href="https://www.rakuten.co.jp/ujihara/" target="_blank" rel="noopener">楽天市場店</a></dd></div>
+          <div><dt>公式サイト</dt><dd><a href="https://www.ujiharaseika.co.jp/" target="_blank" rel="noopener">ujiharaseika.co.jp</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/ujiharaseika/" target="_blank" rel="noopener">@ujiharaseika</a></dd></div>
         </dl>
       </div>
 
       <div class="map-frame">
         <iframe class="map"
-          src="https://maps.google.com/maps?q=%E5%AE%87%E4%BD%90%E7%BE%8E%E9%BA%A6%E9%85%92%E8%A3%BD%E9%80%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E5%AE%87%E4%BD%90%E7%BE%8E3504-1&amp;hl=ja&amp;z=17&amp;output=embed"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="宇佐美麦酒製造株式会社の地図"></iframe>
+          src="https://maps.google.com/maps?q=%E6%B0%8F%E5%8E%9F%E8%A3%BD%E8%8F%93%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E5%B2%A11284&amp;hl=ja&amp;z=17&amp;output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="氏原製菓株式会社の地図"></iframe>
         <div style="padding:0 18px 18px">
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AE%87%E4%BD%90%E7%BE%8E%E9%BA%A6%E9%85%92%E8%A3%BD%E9%80%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E5%AE%87%E4%BD%90%E7%BE%8E3504-1" target="_blank" rel="noopener">Google マップでひらく →</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B0%8F%E5%8E%9F%E8%A3%BD%E8%8F%93%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E5%B2%A11284" target="_blank" rel="noopener">Google マップでひらく →</a>
         </div>
       </div>
     </div>
@@ -441,19 +438,19 @@ a{color:inherit}
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <div class="foot-mark">宇佐美麦酒</div>
-        <div class="foot-lat">Usami Brewery — Ito, Shizuoka</div>
+        <div class="foot-mark">氏原製菓</div>
+        <div class="foot-lat">Ujihara Seika — Ito, Shizuoka</div>
       </div>
-      <a class="foot-tel" href="tel:0557330333"><span>お問い合わせ</span>0557-33-0333</a>
+      <a class="foot-tel" href="tel:0557373334"><span>お問い合わせ</span>0557-37-3334</a>
     </div>
     <div class="foot-bottom">
-      <span>静岡県伊東市宇佐美3504-1 ／ ビールは、公式オンラインショップなどで</span>
+      <span>静岡県伊東市岡1284 ／ 8:00 – 17:30 ／ 日曜ほか休み</span>
       <span class="foot-links">
         <a href="https://ryo-itojournal.github.io/ito-chamber.portal/museum/iimono/index.html">← 展示室へもどる</a>
         <a href="index.html">いとうのいいもの 一覧へ</a>
       </span>
     </div>
-    <p class="foot-note">このページは、ITO PEOPLE MUSEUM「いとうのいいもの 展示室」による事業者紹介です。公開されている情報をもとに作成しています。商品や取扱店は変わることがありますので、くわしくは直接ご確認ください。<br>写真：宇佐美麦酒製造 公式サイト（usami-jibeer.com）</p>
+    <p class="foot-note">このページは、ITO PEOPLE MUSEUM「いとうのいいもの 展示室」による事業者紹介です。公開されている情報をもとに作成しています。商品や取扱店は変わることがありますので、くわしくは直接ご確認ください。</p>
   </div>
 </footer>
 

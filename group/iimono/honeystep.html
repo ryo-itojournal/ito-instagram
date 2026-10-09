@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>宇佐美麦酒製造（Usami Brewery）｜静岡県伊東市宇佐美のクラフトビール</title>
-<meta name="description" content="静岡県伊東市宇佐美の宇佐美麦酒製造（Usami Brewery）。伊豆の海洋深層水で仕こむ黄金色のエール「Usami Golden Ale」は、いとうのいいもの認定品。インターナショナル・ビアカップ2016 銀賞。">
+<title>The Honey Step｜静岡県伊東市のはちみつとフルーツの加工食品</title>
+<meta name="description" content="静岡県伊東市の The Honey Step。伊豆のはちみつとフルーツの加工食品の店。伊東のレモンをドライフルーツにして伊豆のはちみつに漬けた「伊豆産レモンのドライフルーツのハチミツ漬け」は、いとうのいいもの認定品。">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="宇佐美麦酒製造株式会社｜静岡県伊東市宇佐美">
-<meta property="og:description" content="伊豆の海洋深層水で仕こむ、Usami Golden Ale。伊東・宇佐美のクラフトビールの醸造所です。">
+<meta property="og:title" content="The Honey Step｜静岡県伊東市">
+<meta property="og:description" content="伊東のレモンを、伊豆のはちみつに漬けました。伊東のはちみつとフルーツの加工食品の店です。">
 <meta property="og:locale" content="ja_JP">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,23 +17,23 @@
 
 <style>
 /* ============================================================
-   宇佐美麦酒製造株式会社 / design tokens
-   藍＝伊豆の海、金＝ゴールデンエール、あわ＝ビールの泡
+   The Honey Step / design tokens
+   はちみつ色＝伊豆のはちみつ、黄＝伊東のレモン、六角＝はちの巣
    ============================================================ */
 :root{
-  --deep:#101A33;
-  --main:#1C2C55;
-  --mid:#4A5F96;
-  --glaze:#E9EDF5;
-  --paper:#F7F8FA;
-  --ink:#10141D;
-  --ink-soft:#4B5263;
-  --accent:#E0A12E;
-  --accent-soft:#F0CB7E;
-  --accent-ink:#8A5E08;
-  --on-accent:#1F1503;
+  --deep:#382808;
+  --main:#5A4212;
+  --mid:#876416;
+  --glaze:#F6EFD9;
+  --paper:#FCF8EA;
+  --ink:#1E1707;
+  --ink-soft:#5B5038;
+  --accent:#E9A912;
+  --accent-soft:#F5CF63;
+  --accent-ink:#866000;
+  --on-accent:#2A1E00;
 
-  --iri:linear-gradient(118deg,#1C2C55 0%,#4A5F96 26%,#B4C3E3 46%,#F6EDD2 64%,#E0A12E 84%,#33477F 100%);
+  --iri:linear-gradient(118deg,#5A4212 0%,#987221 24%,#E2C26C 46%,#FBF0C4 64%,#E9A912 84%,#7A5A18 100%);
 
   --disp:"Shippori Mincho B1",serif;
   --body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
@@ -114,15 +114,15 @@ a{color:inherit}
   opacity:var(--o,.08);mix-blend-mode:screen;transition:opacity 1.6s ease;
 }
 .tile.lit::after{opacity:.62}
-/* 壁のモチーフ：あわ。ひかりが通ると、ひとつずつ浮かびあがる */
-.wall[data-wall="bubble"]{grid-template-columns:repeat(auto-fill,minmax(50px,1fr));grid-auto-rows:44px}
-.wall[data-wall="bubble"] .tile{background:none;box-shadow:none}
-.wall[data-wall="bubble"] .tile.r1{transform:translateX(50%)}
-.wall[data-wall="bubble"] .tile::before,
-.wall[data-wall="bubble"] .tile::after{content:"";position:absolute;inset:auto;left:50%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%}
-.wall[data-wall="bubble"] .tile::before{background:radial-gradient(circle at 34% 30%,color-mix(in srgb,var(--main) 50%,#fff) 0 7%,transparent 9%),radial-gradient(circle,transparent 0 56%,color-mix(in srgb,var(--main) 70%,#fff) 60% 66%,transparent 70%)}
-.wall[data-wall="bubble"] .tile::after{background:radial-gradient(circle,color-mix(in srgb,var(--accent-soft) 34%,transparent) 0 56%,#fff 60% 66%,transparent 70%);mix-blend-mode:normal;opacity:var(--o,.05)}
-.wall[data-wall="bubble"] .tile.lit::after{opacity:.6}
+/* 壁のモチーフ：はちの巣。ひかりが通ると、はちみつ色になる */
+.wall[data-wall="hex"]{grid-template-columns:repeat(auto-fill,minmax(52px,1fr));grid-auto-rows:45px}
+.wall[data-wall="hex"] .tile{background:none;box-shadow:none}
+.wall[data-wall="hex"] .tile.r1{transform:translateX(50%)}
+.wall[data-wall="hex"] .tile::before,
+.wall[data-wall="hex"] .tile::after{content:"";position:absolute;inset:auto;left:50%;top:50%;width:46px;height:52px;margin:-26px 0 0 -23px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.wall[data-wall="hex"] .tile::before{background:linear-gradient(160deg,color-mix(in srgb,var(--main) 84%,#fff),var(--deep))}
+.wall[data-wall="hex"] .tile::after{background:linear-gradient(160deg,#FFF3C4,var(--accent));opacity:var(--o,.05)}
+.wall[data-wall="hex"] .tile.lit::after{opacity:.5}
 .hero-veil{
   position:absolute;inset:0;
   background:linear-gradient(178deg,color-mix(in srgb,var(--deep) 66%,transparent) 0%,color-mix(in srgb,var(--deep) 32%,transparent) 40%,color-mix(in srgb,var(--deep) 88%,transparent) 90%);
@@ -274,50 +274,61 @@ a{color:inherit}
   *,*::after,*::before{transition-duration:.01ms !important;animation-duration:.01ms !important}
   .rise{opacity:1;transform:none}
 }
+
+/* 特集枠の大きな文字（和文） */
+.stat{font-family:var(--disp);font-weight:800}
+
+/* 欧文の店名：一行におさまる大きさ */
+.plate-name.is-latin{font-size:clamp(24px,7.6vw,56px)}
+@media(min-width:901px){.plate-name.is-latin{font-size:clamp(36px,4.2vw,48px)}}
+
+/* のれん：たて長のときは一語ずつ、よこ長のときは一行で */
+.noren-name.is-latin{width:min-content;padding-inline:0;line-height:1.24}
+@media(max-width:820px){.noren-name.is-latin{width:auto;white-space:nowrap;font-size:clamp(20px,6.4vw,36px)}}
 </style>
 </head>
 <body>
 
 <header class="head" id="head">
-  <a class="head-mark" href="#top">宇佐美麦酒</a>
+  <a class="head-mark is-latin" href="#top">The Honey Step</a>
   <nav class="head-nav">
-    <a href="#goods">ビール</a>
-    <a href="#feature">受賞</a>
-    <a href="#about">会社のこと</a>
+    <a href="#goods">商品</a>
+    <a href="#feature">素材</a>
+    <a href="#about">お店のこと</a>
     <a href="#info">ご案内</a>
   </nav>
 </header>
 
 <!-- ============ ヒーロー ============ -->
 <section class="hero" id="top">
-  <div class="wall" id="wall" data-wall="bubble" aria-hidden="true"></div>
+  <div class="wall" id="wall" data-wall="hex" aria-hidden="true"></div>
   <div class="hero-veil" aria-hidden="true"></div>
 
   <div class="hero-inner">
     <div class="wrap hero-grid">
       <div>
         <div class="plate">
-          <div class="plate-lat">Usami Brewery</div>
-          <h1 class="plate-name is-mid" aria-label="宇佐美麦酒製造株式会社">宇佐美麦酒</h1>
-          <div class="plate-yomi">うさみばくしゅ</div>
+          <div class="plate-lat">Izu Honey and Fruits</div>
+          <h1 class="plate-name is-latin">The Honey Step</h1>
+          <div class="plate-yomi">ザ・ハニーステップ</div>
         </div>
 
-        <p class="hero-copy">伊豆の海洋深層水で仕こむ、<br><b>Usami Golden Ale</b>。</p>
+        <p class="hero-copy">伊東のレモンを、<br><b>伊豆のはちみつ</b>に漬けました。</p>
 
         <div class="hero-meta">
-          <span>静岡県伊東市宇佐美</span>
-          <span>エールビール</span>
-          <span>1998年から</span>
+          <span>静岡県伊東市</span>
+          <span>オンラインショップ</span>
+          <span>イベント出店</span>
         </div>
 
         <div class="hero-cta">
-          <a class="btn" href="#goods">ビールを見る</a>
-          <a class="btn btn-ghost" href="#info">所在地と連絡先</a>
+          <a class="btn" href="#goods">商品を見る</a>
+          <a class="btn btn-ghost" href="#info">ご案内</a>
         </div>
       </div>
 
       <div class="ph hero-shot">
-        <img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/usamiGA_tokubetupage.jpeg" alt="Usami Golden Ale の瓶とグラス" style="object-position:50% 50%">
+        <img src="https://static.wixstatic.com/media/a21f47_2888b9a39eb447ea8e99775fb3620a68~mv2.webp/v1/fit/w_1000,h_1000,q_85/f.jpg" alt="The Honey Step のはちみつ漬けとキャラメリゼ" style="object-position:50% 50%">
       </div>
     </div>
   </div>
@@ -327,80 +338,79 @@ a{color:inherit}
 <section class="band">
   <div class="wrap intro-grid">
     <div>
-      <p class="eyebrow">Usami Brewery</p>
-      <p class="intro-quote">海と山のあいだで、<br>つくるビール。</p>
+      <p class="eyebrow">The Honey Step</p>
+      <p class="intro-quote">思わずステップを、<br>ふみたくなる味。</p>
     </div>
     <div class="intro-text lead">
-      <p>熱海と伊豆高原のあいだ、海ぞいのまち宇佐美にある、クラフトビールの会社です。</p>
-      <p>はじまりは一九九八年。宇佐美の山あい、みかん園のなかでした。ハンガリーのブラウマイスター（ビール職人）から、伝統的な醸造法をじかにおそわっています。</p>
-      <p>つくっているのは、かおり高く、味わい深いエールビール。「Usami Golden Ale」は、伊豆の海洋深層水をつかった、まろやかな黄金色のエールです。</p>
+      <p>伊豆のはちみつと、フルーツの加工食品の店です。「伊豆の魅力を、たくさんの人につたえる」をモットーにはじまりました。</p>
+      <p>「いとうのいいもの」の認定品は、「伊豆産レモンのドライフルーツのハチミツ漬け」。伊東のレモンをドライフルーツにして、伊豆でとれたはちみつに漬けています。</p>
+      <p>商品はすべて、保存料や添加物をつかっていません。店の名前には、「食べることを考えるとワクワクして、ステップをふみたくなる」という思いがこめられています。</p>
     </div>
   </div>
 </section>
 
-<!-- ============ ビール ============ -->
+<!-- ============ 商品 ============ -->
 <section class="band sweets" id="goods">
   <div class="wrap">
-    <p class="eyebrow">Our Beer</p>
-    <h2 class="h2">ビール</h2>
-    <p class="lead" style="margin-bottom:clamp(28px,4vw,46px)">ならぶビールは、時期によってかわります。くわしくは、公式サイトでおたしかめください。</p>
+    <p class="eyebrow">Products</p>
+    <h2 class="h2">商品</h2>
+    <p class="lead" style="margin-bottom:clamp(28px,4vw,46px)">商品は、時期によってかわります。くわしくは、公式サイトでおたしかめください。</p>
 
     <div class="cards">
       <article class="card rise">
-        <div class="ph"><img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/TESUT3.jpeg" alt="グラスにそそいだエールビール" loading="lazy"></div>
+        <div class="ph"><img src="https://static.wixstatic.com/media/b6590c_c68408f765d342de8c7ec9a55df2bed4~mv2.jpg/v1/fit/w_1000,h_1000,q_85/f.jpg" alt="伊豆産レモンのドライフルーツのハチミツ漬けの瓶" loading="lazy"></div>
         <div class="card-body">
           <span class="card-tag">Ito Brand</span>
-          <h3>Usami Golden Ale</h3>
-          <p>大麦麦芽100％。伊豆の海洋深層水をつかい、海のミネラルをふくんだ、まろやかな仕あがりです。魚料理、とくにカルパッチョによくあいます。</p>
-          <p class="card-note">いとうのいいもの 認定品／アルコール 4.5％</p>
+          <h3>伊豆産レモンのドライフルーツのハチミツ漬け</h3>
+          <p>レモンは、やわらかく仕あがるように加工してから、ドライフルーツに。種は、一枚ずつピンセットで取りのぞいています。はちみつのおいしさを、そこなわないための工夫です。</p>
+          <p class="card-note">いとうのいいもの 認定品（2025年）</p>
         </div>
       </article>
 
       <article class="card rise">
-        <div class="ph"><img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/IMGP3055-copy_570.jpeg" alt="宇佐美の海と山" loading="lazy"></div>
+        <div class="ph"><img src="https://static.wixstatic.com/media/a21f47_421231c58b324e9a8c52944268ab88d2~mv2.png/v1/fit/w_1000,h_1000,q_85/f.jpg" alt="緑のなかにならぶ養蜂箱" loading="lazy"></div>
         <div class="card-body">
-          <span class="card-tag">Usami</span>
-          <h3>宇佐美というまち</h3>
-          <p>海と山にかこまれて、ゆっくりとおだやかな時間がながれるまち。その宇佐美で、クラフトビールをつくりつづけています。</p>
+          <span class="card-tag">Honey</span>
+          <h3>伊豆のはちみつ</h3>
+          <p>つかっているのは、伊豆の富田養蜂園のはちみつ。五月から六月に咲く、クロガネモチの花からあつめた蜜です。</p>
         </div>
       </article>
 
       <article class="card rise">
-        <div class="ph"><img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/1200_te-1200x320.jpeg" alt="麦芽" loading="lazy"></div>
+        <div class="ph"><img src="https://static.wixstatic.com/media/b6590c_450ec0fa801d43068cc692e749390866~mv2.jpg/v1/fit/w_1000,h_1000,q_85/f.jpg" alt="はちみつに漬けたレモンをすくうところ" loading="lazy"></div>
         <div class="card-body">
-          <span class="card-tag">Ale</span>
-          <h3>エールビール</h3>
-          <p>十五度から二十五度の、すこし高めの温度ではたらく酵母でつくるビール。こい味わいと、ひろがるかおりがもちあじです。</p>
+          <span class="card-tag">How to</span>
+          <h3>おすすめの食べ方</h3>
+          <p>ヨーグルトにかけたり、バゲットやクラッカーに、クリームチーズとのせたり。時間がたつと、レモンの風味がはちみつに移っていきます。</p>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ 受賞 ============ -->
+<!-- ============ 素材 ============ -->
 <section class="band feature" id="feature">
   <div class="wrap feature-grid">
-    <div class="stat" aria-hidden="true">2016<small>インターナショナル・ビアカップ</small></div>
+    <div class="stat" aria-hidden="true">伊東<small>三枝農園のレモン</small></div>
     <div>
-      <h2>フリーライトエール部門で、銀賞。</h2>
-      <p>「Usami Golden Ale」は、インターナショナル・ビアカップ2016の、フリーライトエール部門で銀賞をうけました。おいしく飲める温度は、六度くらいです。<br><span class="feature-note">※お酒は、二十歳になってから。</span></p>
+      <h2>皮まで食べられる、伊東のレモン。</h2>
+      <p>レモンは、伊東市の三枝農園のもの。除草剤をつかわず、農薬をまく回数も、基準よりへらしてそだてています。エコファームに認定された土でそだったレモンなので、皮まで安心して食べられます。</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 会社のこと ============ -->
+<!-- ============ お店のこと ============ -->
 <section class="band" id="about">
   <div class="wrap about-grid">
     <div>
       <p class="eyebrow">About</p>
-      <h2 class="h2">会社のこと</h2>
-      <p class="lead">ほかに、「Usami SAISON」「Curry Lover Ale」、三種類の「伊豆の地ビール」などをつくっています。</p>
-      <p class="lead">ビールは、公式のオンラインショップで買えます。買えるお店や飲めるお店は、公式サイトで紹介されています。</p>
-      <p class="lead">見学や直売については、公式サイトに案内が見あたりません。お問い合わせは、お電話で。</p>
+      <h2 class="h2">お店のこと</h2>
+      <p class="lead">お買いものは、公式のオンラインショップから。イベントへの出店は、公式の Instagram でお知らせしています。</p>
+      <p class="lead">ほかにも、五つの味がある「胡桃のハチミツキャラメリゼ」や、「伊豆ハチミツレモンシロップ」などがあります。ギフトむけの商品もあります。</p>
     </div>
     <div class="ph about-shot noren rise" aria-hidden="true">
-      <span class="noren-name">宇佐美麦酒</span>
-      <span class="noren-sub">Usami Brewery</span>
+      <span class="noren-name is-latin">The Honey Step</span>
+      <span class="noren-sub">伊豆のはちみつとフルーツ</span>
     </div>
   </div>
 </section>
@@ -414,22 +424,22 @@ a{color:inherit}
     <div class="info-grid">
       <div>
         <dl class="dl">
-          <div><dt>社名</dt><dd>宇佐美麦酒製造株式会社<small>うさみばくしゅせいぞう</small></dd></div>
-          <div><dt>住所</dt><dd>〒414-0001<br>静岡県伊東市宇佐美3504-1</dd></div>
-          <div><dt>電話</dt><dd><a href="tel:0557330333">0557-33-0333</a><small>FAX 0557-33-0334</small></dd></div>
-          <div><dt>認定品</dt><dd>いとうのいいもの「Usami Golden Ale」</dd></div>
-          <div><dt>お取り寄せ</dt><dd><a href="https://usamibrewery.theshop.jp/" target="_blank" rel="noopener">宇佐美麦酒 オンラインショップ</a></dd></div>
-          <div><dt>公式サイト</dt><dd><a href="https://usami-jibeer.com/" target="_blank" rel="noopener">usami-jibeer.com</a></dd></div>
-          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/usamibrewery/" target="_blank" rel="noopener">@usamibrewery</a></dd></div>
+          <div><dt>店名</dt><dd>The Honey Step<small>ザ・ハニーステップ</small></dd></div>
+          <div><dt>住所</dt><dd>静岡県伊東市</dd></div>
+          <div><dt>認定品</dt><dd>いとうのいいもの「伊豆産レモンのドライフルーツのハチミツ漬け」</dd></div>
+          <div><dt>お買いもの</dt><dd><a href="https://www.thehoneystep.net/category/all-products" target="_blank" rel="noopener">公式オンラインショップ</a></dd></div>
+          <div><dt>お問い合わせ</dt><dd><a href="https://www.thehoneystep.net/contact" target="_blank" rel="noopener">公式サイトのお問い合わせフォーム</a></dd></div>
+          <div><dt>公式サイト</dt><dd><a href="https://www.thehoneystep.net/" target="_blank" rel="noopener">thehoneystep.net</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/thehoneystep/" target="_blank" rel="noopener">@thehoneystep</a></dd></div>
         </dl>
       </div>
 
       <div class="map-frame">
         <iframe class="map"
-          src="https://maps.google.com/maps?q=%E5%AE%87%E4%BD%90%E7%BE%8E%E9%BA%A6%E9%85%92%E8%A3%BD%E9%80%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E5%AE%87%E4%BD%90%E7%BE%8E3504-1&amp;hl=ja&amp;z=17&amp;output=embed"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="宇佐美麦酒製造株式会社の地図"></iframe>
+          src="https://maps.google.com/maps?q=%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82&amp;hl=ja&amp;z=12&amp;output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Honey Stepの地図"></iframe>
         <div style="padding:0 18px 18px">
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AE%87%E4%BD%90%E7%BE%8E%E9%BA%A6%E9%85%92%E8%A3%BD%E9%80%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E5%AE%87%E4%BD%90%E7%BE%8E3504-1" target="_blank" rel="noopener">Google マップでひらく →</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82" target="_blank" rel="noopener">Google マップでひらく →</a>
         </div>
       </div>
     </div>
@@ -441,19 +451,19 @@ a{color:inherit}
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <div class="foot-mark">宇佐美麦酒</div>
-        <div class="foot-lat">Usami Brewery — Ito, Shizuoka</div>
+        <div class="foot-mark is-latin">The Honey Step</div>
+        <div class="foot-lat">The Honey Step — Ito, Shizuoka</div>
       </div>
-      <a class="foot-tel" href="tel:0557330333"><span>お問い合わせ</span>0557-33-0333</a>
+      <a class="foot-tel" href="https://www.instagram.com/thehoneystep/" target="_blank" rel="noopener"><span>お問い合わせ（Instagram）</span>@thehoneystep</a>
     </div>
     <div class="foot-bottom">
-      <span>静岡県伊東市宇佐美3504-1 ／ ビールは、公式オンラインショップなどで</span>
+      <span>静岡県伊東市 ／ オンラインショップとイベント出店</span>
       <span class="foot-links">
         <a href="https://ryo-itojournal.github.io/ito-chamber.portal/museum/iimono/index.html">← 展示室へもどる</a>
         <a href="index.html">いとうのいいもの 一覧へ</a>
       </span>
     </div>
-    <p class="foot-note">このページは、ITO PEOPLE MUSEUM「いとうのいいもの 展示室」による事業者紹介です。公開されている情報をもとに作成しています。商品や取扱店は変わることがありますので、くわしくは直接ご確認ください。<br>写真：宇佐美麦酒製造 公式サイト（usami-jibeer.com）</p>
+    <p class="foot-note">このページは、ITO PEOPLE MUSEUM「いとうのいいもの 展示室」による店舗紹介です。公開されている情報をもとに作成しています。営業時間や内容は変わることがありますので、お出かけの前にご確認ください。<br>写真：The Honey Step 公式サイト（thehoneystep.net）</p>
   </div>
 </footer>
 

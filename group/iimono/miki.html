@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>宇佐美麦酒製造（Usami Brewery）｜静岡県伊東市宇佐美のクラフトビール</title>
-<meta name="description" content="静岡県伊東市宇佐美の宇佐美麦酒製造（Usami Brewery）。伊豆の海洋深層水で仕こむ黄金色のエール「Usami Golden Ale」は、いとうのいいもの認定品。インターナショナル・ビアカップ2016 銀賞。">
+<title>三木洋菓子店｜静岡県伊東市猪戸の洋菓子店</title>
+<meta name="description" content="静岡県伊東市猪戸の三木洋菓子店。伊東の老舗の洋菓子店。銘菓のクッキー「ネコの舌」は、伊東ブランド「いとうのいいもの」の認定品。創業からのメロンゼリーや、昭和レトロなケーキも。不定休。">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="宇佐美麦酒製造株式会社｜静岡県伊東市宇佐美">
-<meta property="og:description" content="伊豆の海洋深層水で仕こむ、Usami Golden Ale。伊東・宇佐美のクラフトビールの醸造所です。">
+<meta property="og:title" content="三木洋菓子店｜静岡県伊東市猪戸">
+<meta property="og:description" content="クッキーの名前は、ネコの舌。伊東・猪戸の洋菓子店です。">
 <meta property="og:locale" content="ja_JP">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,23 +17,23 @@
 
 <style>
 /* ============================================================
-   宇佐美麦酒製造株式会社 / design tokens
-   藍＝伊豆の海、金＝ゴールデンエール、あわ＝ビールの泡
+   三木洋菓子店 / design tokens
+   桃色＝お店のマーク、焼き色＝クッキー、細長いかたち＝ネコの舌
    ============================================================ */
 :root{
-  --deep:#101A33;
-  --main:#1C2C55;
-  --mid:#4A5F96;
-  --glaze:#E9EDF5;
-  --paper:#F7F8FA;
-  --ink:#10141D;
-  --ink-soft:#4B5263;
-  --accent:#E0A12E;
-  --accent-soft:#F0CB7E;
-  --accent-ink:#8A5E08;
-  --on-accent:#1F1503;
+  --deep:#47212F;
+  --main:#6C3146;
+  --mid:#9A4E69;
+  --glaze:#F8EAEE;
+  --paper:#FDF8F6;
+  --ink:#22141A;
+  --ink-soft:#5F4C54;
+  --accent:#C9456A;
+  --accent-soft:#F3A4B8;
+  --accent-ink:#A9345A;
+  --on-accent:#fff;
 
-  --iri:linear-gradient(118deg,#1C2C55 0%,#4A5F96 26%,#B4C3E3 46%,#F6EDD2 64%,#E0A12E 84%,#33477F 100%);
+  --iri:linear-gradient(118deg,#A65A75 0%,#D58FA4 26%,#F6D9DF 46%,#FBEFD9 64%,#E88AA6 84%,#8F4A63 100%);
 
   --disp:"Shippori Mincho B1",serif;
   --body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
@@ -114,15 +114,15 @@ a{color:inherit}
   opacity:var(--o,.08);mix-blend-mode:screen;transition:opacity 1.6s ease;
 }
 .tile.lit::after{opacity:.62}
-/* 壁のモチーフ：あわ。ひかりが通ると、ひとつずつ浮かびあがる */
-.wall[data-wall="bubble"]{grid-template-columns:repeat(auto-fill,minmax(50px,1fr));grid-auto-rows:44px}
-.wall[data-wall="bubble"] .tile{background:none;box-shadow:none}
-.wall[data-wall="bubble"] .tile.r1{transform:translateX(50%)}
-.wall[data-wall="bubble"] .tile::before,
-.wall[data-wall="bubble"] .tile::after{content:"";position:absolute;inset:auto;left:50%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%}
-.wall[data-wall="bubble"] .tile::before{background:radial-gradient(circle at 34% 30%,color-mix(in srgb,var(--main) 50%,#fff) 0 7%,transparent 9%),radial-gradient(circle,transparent 0 56%,color-mix(in srgb,var(--main) 70%,#fff) 60% 66%,transparent 70%)}
-.wall[data-wall="bubble"] .tile::after{background:radial-gradient(circle,color-mix(in srgb,var(--accent-soft) 34%,transparent) 0 56%,#fff 60% 66%,transparent 70%);mix-blend-mode:normal;opacity:var(--o,.05)}
-.wall[data-wall="bubble"] .tile.lit::after{opacity:.6}
+/* 壁のモチーフ：天板にならぶ「ネコの舌」。ひかりが通ると焼き色がつく */
+.wall[data-wall="tongue"]{grid-template-columns:repeat(auto-fill,minmax(84px,1fr));grid-auto-rows:40px}
+.wall[data-wall="tongue"] .tile{background:none;box-shadow:none}
+.wall[data-wall="tongue"] .tile.r1{transform:translateX(50%)}
+.wall[data-wall="tongue"] .tile::before,
+.wall[data-wall="tongue"] .tile::after{content:"";position:absolute;inset:auto;left:50%;top:50%;width:66px;height:22px;margin:-11px 0 0 -33px;border-radius:999px}
+.wall[data-wall="tongue"] .tile::before{background:color-mix(in srgb,var(--main) 90%,#fff);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--glaze) 7%,transparent)}
+.wall[data-wall="tongue"] .tile::after{background:radial-gradient(ellipse at 50% 50%,#FBEBC4 0%,#F0CE8E 55%,#C98A4B 100%);mix-blend-mode:normal;opacity:var(--o,.06)}
+.wall[data-wall="tongue"] .tile.lit::after{opacity:.46}
 .hero-veil{
   position:absolute;inset:0;
   background:linear-gradient(178deg,color-mix(in srgb,var(--deep) 66%,transparent) 0%,color-mix(in srgb,var(--deep) 32%,transparent) 40%,color-mix(in srgb,var(--deep) 88%,transparent) 90%);
@@ -201,22 +201,6 @@ a{color:inherit}
 .card p.card-note{margin-top:auto;padding-top:16px;font-size:12.5px;letter-spacing:.06em;color:var(--accent-ink)}
 
 /* ============================================================
-   特集枠
-   ============================================================ */
-.feature{background:var(--deep);color:var(--glaze)}
-.feature-grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,6vw,64px);align-items:center}
-@media(max-width:760px){.feature-grid{grid-template-columns:1fr}}
-.week{display:flex;gap:6px}
-.day{width:clamp(34px,5.4vw,44px);aspect-ratio:1;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--glaze) 24%,transparent);font-family:var(--lat);font-size:12px;letter-spacing:.06em;color:color-mix(in srgb,var(--glaze) 55%,transparent)}
-.day.off{color:color-mix(in srgb,var(--glaze) 20%,transparent);border-style:dashed}
-.day.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-.stat{font-family:var(--lat);font-size:clamp(56px,9vw,104px);line-height:1;letter-spacing:.04em;color:var(--accent-soft);white-space:nowrap}
-.stat small{display:block;margin-top:14px;font-family:var(--body);font-size:12px;letter-spacing:.32em;color:color-mix(in srgb,var(--glaze) 62%,transparent)}
-.feature h2{font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.8vw,36px);letter-spacing:.05em;line-height:1.5;margin-bottom:16px}
-.feature p{color:color-mix(in srgb,var(--glaze) 78%,transparent);max-width:40em;font-size:15.5px}
-.feature-note{color:var(--accent-soft)}
-
-/* ============================================================
    お店のこと
    ============================================================ */
 .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,6vw,70px);align-items:center}
@@ -274,50 +258,48 @@ a{color:inherit}
   *,*::after,*::before{transition-duration:.01ms !important;animation-duration:.01ms !important}
   .rise{opacity:1;transform:none}
 }
+
+/* のれん：文字数の多い店名 */
+.noren-name{font-size:clamp(28px,4.4vw,50px)}
 </style>
 </head>
 <body>
 
 <header class="head" id="head">
-  <a class="head-mark" href="#top">宇佐美麦酒</a>
+  <a class="head-mark" href="#top">三木洋菓子店</a>
   <nav class="head-nav">
-    <a href="#goods">ビール</a>
-    <a href="#feature">受賞</a>
-    <a href="#about">会社のこと</a>
+    <a href="#sweets">お菓子</a>
+    <a href="#about">お店のこと</a>
     <a href="#info">ご案内</a>
   </nav>
 </header>
 
 <!-- ============ ヒーロー ============ -->
 <section class="hero" id="top">
-  <div class="wall" id="wall" data-wall="bubble" aria-hidden="true"></div>
+  <div class="wall" id="wall" data-wall="tongue" aria-hidden="true"></div>
   <div class="hero-veil" aria-hidden="true"></div>
 
   <div class="hero-inner">
-    <div class="wrap hero-grid">
+    <div class="wrap hero-grid solo">
       <div>
         <div class="plate">
-          <div class="plate-lat">Usami Brewery</div>
-          <h1 class="plate-name is-mid" aria-label="宇佐美麦酒製造株式会社">宇佐美麦酒</h1>
-          <div class="plate-yomi">うさみばくしゅ</div>
+          <div class="plate-lat">Miki</div>
+          <h1 class="plate-name is-mid">三木洋菓子店</h1>
+          <div class="plate-yomi">みきようがしてん</div>
         </div>
 
-        <p class="hero-copy">伊豆の海洋深層水で仕こむ、<br><b>Usami Golden Ale</b>。</p>
+        <p class="hero-copy">クッキーの名前は、<br><b>ネコの舌</b>。</p>
 
         <div class="hero-meta">
-          <span>静岡県伊東市宇佐美</span>
-          <span>エールビール</span>
-          <span>1998年から</span>
+          <span>静岡県伊東市猪戸</span>
+          <span>伊東ブランド「ネコの舌」</span>
+          <span>不定休</span>
         </div>
 
         <div class="hero-cta">
-          <a class="btn" href="#goods">ビールを見る</a>
-          <a class="btn btn-ghost" href="#info">所在地と連絡先</a>
+          <a class="btn" href="#sweets">お菓子を見る</a>
+          <a class="btn btn-ghost" href="#info">場所と営業時間</a>
         </div>
-      </div>
-
-      <div class="ph hero-shot">
-        <img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/usamiGA_tokubetupage.jpeg" alt="Usami Golden Ale の瓶とグラス" style="object-position:50% 50%">
       </div>
     </div>
   </div>
@@ -327,80 +309,65 @@ a{color:inherit}
 <section class="band">
   <div class="wrap intro-grid">
     <div>
-      <p class="eyebrow">Usami Brewery</p>
-      <p class="intro-quote">海と山のあいだで、<br>つくるビール。</p>
+      <p class="eyebrow">Miki Yogashiten</p>
+      <p class="intro-quote">小さな子から、<br>お年よりまで。</p>
     </div>
     <div class="intro-text lead">
-      <p>熱海と伊豆高原のあいだ、海ぞいのまち宇佐美にある、クラフトビールの会社です。</p>
-      <p>はじまりは一九九八年。宇佐美の山あい、みかん園のなかでした。ハンガリーのブラウマイスター（ビール職人）から、伝統的な醸造法をじかにおそわっています。</p>
-      <p>つくっているのは、かおり高く、味わい深いエールビール。「Usami Golden Ale」は、伊豆の海洋深層水をつかった、まろやかな黄金色のエールです。</p>
+      <p>伊東市猪戸にある、老舗の洋菓子店です。公式の Instagram では、「創業68年」と紹介されています。</p>
+      <p>銘菓は、クッキーの「ネコの舌」。伊東ブランドの認定品で、小さなお子さんからお年よりまで、はばひろく親しまれています。</p>
+      <p>創業のころからつくりつづけているメロンゼリーや、ババロア、バタークリームで仕あげるレモンパイ。昭和のなつかしいケーキもならびます。</p>
     </div>
   </div>
 </section>
 
-<!-- ============ ビール ============ -->
-<section class="band sweets" id="goods">
+<!-- ============ お菓子 ============ -->
+<section class="band sweets" id="sweets">
   <div class="wrap">
-    <p class="eyebrow">Our Beer</p>
-    <h2 class="h2">ビール</h2>
-    <p class="lead" style="margin-bottom:clamp(28px,4vw,46px)">ならぶビールは、時期によってかわります。くわしくは、公式サイトでおたしかめください。</p>
+    <p class="eyebrow">Our Sweets</p>
+    <h2 class="h2">お菓子</h2>
+    <p class="lead" style="margin-bottom:clamp(28px,4vw,46px)">ならぶ顔ぶれは季節や日によってかわります。お目当てがあるときは、お店におたずねください。</p>
 
     <div class="cards">
-      <article class="card rise">
-        <div class="ph"><img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/TESUT3.jpeg" alt="グラスにそそいだエールビール" loading="lazy"></div>
+      <article class="card noimg rise">
         <div class="card-body">
           <span class="card-tag">Ito Brand</span>
-          <h3>Usami Golden Ale</h3>
-          <p>大麦麦芽100％。伊豆の海洋深層水をつかい、海のミネラルをふくんだ、まろやかな仕あがりです。魚料理、とくにカルパッチョによくあいます。</p>
-          <p class="card-note">いとうのいいもの 認定品／アルコール 4.5％</p>
+          <h3>ネコの舌</h3>
+          <p>店の銘菓のクッキー。小さなお子さんからお年よりまで、長く親しまれています。</p>
+          <p class="card-note">いとうのいいもの 認定品</p>
         </div>
       </article>
 
-      <article class="card rise">
-        <div class="ph"><img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/IMGP3055-copy_570.jpeg" alt="宇佐美の海と山" loading="lazy"></div>
+      <article class="card noimg rise">
         <div class="card-body">
-          <span class="card-tag">Usami</span>
-          <h3>宇佐美というまち</h3>
-          <p>海と山にかこまれて、ゆっくりとおだやかな時間がながれるまち。その宇佐美で、クラフトビールをつくりつづけています。</p>
+          <span class="card-tag">Showa</span>
+          <h3>昭和レトロなケーキ</h3>
+          <p>創業のころからのメロンゼリー、なつかしいババロア、カスタードたっぷりのレモンパイ。サバランや、焼きたてのパウンドケーキがならぶ日もあります。</p>
         </div>
       </article>
 
-      <article class="card rise">
-        <div class="ph"><img src="https://usami-jibeer.com/wp3_nBu7Vy37VcD/wp-content/uploads/2017/01/1200_te-1200x320.jpeg" alt="麦芽" loading="lazy"></div>
+      <article class="card noimg rise">
         <div class="card-body">
-          <span class="card-tag">Ale</span>
-          <h3>エールビール</h3>
-          <p>十五度から二十五度の、すこし高めの温度ではたらく酵母でつくるビール。こい味わいと、ひろがるかおりがもちあじです。</p>
+          <span class="card-tag">Info</span>
+          <h3>お店から</h3>
+          <p>店主は、大橋 現さん。おやすみは不定休です。営業の予定は、お電話でおたしかめください。</p>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ 受賞 ============ -->
-<section class="band feature" id="feature">
-  <div class="wrap feature-grid">
-    <div class="stat" aria-hidden="true">2016<small>インターナショナル・ビアカップ</small></div>
-    <div>
-      <h2>フリーライトエール部門で、銀賞。</h2>
-      <p>「Usami Golden Ale」は、インターナショナル・ビアカップ2016の、フリーライトエール部門で銀賞をうけました。おいしく飲める温度は、六度くらいです。<br><span class="feature-note">※お酒は、二十歳になってから。</span></p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 会社のこと ============ -->
+<!-- ============ お店のこと ============ -->
 <section class="band" id="about">
   <div class="wrap about-grid">
     <div>
       <p class="eyebrow">About</p>
-      <h2 class="h2">会社のこと</h2>
-      <p class="lead">ほかに、「Usami SAISON」「Curry Lover Ale」、三種類の「伊豆の地ビール」などをつくっています。</p>
-      <p class="lead">ビールは、公式のオンラインショップで買えます。買えるお店や飲めるお店は、公式サイトで紹介されています。</p>
-      <p class="lead">見学や直売については、公式サイトに案内が見あたりません。お問い合わせは、お電話で。</p>
+      <h2 class="h2">お店のこと</h2>
+      <p class="lead">お店は、伊東市猪戸にあります。おやすみは不定休です。</p>
+      <p class="lead">営業時間は、公式の Instagram に案内が見あたりません。お出かけの前に、お電話でおたしかめください。</p>
     </div>
     <div class="ph about-shot noren rise" aria-hidden="true">
-      <span class="noren-name">宇佐美麦酒</span>
-      <span class="noren-sub">Usami Brewery</span>
+      <span class="noren-name">三木洋菓子店</span>
+      <span class="noren-sub">銘菓 ネコの舌</span>
     </div>
   </div>
 </section>
@@ -414,22 +381,22 @@ a{color:inherit}
     <div class="info-grid">
       <div>
         <dl class="dl">
-          <div><dt>社名</dt><dd>宇佐美麦酒製造株式会社<small>うさみばくしゅせいぞう</small></dd></div>
-          <div><dt>住所</dt><dd>〒414-0001<br>静岡県伊東市宇佐美3504-1</dd></div>
-          <div><dt>電話</dt><dd><a href="tel:0557330333">0557-33-0333</a><small>FAX 0557-33-0334</small></dd></div>
-          <div><dt>認定品</dt><dd>いとうのいいもの「Usami Golden Ale」</dd></div>
-          <div><dt>お取り寄せ</dt><dd><a href="https://usamibrewery.theshop.jp/" target="_blank" rel="noopener">宇佐美麦酒 オンラインショップ</a></dd></div>
-          <div><dt>公式サイト</dt><dd><a href="https://usami-jibeer.com/" target="_blank" rel="noopener">usami-jibeer.com</a></dd></div>
-          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/usamibrewery/" target="_blank" rel="noopener">@usamibrewery</a></dd></div>
+          <div><dt>店名</dt><dd>三木洋菓子店<small>みきようがしてん</small></dd></div>
+          <div><dt>住所</dt><dd>静岡県伊東市猪戸1-6-18</dd></div>
+          <div><dt>電話</dt><dd><a href="tel:0557373807">0557-37-3807</a></dd></div>
+          <div><dt>営業時間</dt><dd>要確認<small>お出かけの前に、お店へおたしかめください</small></dd></div>
+          <div><dt>定休日</dt><dd>不定休</dd></div>
+          <div><dt>認定品</dt><dd>いとうのいいもの「ネコの舌」</dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/ito_mikiyougashiten/" target="_blank" rel="noopener">@ito_mikiyougashiten</a></dd></div>
         </dl>
       </div>
 
       <div class="map-frame">
         <iframe class="map"
-          src="https://maps.google.com/maps?q=%E5%AE%87%E4%BD%90%E7%BE%8E%E9%BA%A6%E9%85%92%E8%A3%BD%E9%80%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E5%AE%87%E4%BD%90%E7%BE%8E3504-1&amp;hl=ja&amp;z=17&amp;output=embed"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="宇佐美麦酒製造株式会社の地図"></iframe>
+          src="https://maps.google.com/maps?q=%E4%B8%89%E6%9C%A8%E6%B4%8B%E8%8F%93%E5%AD%90%E5%BA%97%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E7%8C%AA%E6%88%B81-6-18&amp;hl=ja&amp;z=17&amp;output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="三木洋菓子店の地図"></iframe>
         <div style="padding:0 18px 18px">
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AE%87%E4%BD%90%E7%BE%8E%E9%BA%A6%E9%85%92%E8%A3%BD%E9%80%A0%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E5%AE%87%E4%BD%90%E7%BE%8E3504-1" target="_blank" rel="noopener">Google マップでひらく →</a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%89%E6%9C%A8%E6%B4%8B%E8%8F%93%E5%AD%90%E5%BA%97%20%E9%9D%99%E5%B2%A1%E7%9C%8C%E4%BC%8A%E6%9D%B1%E5%B8%82%E7%8C%AA%E6%88%B81-6-18" target="_blank" rel="noopener">Google マップでひらく →</a>
         </div>
       </div>
     </div>
@@ -441,19 +408,19 @@ a{color:inherit}
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <div class="foot-mark">宇佐美麦酒</div>
-        <div class="foot-lat">Usami Brewery — Ito, Shizuoka</div>
+        <div class="foot-mark">三木洋菓子店</div>
+        <div class="foot-lat">Miki Yogashiten — Ito, Shizuoka</div>
       </div>
-      <a class="foot-tel" href="tel:0557330333"><span>お問い合わせ</span>0557-33-0333</a>
+      <a class="foot-tel" href="tel:0557373807"><span>ご注文・お問い合わせ</span>0557-37-3807</a>
     </div>
     <div class="foot-bottom">
-      <span>静岡県伊東市宇佐美3504-1 ／ ビールは、公式オンラインショップなどで</span>
+      <span>静岡県伊東市猪戸1-6-18 ／ 伊東ブランド「ネコの舌」 ／ 不定休</span>
       <span class="foot-links">
         <a href="https://ryo-itojournal.github.io/ito-chamber.portal/museum/iimono/index.html">← 展示室へもどる</a>
         <a href="index.html">いとうのいいもの 一覧へ</a>
       </span>
     </div>
-    <p class="foot-note">このページは、ITO PEOPLE MUSEUM「いとうのいいもの 展示室」による事業者紹介です。公開されている情報をもとに作成しています。商品や取扱店は変わることがありますので、くわしくは直接ご確認ください。<br>写真：宇佐美麦酒製造 公式サイト（usami-jibeer.com）</p>
+    <p class="foot-note">このページは、ITO PEOPLE MUSEUM「いとうのいいもの 展示室」による店舗紹介です。公開されている情報をもとに作成しています。営業時間や商品は変わることがありますので、お出かけの前にお店へご確認ください。</p>
   </div>
 </footer>
 
