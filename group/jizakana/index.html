@@ -3,181 +3,716 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>地魚王国｜Instagram改善提案</title>
-<meta name="description" content="伊豆・いとう地魚王国に関わる鮮魚店・水産加工・飲食店のInstagram改善提案をまとめた一覧ページです。">
+<title>地魚王国｜伊豆・いとう地魚王国 会員事業者 総覧</title>
+<meta name="description" content="伊豆・いとう地魚王国の会員事業者28件を台帳形式でまとめ、各事業者の店舗紹介ページへ案内する総覧ページです。">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="伊東Instagram改善提案">
-<meta property="og:title" content="地魚王国｜Instagram改善提案">
-<meta property="og:description" content="伊豆・いとう地魚王国に関わる鮮魚店・水産加工・飲食店のInstagram改善提案をまとめた一覧ページです。">
-
+<meta property="og:title" content="地魚王国｜伊豆・いとう地魚王国 会員事業者 総覧">
+<meta property="og:description" content="伊豆・いとう地魚王国の会員事業者28件を台帳形式でまとめ、各事業者の店舗紹介ページへ案内する総覧ページです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-body{
-margin:0;
-font-family:"Noto Sans JP",sans-serif;
-background:#f7f3ea;
-color:#333;
-}
-header{
-background:#fff;
-padding:40px 20px;
-text-align:center;
-}
-.container{
-max-width:1000px;
-margin:auto;
-padding:30px 20px;
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-.card{
-background:#fff;
-border-radius:20px;
-padding:24px;
-text-decoration:none;
-color:#333;
-box-shadow:0 6px 18px rgba(0,0,0,.08);
-}
-.card:hover{
-transform:translateY(-4px);
-}
-.card h2{
-margin:0 0 8px;
-font-size:18px;
-}
-.card p{
-margin:0;
-font-size:14px;
-line-height:1.7;
-color:#555;
-}
-.card--soon{
-background:#fbf8f1;
-border:1px dashed #cbbfa6;
-box-shadow:none;
-color:#8b8375;
-}
-.card--soon p{
-color:#8b8375;
-}
+  :root{
+    --washi:#EEF5FA;
+    --washi-2:#DBEAF4;
+    --ink:#0B3A5C;
+    --ink-soft:#4A6675;
+    --seal:#0F6F92;
+    --seal-deep:#052539;
+    --gold:#1F7FB0;
+    --card:#FFFFFF;
+    --line: rgba(11,58,92,.16);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--washi);
+    color:var(--ink);
+    font-family:"Noto Sans JP", sans-serif;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(11,58,92,.06) 1px, transparent 1px),
+      radial-gradient(1px 1px at 70% 65%, rgba(11,58,92,.05) 1px, transparent 1px);
+    background-size:180px 180px, 220px 220px;
+  }
+  h1,h2{ font-family:"Shippori Mincho B1", serif; margin:0; }
+  a{color:inherit;}
+
+  .eyebrow{
+    font-family:"Shippori Mincho B1", serif;
+    font-size:12.5px; letter-spacing:.32em;
+    color:var(--gold);
+  }
+
+  .backlink{
+    position:sticky; top:0; z-index:40;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:14px 6vw;
+    background:rgba(238,245,250,.9);
+    backdrop-filter: blur(6px);
+    border-bottom:1px solid var(--line);
+    font-size:12.5px; letter-spacing:.04em;
+  }
+  .backlink a{ text-decoration:none; color:var(--ink-soft); }
+  .backlink a:hover{ color:var(--seal); }
+  .backlink .tag{
+    font-family:"Shippori Mincho B1", serif;
+    color:var(--seal); border:1px solid var(--seal);
+    padding:3px 12px; border-radius:2px; font-size:12px;
+  }
+
+  /* ---------------- hero ---------------- */
+  .hero{
+    position:relative;
+    padding:16vh 6vw 10vh;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{ max-width:760px; }
+  .hero h1{
+    font-size:clamp(40px, 7vw, 84px);
+    font-weight:800;
+    line-height:1.25;
+    letter-spacing:.06em;
+    margin-top:18px;
+  }
+  .hero-sub{
+    max-width:520px; margin-top:24px; font-size:15.5px; color:var(--ink-soft);
+  }
+  .hero-rule{
+    margin-top:14px; width:64px; height:2px; background:var(--seal);
+  }
+
+  /* hand-stamped seal, signature element */
+  .stamp{
+    position:absolute;
+    top:14vh; right:7vw;
+    width:168px; height:168px;
+    transform:rotate(-9deg);
+  }
+  @media (max-width:760px){
+    .stamp{ position:static; margin:36px auto 0; transform:rotate(-9deg) scale(.85); }
+  }
+
+  /* ---------------- registry section ---------------- */
+  .registry{ padding:9vh 6vw 14vh; }
+  .registry-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-bottom:8px; padding-bottom:18px; border-bottom:2px solid var(--ink);
+  }
+  .registry-head h2{ font-size:26px; letter-spacing:.08em; }
+  .registry-count{ font-size:13px; color:var(--ink-soft); }
+  .registry-count b{ color:var(--seal); font-family:"Shippori Mincho B1",serif; font-size:16px; }
+
+  .col-labels{
+    display:grid;
+    grid-template-columns:64px 1fr 200px 190px;
+    padding:14px 4px;
+    font-size:11.5px; color:var(--ink-soft); letter-spacing:.1em;
+    border-bottom:1px solid var(--line);
+  }
+
+  .entry{
+    display:grid;
+    grid-template-columns:64px 1fr 200px 190px;
+    align-items:center;
+    padding:26px 4px;
+    border-bottom:1px solid var(--line);
+    text-decoration:none;
+    color:inherit;
+    position:relative;
+    transition:background .2s ease;
+  }
+  .entry.active{ cursor:pointer; }
+  .entry.active:hover{ background:var(--card); }
+  .entry.active::before{
+    content:"";
+    position:absolute; left:-6vw; top:0; bottom:0; width:4px; background:transparent;
+    transition:background .2s ease;
+  }
+  .entry.active:hover::before{ background:var(--seal); }
+
+  .entry-num{
+    font-family:"Shippori Mincho B1", serif; font-size:15px; color:var(--ink-soft);
+  }
+  .entry-name{ display:flex; align-items:baseline; gap:14px; }
+  .entry-name .icon{ font-size:22px; }
+  .entry-name .txt h3{
+    font-family:"Shippori Mincho B1", serif; font-size:19px; font-weight:600; letter-spacing:.04em;
+  }
+  .entry-name .txt p{ margin:4px 0 0; font-size:12.5px; color:var(--ink-soft); }
+  .entry-name .txt p.copy{
+    margin-top:6px; font-size:13px; color:var(--ink); opacity:.78;
+    font-family:"Shippori Mincho B1", serif; letter-spacing:.02em; line-height:1.7;
+  }
+
+  .entry-cat{ font-size:13px; color:var(--ink-soft); }
+
+  .stamp-badge{
+    justify-self:end;
+    display:flex; align-items:center; gap:8px;
+    font-family:"Shippori Mincho B1", serif;
+    font-size:13px;
+  }
+  .stamp-mark{
+    width:40px; height:40px; border-radius:3px; white-space:nowrap;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; letter-spacing:.04em;
+    flex:none;
+  }
+  .stamp-mark.done{
+    border:2px solid var(--seal); color:var(--seal);
+    transform:rotate(-6deg);
+  }
+  .stamp-mark.pending{
+    border:2px dashed var(--line); color:var(--ink-soft);
+    transform:rotate(-6deg);
+  }
+  .status-txt{ white-space:nowrap; }
+  .status-txt.done{ color:var(--seal); }
+  .status-txt.pending{ color:var(--ink-soft); }
+
+  footer{ padding:6vh 6vw 8vh; text-align:center; border-top:1px solid var(--line); }
+  footer small{ color:var(--ink-soft); font-size:11px; letter-spacing:.05em; }
+
+  @media (max-width:820px){
+    .col-labels{ display:none; }
+    .entry{
+      grid-template-columns:1fr; gap:12px; padding:24px 4px;
+    }
+    .entry-num{ order:0; }
+    .entry-cat{ order:2; }
+    .stamp-badge{ order:3; justify-self:start; }
+  }
+
 .links{
-margin-top:36px;
-background:#fff;
-border-radius:20px;
-padding:24px;
-box-shadow:0 6px 18px rgba(0,0,0,.06);
+  max-width:900px;
+  margin:32px auto 0;
+  padding:24px 26px;
+  background:#ffffff;
+  border:1px solid rgba(11,58,92,.12);
+  border-radius:14px;
 }
 .links h2{
-margin:0 0 12px;
-font-size:17px;
+  margin:0 0 10px;
+  font-size:16px;
+  letter-spacing:.06em;
 }
 .links ul{
-margin:0;
-padding-left:1.2em;
-line-height:2;
+  margin:0;
+  padding-left:1.2em;
+  line-height:2;
+  font-size:14px;
 }
 .links a{
-color:#0f6f92;
-}
-footer{
-padding:28px 20px 40px;
-text-align:center;
-font-size:13px;
-color:#8b8375;
-}
-.back{
-display:inline-block;
-margin-bottom:20px;
-color:#666;
-text-decoration:none;
+  color:#0F6F92;
 }
 </style>
 </head>
-
 <body>
 
-<header>
-<h1>🐟 地魚王国</h1>
-<p>伊東の魚・漁業・飲食店のInstagram改善提案</p>
+<div class="backlink">
+  <a href="../../index.html">← 伊東Instagram改善提案 トップへ</a>
+  <span class="tag">地魚王国 GROUP</span>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">伊豆・いとう地魚王国　会員事業者　総覧</span>
+    <h1>地魚王国</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">
+      伊豆・いとう地魚王国の会員事業者を、台帳形式でまとめています。
+      事業者名を選ぶと、お店や仕事を紹介する店舗紹介ページへ移動します。
+    </p>
+  </div>
+
+  <svg class="stamp" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="rough">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise" seed="7"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4"/>
+      </filter>
+    </defs>
+    <g filter="url(#rough)">
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#0F6F92" stroke-width="6"/>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="#0F6F92" stroke-width="1.5"/>
+      <text x="100" y="82" text-anchor="middle" font-family="Shippori Mincho B1, serif" font-size="34" font-weight="800" fill="#0F6F92">地</text>
+      <text x="100" y="132" text-anchor="middle" font-family="Shippori Mincho B1, serif" font-size="34" font-weight="800" fill="#0F6F92">魚</text>
+    </g>
+  </svg>
 </header>
 
-<div class="container">
+<section class="registry">
+  <div class="registry-head">
+    <h2>会員事業者台帳</h2>
+    <span class="registry-count">公開 <b>26</b> / 全28件</span>
+  </div>
+  <div class="col-labels">
+    <span>No.</span><span>事業者</span><span>分類</span><span>状況</span>
+  </div>
 
-<a href="../../index.html" class="back">
-← トップページへ戻る
-</a>
-
-<div class="grid">
-
-<a href="jupiter.html" class="card">
-<h2>🍝 ジュピター</h2>
-<p>Instagram改善提案</p>
-</a>
-  
-<a href="toheisyokai.html" class="card">
-<h2>🥫 株式会社東平商会</h2>
-<p>さば缶・いとうナゲットなど魚を使った商品<br>Instagram改善提案</p>
-</a>
-
-<a href="banban.html" class="card">
-<h2>🍚 ばんばん食堂</h2>
-<p>干物屋「伊豆中」直営の海鮮食堂<br>Instagram改善提案</p>
-</a>
-
-<a href="hamayaki.html" class="card">
-<h2>🐚 伊豆浜焼本舗</h2>
-<p>干物屋「伊豆中」直営の海鮮浜焼き<br>Instagram改善提案</p>
-</a>
-
-<a href="marusu.html" class="card">
-<h2>🍣 伊豆まるす</h2>
-<p>干物屋「伊豆中」直営の寿司・海鮮丼<br>Instagram改善提案</p>
-</a>
-
-<div class="card card--soon">
-<h2>株式会社魚将</h2>
-<p>準備中</p>
-</div>
-
-<div class="card card--soon">
-<h2>山六ひもの店</h2>
-<p>準備中</p>
-</div>
-
-<div class="card card--soon">
-<h2>濱村屋</h2>
-<p>準備中</p>
-</div>
-
-<div class="card card--soon">
-<h2>三浦水産</h2>
-<p>準備中</p>
-</div>
-
-<div class="card card--soon">
-<h2>中野鮮魚店</h2>
-<p>準備中</p>
-</div>
-
-</div>
-
-<section class="links">
-<h2>関連リンク</h2>
-<ul>
-<li><a href="https://ryo-itojournal.github.io/ito-chamber.portal/museum/jizakana/index.html">伊豆・いとう地魚王国 展示室（3Dミュージアム）</a></li>
-<li><a href="https://ito-jizakana.com/" target="_blank" rel="noopener">伊豆・いとう地魚王国 公式サイト</a></li>
-<li><a href="https://www.instagram.com/ito_jizakana.kingdom/?hl=ja" target="_blank" rel="noopener">地魚王国 Instagram</a></li>
-<li><a href="https://www.google.com/maps/d/viewer?mid=1TerwHKM5mOjRn1C6v_EZSL6bHoVmjws&ll=35.51749624690791%2C138.185059&z=7" target="_blank" rel="noopener">地魚王国 Googleマイマップ</a></li>
-</ul>
+  <a class="entry active" href="syoan.html">
+    <span class="entry-num">01</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍚</span>
+      <div class="txt">
+        <h3>湯の街飯家 笑あん</h3>
+        <p>Shoan</p>
+        <p class="copy">アジ丼は、まご茶漬けに。しめまでおいしい、湯のまちのごはん。</p>
+      </div>
+    </div>
+    <span class="entry-cat">食事処</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="nakanosengyo.html">
+    <span class="entry-num">02</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🐟</span>
+      <div class="txt">
+        <h3>中野鮮魚店</h3>
+        <p>Nakano Sengyoten</p>
+        <p class="copy">魚のことは、さかなの伝道師に。東松原町の、まちの魚屋さん。</p>
+      </div>
+    </div>
+    <span class="entry-cat">鮮魚店</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="jupiter-izukogen.html">
+    <span class="entry-num">03</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍝</span>
+      <div class="txt">
+        <h3>Jupiter</h3>
+        <p>Izu-Kogen</p>
+        <p class="copy">富戸の朝どれサバが、ラグーのスパゲッティに。</p>
+      </div>
+    </div>
+    <span class="entry-cat">イタリアン</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="yumenoya.html">
+    <span class="entry-num">04</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">♨️</span>
+      <div class="txt">
+        <h3>離れ御宿 夢のや</h3>
+        <p>Hanare Onyado Yumenoya</p>
+        <p class="copy">森のなかの、六つの離れ。温泉と、旬の料理の宿。</p>
+      </div>
+    </div>
+    <span class="entry-cat">宿泊</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="daichan.html">
+    <span class="entry-num">05</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🥢</span>
+      <div class="txt">
+        <h3>肴屋 大ちゃん</h3>
+        <p>Sakanaya Daichan</p>
+        <p class="copy">毎朝、富戸の定置網へ。店主みずから、魚をえらびます。</p>
+      </div>
+    </div>
+    <span class="entry-cat">地魚料理</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="syunseki-fumi.html">
+    <span class="entry-num">06</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍱</span>
+      <div class="txt">
+        <h3>旬席ふみ</h3>
+        <p>Shunseki Fumi</p>
+        <p class="copy">京都で修業した主人が、富戸の魚を会席に。</p>
+      </div>
+    </div>
+    <span class="entry-cat">料理店</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="matsu.html">
+    <span class="entry-num">07</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🎣</span>
+      <div class="txt">
+        <h3>地魚料理 松</h3>
+        <p>Jizakana Ryori Matsu</p>
+        <p class="copy">その日の魚は、漁師さんにきいてきめます。</p>
+      </div>
+    </div>
+    <span class="entry-cat">食事処</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="delfino.html">
+    <span class="entry-num">08</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍅</span>
+      <div class="txt">
+        <h3>イタリア料理 デルフィーノ</h3>
+        <p>Delfino</p>
+        <p class="copy">富戸の魚でつくる、伊豆イタリアン。</p>
+      </div>
+    </div>
+    <span class="entry-cat">イタリア料理</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="daisyo-suisan.html">
+    <span class="entry-num">09</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🚚</span>
+      <div class="txt">
+        <h3>大翔水産</h3>
+        <p>Daisho Suisan</p>
+        <p class="copy">料理人の注文に、伊東の地魚でこたえる。</p>
+      </div>
+    </div>
+    <span class="entry-cat">水産</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="miura-suisan.html">
+    <span class="entry-num">10</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🦞</span>
+      <div class="txt">
+        <h3>三浦水産</h3>
+        <p>Miura Suisan</p>
+        <p class="copy">あわび、さざえ、伊勢海老。魚市場の前の、水産卸です。</p>
+      </div>
+    </div>
+    <span class="entry-cat">水産</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="tappan.html">
+    <span class="entry-num">11</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍣</span>
+      <div class="txt">
+        <h3>さかな倶楽部 たっぱん</h3>
+        <p>Sakana Club Tappan</p>
+        <p class="copy">旬の魚を、お客さんと楽しく、おいしく。</p>
+      </div>
+    </div>
+    <span class="entry-cat">鮨・地魚料理</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="regalo-terra.html">
+    <span class="entry-num">12</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🥬</span>
+      <div class="txt">
+        <h3>イタリア料理 レガーロテッラ</h3>
+        <p>Regalo Terra</p>
+        <p class="copy">魚は地のもの、野菜はじぶんの畑から。</p>
+      </div>
+    </div>
+    <span class="entry-cat">イタリア料理</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="sononi.html">
+    <span class="entry-num">13</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍶</span>
+      <div class="txt">
+        <h3>ごはん酒菜 そのに</h3>
+        <p>So.noni</p>
+        <p class="copy">父から受けついだ味を、釜めしと串揚げで。</p>
+      </div>
+    </div>
+    <span class="entry-cat">酒菜・食事処</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="yamaroku.html">
+    <span class="entry-num">14</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🐠</span>
+      <div class="txt">
+        <h3>山六ひもの店</h3>
+        <p>Yamaroku Himono</p>
+        <p class="copy">無添加の干物を、昔ながらの手づくりで。</p>
+      </div>
+    </div>
+    <span class="entry-cat">ひもの店</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="dorome.html">
+    <span class="entry-num">15</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🥣</span>
+      <div class="txt">
+        <h3>黒潮金剛 どろめ 伊東駅前店</h3>
+        <p>Kuroshio Kongo Dorome</p>
+        <p class="copy">宇佐美の港にあがった生しらすを、丼で。</p>
+      </div>
+    </div>
+    <span class="entry-cat">海鮮丼</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="izuchu.html">
+    <span class="entry-num">16</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🎁</span>
+      <div class="txt">
+        <h3>伊豆中</h3>
+        <p>Izuchu</p>
+        <p class="copy">伊豆の味で、心を届けるお手伝い。</p>
+      </div>
+    </div>
+    <span class="entry-cat">水産加工</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="lagoon.html">
+    <span class="entry-num">17</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🎳</span>
+      <div class="txt">
+        <h3>LAGOON</h3>
+        <p>Italian Restaurant</p>
+        <p class="copy">ボウリング場の二階に、伊東の魚介のイタリアン。</p>
+      </div>
+    </div>
+    <span class="entry-cat">イタリアン</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="sawa.html">
+    <span class="entry-num">18</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍣</span>
+      <div class="txt">
+        <h3>伊豆前 すし処 澤</h3>
+        <p>Sushidokoro Sawa</p>
+        <p class="copy">江戸前で修業した主人の、「伊豆前」の鮨。</p>
+      </div>
+    </div>
+    <span class="entry-cat">鮨</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="tanakaya-seimenjyo.html">
+    <span class="entry-num">19</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍜</span>
+      <div class="txt">
+        <h3>田中屋製麺所</h3>
+        <p>Tanakaya Seimenjo</p>
+        <p class="copy">伊東のアジとサバのけずり節でつくる、焼きそば。</p>
+      </div>
+    </div>
+    <span class="entry-cat">製麺・焼きそば</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="abba-resorts-izu.html">
+    <span class="entry-num">20</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🏨</span>
+      <div class="txt">
+        <h3>ABBA RESORTS IZU 坐漁荘</h3>
+        <p>ABBA RESORTS IZU</p>
+        <p class="copy">伊東の海の幸を、和会席とフレンチで。</p>
+      </div>
+    </div>
+    <span class="entry-cat">宿泊</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="genki.html">
+    <span class="entry-num">21</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍻</span>
+      <div class="txt">
+        <h3>居酒屋 元気</h3>
+        <p>Izakaya Genki</p>
+        <p class="copy">お刺身には、その場ですりおろす伊豆の本わさびを。</p>
+      </div>
+    </div>
+    <span class="entry-cat">居酒屋</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="nayuta.html">
+    <span class="entry-num">22</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍛</span>
+      <div class="txt">
+        <h3>Nayuta</h3>
+        <p>Dining Bar &amp; Cafe</p>
+        <p class="copy">伊東のサバが、ガパオになりました。</p>
+      </div>
+    </div>
+    <span class="entry-cat">ダイニングバー・カフェ</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="kazusaya-kanko.html">
+    <span class="entry-num">23</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🛍️</span>
+      <div class="txt">
+        <h3>かずさや観光物産</h3>
+        <p>Kazusaya Kanko Bussan</p>
+        <p class="copy">食べておいしい、贈ってよろこばれる。</p>
+      </div>
+    </div>
+    <span class="entry-cat">観光物産</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="tohei-ito.html">
+    <span class="entry-num">24</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🥫</span>
+      <div class="txt">
+        <h3>東平商会 食品部 伊東営業所</h3>
+        <p>Tohei Shokai</p>
+        <p class="copy">いとうナゲットは、伊東のサバのすり身から。</p>
+      </div>
+    </div>
+    <span class="entry-cat">水産加工・食品</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="hamamuraya.html">
+    <span class="entry-num">25</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍢</span>
+      <div class="txt">
+        <h3>濵村屋</h3>
+        <p>Hamamuraya</p>
+        <p class="copy">伊東のサバのすり身で、さばコロ。</p>
+      </div>
+    </div>
+    <span class="entry-cat">干物・地魚加工</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="uosyo.html">
+    <span class="entry-num">26</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🐟</span>
+      <div class="txt">
+        <h3>魚将</h3>
+        <p>Uosho</p>
+        <p class="copy">毎朝、社長みずから市場で目利き。</p>
+      </div>
+    </div>
+    <span class="entry-cat">地魚商品</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <div class="entry">
+    <span class="entry-num">27</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🤝</span>
+      <div class="txt">
+        <h3>NPO法人 笑顔のきずな</h3>
+        <p>NPO Egao no Kizuna</p>
+      </div>
+    </div>
+    <span class="entry-cat">地域活動</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark pending">準備中</span>
+      <span class="status-txt pending">Coming soon</span>
+    </span>
+  </div>
+  <div class="entry">
+    <span class="entry-num">28</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🐟</span>
+      <div class="txt">
+        <h3>HALU BALL</h3>
+        <p>Halu Ball</p>
+      </div>
+    </div>
+    <span class="entry-cat">地魚王国 会員</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark pending">準備中</span>
+      <span class="status-txt pending">Coming soon</span>
+    </span>
+  </div>
 </section>
 
-</div>
+<section class="links">
+  <h2>関連リンク</h2>
+  <ul>
+    <li><a href="https://ryo-itojournal.github.io/ito-chamber.portal/museum/jizakana/index.html">伊豆・いとう地魚王国 展示室（3Dミュージアム）</a></li>
+    <li><a href="https://ito-jizakana.com/" target="_blank" rel="noopener">伊豆・いとう地魚王国 公式サイト</a></li>
+    <li><a href="https://www.instagram.com/ito_jizakana.kingdom/?hl=ja" target="_blank" rel="noopener">地魚王国 Instagram</a></li>
+    <li><a href="https://www.google.com/maps/d/viewer?mid=1TerwHKM5mOjRn1C6v_EZSL6bHoVmjws&amp;ll=35.51749624690791%2C138.185059&amp;z=7" target="_blank" rel="noopener">地魚王国 Googleマイマップ</a></li>
+  </ul>
+</section>
 
-<footer>
-© 伊東Instagram改善提案
-</footer>
+<footer><small>© Ito Instagram</small></footer>
 
 </body>
 </html>
