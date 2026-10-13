@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>いとうのいいもの｜伊東ブランド認定事業者 総覧</title>
-<meta name="description" content="伊東ブランド「いとうのいいもの」の認定事業者を台帳形式でまとめ、Instagram改善提案の公開状況を一覧できるページです。">
+<meta name="description" content="伊東ブランド「いとうのいいもの」の認定事業者23件を台帳形式でまとめ、各事業者の店舗紹介ページへ案内する総覧ページです。">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="伊東Instagram改善提案">
 <meta property="og:title" content="いとうのいいもの｜伊東ブランド認定事業者 総覧">
-<meta property="og:description" content="伊東ブランド「いとうのいいもの」の認定事業者を台帳形式でまとめ、Instagram改善提案の公開状況を一覧できるページです。">
+<meta property="og:description" content="伊東ブランド「いとうのいいもの」の認定事業者23件を台帳形式でまとめ、各事業者の店舗紹介ページへ案内する総覧ページです。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -108,7 +108,7 @@
 
   .col-labels{
     display:grid;
-    grid-template-columns:64px 1fr 200px 140px;
+    grid-template-columns:64px 1fr 200px 190px;
     padding:14px 4px;
     font-size:11.5px; color:var(--ink-soft); letter-spacing:.1em;
     border-bottom:1px solid var(--line);
@@ -116,7 +116,7 @@
 
   .entry{
     display:grid;
-    grid-template-columns:64px 1fr 200px 140px;
+    grid-template-columns:64px 1fr 200px 190px;
     align-items:center;
     padding:26px 4px;
     border-bottom:1px solid var(--line);
@@ -143,6 +143,10 @@
     font-family:"Shippori Mincho B1", serif; font-size:19px; font-weight:600; letter-spacing:.04em;
   }
   .entry-name .txt p{ margin:4px 0 0; font-size:12.5px; color:var(--ink-soft); }
+  .entry-name .txt p.copy{
+    margin-top:6px; font-size:13px; color:var(--ink); opacity:.78;
+    font-family:"Shippori Mincho B1", serif; letter-spacing:.02em; line-height:1.7;
+  }
 
   .entry-cat{ font-size:13px; color:var(--ink-soft); }
 
@@ -166,6 +170,7 @@
     border:2px dashed var(--line); color:var(--ink-soft);
     transform:rotate(-6deg);
   }
+  .status-txt{ white-space:nowrap; }
   .status-txt.done{ color:var(--seal); }
   .status-txt.pending{ color:var(--ink-soft); }
 
@@ -219,8 +224,8 @@
     <h1>いとうのいいもの</h1>
     <div class="hero-rule"></div>
     <p class="hero-sub">
-      伊東ブランドに認定された事業者を対象に、Instagramのプロフィール・投稿・リールの改善提案を
-      一者ずつ作成し、台帳形式でまとめています。
+      伊東ブランド「いとうのいいもの」に認定された事業者を、台帳形式でまとめています。
+      事業者名を選ぶと、お店と認定品を紹介する店舗紹介ページへ移動します。
     </p>
   </div>
 
@@ -243,121 +248,378 @@
 <section class="registry">
   <div class="registry-head">
     <h2>認定事業者台帳</h2>
-    <span class="registry-count">公開 <b>2</b> / 全7件</span>
+    <span class="registry-count">公開 <b>23</b> / 全23件</span>
   </div>
   <div class="col-labels">
     <span>No.</span><span>事業者</span><span>分類</span><span>状況</span>
   </div>
 
-  <a class="entry active" href="../../group/iimono/usami.html">
+  <a class="entry active" href="ujihara.html">
     <span class="entry-num">01</span>
     <div class="entry-name">
-      <span class="icon">🍺</span>
+      <span class="icon" aria-hidden="true">🍡</span>
       <div class="txt">
-        <h3>宇佐美麦酒製造</h3>
-        <p>Usami Brewery</p>
+        <h3>氏原製菓株式会社</h3>
+        <p>Ujihara Seika</p>
+        <p class="copy">ぐり茶の抹茶あんで、白あんを包んで。伊豆 ぐり茶しぐれ。</p>
       </div>
     </div>
-    <span class="entry-cat">クラフトビール醸造</span>
+    <span class="entry-cat">菓子製造</span>
     <span class="stamp-badge">
       <span class="stamp-mark done">公開</span>
       <span class="status-txt done">紹介ページを見る →</span>
     </span>
   </a>
-
-  <div class="entry">
+  <a class="entry active" href="sononi.html">
     <span class="entry-num">02</span>
     <div class="entry-name">
-      <span class="icon">🍵</span>
+      <span class="icon" aria-hidden="true">🍶</span>
       <div class="txt">
-        <h3>杉山製茶</h3>
-        <p>Sugiyama Seicha</p>
+        <h3>ごはん酒菜 そのに</h3>
+        <p>So.noni</p>
+        <p class="copy">アジフライのための、味和伊（あじわい）ソース。</p>
+      </div>
+    </div>
+    <span class="entry-cat">酒菜・食事処</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="sekishuan.html">
+    <span class="entry-num">03</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🥧</span>
+      <div class="txt">
+        <h3>石舟庵</h3>
+        <p>Sekishuan</p>
+        <p class="copy">伊豆の柑橘でつくる、みかんの花咲く丘。</p>
+      </div>
+    </div>
+    <span class="entry-cat">和菓子製造</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="kashiwaya.html">
+    <span class="entry-num">04</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🌰</span>
+      <div class="txt">
+        <h3>いで湯菓子処 伊豆柏屋 本店</h3>
+        <p>Izu Kashiwaya</p>
+        <p class="copy">竹の皮で包んで、蒸しあげる。いでゆむし極上栗蒸羊羹。</p>
+      </div>
+    </div>
+    <span class="entry-cat">和菓子・菓子店</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="honeystep.html">
+    <span class="entry-num">05</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍯</span>
+      <div class="txt">
+        <h3>The Honey Step</h3>
+        <p>Izu Honey and Fruits</p>
+        <p class="copy">伊東のレモンを、伊豆のはちみつに漬けました。</p>
+      </div>
+    </div>
+    <span class="entry-cat">はちみつ</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="shirai-seichaen.html">
+    <span class="entry-num">06</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍵</span>
+      <div class="txt">
+        <h3>白井製茶園</h3>
+        <p>Shirai Seichaen</p>
+        <p class="copy">自分たちの茶畑から、伊豆の紅茶と、ぐり茶。</p>
       </div>
     </div>
     <span class="entry-cat">製茶</span>
     <span class="stamp-badge">
-      <span class="stamp-mark pending">準備中</span>
-      <span class="status-txt pending">Coming soon</span>
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
     </span>
-  </div>
-
-  <div class="entry">
-    <span class="entry-num">03</span>
+  </a>
+  <a class="entry active" href="tokaibus.html">
+    <span class="entry-num">07</span>
     <div class="entry-name">
-      <span class="icon">🐟</span>
+      <span class="icon" aria-hidden="true">🚌</span>
       <div class="txt">
-        <h3>丸達水産</h3>
-        <p>Marutatsu Suisan</p>
+        <h3>東海自動車（東海バス）</h3>
+        <p>Tokai Bus</p>
+        <p class="copy">東海バスがつくった、新夏蜜柑酎「うめえら！」。</p>
       </div>
     </div>
-    <span class="entry-cat">水産加工</span>
+    <span class="entry-cat">交通・観光</span>
     <span class="stamp-badge">
-      <span class="stamp-mark pending">準備中</span>
-      <span class="status-txt pending">Coming soon</span>
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
     </span>
-  </div>
-
-  <div class="entry">
-    <span class="entry-num">04</span>
+  </a>
+  <a class="entry active" href="jupiter.html">
+    <span class="entry-num">08</span>
     <div class="entry-name">
-      <span class="icon">🍵</span>
+      <span class="icon" aria-hidden="true">🍝</span>
+      <div class="txt">
+        <h3>Jupiter</h3>
+        <p>Izu-Kogen</p>
+        <p class="copy">朝獲れのサバを、数時間のうちに。サバのラグーのパスタソース。</p>
+      </div>
+    </div>
+    <span class="entry-cat">イタリアン</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="beniya.html">
+    <span class="entry-num">09</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍘</span>
+      <div class="txt">
+        <h3>手造り和菓子 紅谷</h3>
+        <p>Beniya</p>
+        <p class="copy">創業のころからの味、潮吹最中。</p>
+      </div>
+    </div>
+    <span class="entry-cat">和菓子</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="kanseido.html">
+    <span class="entry-num">10</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍰</span>
+      <div class="txt">
+        <h3>パティスリー 甘青堂</h3>
+        <p>Pâtisserie Kanseido</p>
+        <p class="copy">看板は、町の菓子屋。中は、フランス菓子。</p>
+      </div>
+    </div>
+    <span class="entry-cat">洋菓子・和菓子</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="umeya.html">
+    <span class="entry-num">11</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">⛳</span>
+      <div class="txt">
+        <h3>梅家 湯の花店</h3>
+        <p>Umeya</p>
+        <p class="copy">ゴルフボールのかたちの、伊東のおみやげ、ホール・イン。</p>
+      </div>
+    </div>
+    <span class="entry-cat">和洋菓子店</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="kiyonaka.html">
+    <span class="entry-num">12</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍣</span>
+      <div class="txt">
+        <h3>割烹 きよ仲</h3>
+        <p>Kiyonaka</p>
+        <p class="copy">伊東港のさばを、橙酢でしめて。大人のお寿司 さばの泪。</p>
+      </div>
+    </div>
+    <span class="entry-cat">割烹・天ぷら</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="honke-maguroya.html">
+    <span class="entry-num">13</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍙</span>
+      <div class="txt">
+        <h3>本家鮪屋</h3>
+        <p>Honke Maguroya</p>
+        <p class="copy">稲取の金目鯛を、焼むすびにしました。</p>
+      </div>
+    </div>
+    <span class="entry-cat">まぐろ料理</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="inaba.html">
+    <span class="entry-num">14</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🥩</span>
+      <div class="txt">
+        <h3>いなば肉店</h3>
+        <p>Inaba Nikuten</p>
+        <p class="copy">伊豆のみそと、伊東の地酒で漬けた、伊東のみそ漬。</p>
+      </div>
+    </div>
+    <span class="entry-cat">精肉店</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="ito-shirako.html">
+    <span class="entry-num">15</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🌶️</span>
+      <div class="txt">
+        <h3>株式会社 いとう白子</h3>
+        <p>Ito Shirako</p>
+        <p class="copy">ニューサマーオレンジと、青唐辛子。伊豆の辛いソース、ニュースコ。</p>
+      </div>
+    </div>
+    <span class="entry-cat">食品メーカー</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="miura.html">
+    <span class="entry-num">16</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">💧</span>
+      <div class="txt">
+        <h3>有限会社 三浦製菓</h3>
+        <p>Miura Seika</p>
+        <p class="copy">ニューサマーオレンジと、海洋深層水。さわやかなゼリー、伊豆のしずく。</p>
+      </div>
+    </div>
+    <span class="entry-cat">菓子製造</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="isshin.html">
+    <span class="entry-num">17</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍮</span>
+      <div class="txt">
+        <h3>創作菓子いっしん 伊豆高原本店</h3>
+        <p>Isshin</p>
+        <p class="copy">ぐり茶を、たっぷりと。いっしん特製の、ぐり茶プリン。</p>
+      </div>
+    </div>
+    <span class="entry-cat">創作菓子</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="miki.html">
+    <span class="entry-num">18</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🐱</span>
+      <div class="txt">
+        <h3>三木洋菓子店</h3>
+        <p>Miki Yogashiten</p>
+        <p class="copy">クッキーの名前は、ネコの舌。</p>
+      </div>
+    </div>
+    <span class="entry-cat">洋菓子店</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="ja-fujiizu.html">
+    <span class="entry-num">19</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍊</span>
+      <div class="txt">
+        <h3>ＪＡふじ伊豆 吉田支店</h3>
+        <p>JA Fuji-Izu</p>
+        <p class="copy">ダイダイを、まるごとつかった、だいだいマーマレード。</p>
+      </div>
+    </div>
+    <span class="entry-cat">農業協同組合</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="binya.html">
+    <span class="entry-num">20</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">☕</span>
+      <div class="txt">
+        <h3>備屋珈琲 自家焙煎工房</h3>
+        <p>Binya Coffee</p>
+        <p class="copy">備長炭で、すこしずつ焙煎。伊東駅から一分の、珈琲店。</p>
+      </div>
+    </div>
+    <span class="entry-cat">珈琲・自家焙煎</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="yamamoto-coffee.html">
+    <span class="entry-num">21</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">☕</span>
+      <div class="txt">
+        <h3>ヤマモトコーヒー 一番館・二番館</h3>
+        <p>Yamamoto Coffee</p>
+        <p class="copy">三浦按針にちなんだ、按針珈琲のドリップパック。</p>
+      </div>
+    </div>
+    <span class="entry-cat">珈琲</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="usami.html">
+    <span class="entry-num">22</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍺</span>
+      <div class="txt">
+        <h3>宇佐美麦酒製造</h3>
+        <p>Usami Brewery</p>
+        <p class="copy">伊豆の海洋深層水で仕こむ、Usami Golden Ale。</p>
+      </div>
+    </div>
+    <span class="entry-cat">クラフトビール</span>
+    <span class="stamp-badge">
+      <span class="stamp-mark done">公開</span>
+      <span class="status-txt done">紹介ページを見る →</span>
+    </span>
+  </a>
+  <a class="entry active" href="ichikawa.html">
+    <span class="entry-num">23</span>
+    <div class="entry-name">
+      <span class="icon" aria-hidden="true">🍵</span>
       <div class="txt">
         <h3>市川製茶</h3>
         <p>Ichikawa Seicha</p>
+        <p class="copy">大正八年から、伊豆にかおる、市川のぐり茶。</p>
       </div>
     </div>
     <span class="entry-cat">製茶</span>
     <span class="stamp-badge">
-      <span class="stamp-mark pending">準備中</span>
-      <span class="status-txt pending">Coming soon</span>
-    </span>
-  </div>
-
-  <div class="entry">
-    <span class="entry-num">05</span>
-    <div class="entry-name">
-      <span class="icon">🍊</span>
-      <div class="txt">
-        <h3>HINASAKU</h3>
-        <p>Hinasaku</p>
-      </div>
-    </div>
-    <span class="entry-cat">柑橘</span>
-    <span class="stamp-badge">
-      <span class="stamp-mark pending">準備中</span>
-      <span class="status-txt pending">Coming soon</span>
-    </span>
-  </div>
-
-  <div class="entry">
-    <span class="entry-num">06</span>
-    <div class="entry-name">
-      <span class="icon">🦐</span>
-      <div class="txt">
-        <h3>伊東白子</h3>
-        <p>Ito Shirasu</p>
-      </div>
-    </div>
-    <span class="entry-cat">海産物</span>
-    <span class="stamp-badge">
-      <span class="stamp-mark pending">準備中</span>
-      <span class="status-txt pending">Coming soon</span>
-    </span>
-  </div>
-
-  <a class="entry active" href="../../group/iimono/kanseido-instagram.html">
-    <span class="entry-num">07</span>
-    <div class="entry-name">
-      <span class="icon">🍰</span>
-      <div class="txt">
-        <h3>甘青堂</h3>
-        <p>Kanseido</p>
-      </div>
-    </div>
-    <span class="entry-cat">フランス菓子</span>
-    <span class="stamp-badge">
       <span class="stamp-mark done">公開</span>
-      <span class="status-txt done">提案を見る →</span>
+      <span class="status-txt done">紹介ページを見る →</span>
     </span>
   </a>
 </section>
@@ -366,9 +628,9 @@
   <h2>関連リンク</h2>
   <ul>
     <li><a href="https://ryo-itojournal.github.io/ito-chamber.portal/museum/iimono/index.html">いとうのいいもの 展示室（3Dミュージアム）</a></li>
-    <li><a href="../../group/iimono/kanseido.html">甘青堂（店舗紹介ページ）</a></li>
+    <li><a href="kanseido-instagram.html">甘青堂（Instagram改善提案）</a></li>
     <li><a href="https://www.instagram.com/ito_iimono.brand/?hl=ja" target="_blank" rel="noopener">いとうのいいもの Instagram</a></li>
-    <li><a href="https://www.google.com/maps/d/viewer?mid=1LHZKauJx5gOcHZKi9nA2IL30OBWT4AI&ll=34.946285826717514%2C139.093087&z=12" target="_blank" rel="noopener">いとうのいいもの Googleマイマップ</a></li>
+    <li><a href="https://www.google.com/maps/d/viewer?mid=1LHZKauJx5gOcHZKi9nA2IL30OBWT4AI&amp;ll=34.946285826717514%2C139.093087&amp;z=12" target="_blank" rel="noopener">いとうのいいもの Googleマイマップ</a></li>
   </ul>
 </section>
 
