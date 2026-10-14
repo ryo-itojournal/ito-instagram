@@ -264,6 +264,12 @@ a{color:inherit}
 
 /* 欧文の店名：文字数にあわせた大きさ */
 .plate-name.is-latin{font-size:clamp(40px,9vw,84px)}
+/* ---- Instagram リンク ---- */
+.btn-ig{display:inline-flex;align-items:center;gap:10px}
+.btn-ig svg{width:18px;height:18px;flex:none}
+.foot-contact{display:flex;flex-wrap:wrap;gap:18px 44px;align-items:flex-end}
+.foot-ig{font-size:clamp(18px,3vw,24px);overflow-wrap:anywhere}
+.foot-ig svg{width:.8em;height:.8em;vertical-align:-.08em;margin-right:.3em}
 </style>
 </head>
 <body>
@@ -303,6 +309,7 @@ a{color:inherit}
         <div class="hero-cta">
           <a class="btn" href="#menu">メニューを見る</a>
           <a class="btn btn-ghost" href="#info">場所と営業時間</a>
+          <a class="btn btn-ghost btn-ig" href="https://www.instagram.com/nayuta2018/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagram</a>
         </div>
       </div>
 
@@ -420,6 +427,7 @@ a{color:inherit}
           <div><dt>お支払い</dt><dd>現金、カード、電子マネー</dd></div>
           <div><dt>ブログ</dt><dd><a href="https://ameblo.jp/nayuta2014" target="_blank" rel="noopener">ameblo.jp/nayuta2014</a></dd></div>
           <div><dt>地魚王国</dt><dd><a href="https://ito-jizakana.com/shop/nayuta/" target="_blank" rel="noopener">加盟店ページを見る</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/nayuta2018/" target="_blank" rel="noopener">@nayuta2018</a></dd></div>
         </dl>
       </div>
 
@@ -443,7 +451,10 @@ a{color:inherit}
         <div class="foot-mark is-latin">Nayuta</div>
         <div class="foot-lat">Nayuta — Ito, Shizuoka</div>
       </div>
-      <a class="foot-tel" href="tel:0557533923"><span>ご予約・お問い合わせ</span>0557-53-3923</a>
+      <div class="foot-contact">
+        <a class="foot-tel" href="tel:0557533923"><span>ご予約・お問い合わせ</span>0557-53-3923</a>
+        <a class="foot-tel foot-ig" href="https://www.instagram.com/nayuta2018/" target="_blank" rel="noopener"><span>Instagram</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>@nayuta2018</a>
+      </div>
     </div>
     <div class="foot-bottom">
       <span>静岡県伊東市八幡野1100-5 ／ 11:30 – 15:00／17:00 – 22:00 ／ 木曜定休</span>

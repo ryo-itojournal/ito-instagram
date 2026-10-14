@@ -264,6 +264,12 @@ a{color:inherit}
 
 /* 欧文の店名：文字数にあわせた大きさ */
 .plate-name.is-latin{font-size:clamp(40px,9vw,84px)}
+/* ---- Instagram リンク ---- */
+.btn-ig{display:inline-flex;align-items:center;gap:10px}
+.btn-ig svg{width:18px;height:18px;flex:none}
+.foot-contact{display:flex;flex-wrap:wrap;gap:18px 44px;align-items:flex-end}
+.foot-ig{font-size:clamp(18px,3vw,24px);overflow-wrap:anywhere}
+.foot-ig svg{width:.8em;height:.8em;vertical-align:-.08em;margin-right:.3em}
 </style>
 </head>
 <body>
@@ -303,6 +309,7 @@ a{color:inherit}
         <div class="hero-cta">
           <a class="btn" href="#menu">メニューを見る</a>
           <a class="btn btn-ghost" href="#info">場所と営業時間</a>
+          <a class="btn btn-ghost btn-ig" href="https://www.instagram.com/jupiter_izukougen/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagram</a>
         </div>
       </div>
 
@@ -419,6 +426,7 @@ a{color:inherit}
           <div><dt>ご予約</dt><dd>お電話で<small>お電話は、営業前か営業後（9:30〜11:00ごろ・15:00〜18:00ごろ）に。営業中は、当日のご予約のみ</small></dd></div>
           <div><dt>お支払い</dt><dd>現金、カード、QRコード決済</dd></div>
           <div><dt>公式サイト</dt><dd><a href="https://www.izukougen-jupiter.jp/" target="_blank" rel="noopener">izukougen-jupiter.jp</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/jupiter_izukougen/" target="_blank" rel="noopener">@jupiter_izukougen</a></dd></div>
           <div><dt>地魚王国</dt><dd><a href="https://ito-jizakana.com/shop/jupiter/" target="_blank" rel="noopener">加盟店ページを見る</a></dd></div>
         </dl>
       </div>
@@ -443,7 +451,10 @@ a{color:inherit}
         <div class="foot-mark is-latin">Jupiter</div>
         <div class="foot-lat">Jupiter — Ito, Shizuoka</div>
       </div>
-      <a class="foot-tel" href="tel:0557543736"><span>ご予約・お問い合わせ</span>0557-54-3736</a>
+      <div class="foot-contact">
+        <a class="foot-tel" href="tel:0557543736"><span>ご予約・お問い合わせ</span>0557-54-3736</a>
+        <a class="foot-tel foot-ig" href="https://www.instagram.com/jupiter_izukougen/" target="_blank" rel="noopener"><span>Instagram</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>@jupiter_izukougen</a>
+      </div>
     </div>
     <div class="foot-bottom">
       <span>静岡県伊東市八幡野1039-101 ／ 11:00 – 13:30（L.O.） ／ 水曜定休</span>
